@@ -1,0 +1,43 @@
+{
+  "name": "@poli-page/templates",
+  "version": "0.1.0",
+  "description": "Poli Page — Official Templates",
+  "main": "index.js",
+  "directories": {
+    "getting-started": "getting-started",
+    "playground": "playground",
+    "showcase": "showcase",
+    "structures": "structures",
+    "test": "tests"
+  },
+  "files": [
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poli-page/templates.git"
+  },
+  "keywords": [
+    "pdf",
+    "cli",
+    "poli-page",
+    "pdf-generation",
+    "html-to-pdf",
+    "document",
+    "templates",
+    "reporting"
+  ],
+  "author": "Poli Page",
+  "license": "MIT",
+  "homepage": "https://poli.page",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/poli-page/templates/issues"
+  }
+}
