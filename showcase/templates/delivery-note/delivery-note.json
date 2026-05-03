@@ -1,0 +1,64 @@
+{
+  "locale": "en",
+  "data": {
+    "company": {
+      "name": "Pacific Hardware Supply",
+      "tagline": "Industrial Components & Precision Parts",
+      "address": "1500 Industrial Parkway",
+      "city": "Portland, OR 97201",
+      "phone": "+1 (503) 555-4567"
+    },
+    "recipient": {
+      "name": "Midwest Manufacturing Corp.",
+      "address": "8800 Commerce Drive",
+      "postalCode": "60607",
+      "city": "Chicago, IL",
+      "contact": "Thomas Miller, Warehouse Manager"
+    },
+    "delivery": {
+      "number": "DN-2026-003471",
+      "date": "2026-04-12",
+      "orderReference": "PO-2026-BM-0892",
+      "carrier": "UPS Freight",
+      "trackingNumber": "1Z999AA10123456784",
+      "packageCount": 4,
+      "totalWeight": "127.5 kg",
+      "items": [
+        { "sku": "NH-BRG-001", "description": "Precision Ball Bearing 6205-2RS (box of 50)", "ordered": 10, "shipped": 10, "backorder": 0 },
+        { "sku": "NH-BRG-002", "description": "Precision Ball Bearing 6208-2RS (box of 25)", "ordered": 8, "shipped": 8, "backorder": 0 },
+        { "sku": "NH-BLT-010", "description": "Timing Belt HTD-5M-15 (1500mm)", "ordered": 20, "shipped": 20, "backorder": 0 },
+        { "sku": "NH-BLT-012", "description": "Timing Belt HTD-8M-20 (2000mm)", "ordered": 15, "shipped": 12, "backorder": 3 },
+        { "sku": "NH-GRK-005", "description": "Linear Guide Rail HGR20 (500mm)", "ordered": 6, "shipped": 6, "backorder": 0 },
+        { "sku": "NH-GRK-006", "description": "Linear Guide Block HGH20CA", "ordered": 12, "shipped": 12, "backorder": 0 },
+        { "sku": "NH-MOT-020", "description": "Stepper Motor NEMA 23 (2.8A, 1.26Nm)", "ordered": 4, "shipped": 4, "backorder": 0 },
+        { "sku": "NH-MOT-021", "description": "Stepper Motor Driver DM556 (5.6A)", "ordered": 4, "shipped": 4, "backorder": 0 },
+        { "sku": "NH-CNC-100", "description": "Ball Screw SFU1605 (600mm) with Nut", "ordered": 3, "shipped": 3, "backorder": 0 },
+        { "sku": "NH-CNC-101", "description": "Ball Screw Support BK12/BF12 Set", "ordered": 3, "shipped": 3, "backorder": 0 },
+        { "sku": "NH-FAS-050", "description": "M5x20 Socket Head Cap Screw (box of 100)", "ordered": 5, "shipped": 5, "backorder": 0 },
+        { "sku": "NH-FAS-051", "description": "M6x25 Socket Head Cap Screw (box of 100)", "ordered": 5, "shipped": 5, "backorder": 0 },
+        { "sku": "NH-FAS-060", "description": "M5 T-Nut for 2020 Profile (box of 50)", "ordered": 10, "shipped": 10, "backorder": 0 },
+        { "sku": "NH-PRF-030", "description": "Aluminium Profile 2040 V-Slot (1000mm)", "ordered": 8, "shipped": 8, "backorder": 0 },
+        { "sku": "NH-PRF-031", "description": "Aluminium Profile 2020 V-Slot (500mm)", "ordered": 12, "shipped": 12, "backorder": 0 },
+        { "sku": "NH-ELC-070", "description": "24V 15A Power Supply (Mean Well LRS-350-24)", "ordered": 2, "shipped": 2, "backorder": 0 },
+        { "sku": "NH-ELC-075", "description": "Emergency Stop Button (NC+NO)", "ordered": 2, "shipped": 2, "backorder": 0 },
+        { "sku": "NH-SEN-040", "description": "Inductive Proximity Sensor NPN (M12, 4mm)", "ordered": 6, "shipped": 4, "backorder": 2 },
+        { "sku": "NH-CPL-015", "description": "Flexible Jaw Coupling 6.35mm to 10mm", "ordered": 3, "shipped": 3, "backorder": 0 },
+        { "sku": "NH-LUB-001", "description": "Linear Rail Grease Cartridge (80ml)", "ordered": 4, "shipped": 4, "backorder": 0 }
+      ],
+      "summary": {
+        "totalItems": 20,
+        "backorderCount": 2,
+        "completeCount": 18
+      },
+      "terms": [
+        { "title": "Inspection", "text": "Goods must be inspected within 48 hours of delivery. Any damage or discrepancy must be reported to the carrier and to Pacific Hardware Supply immediately." },
+        { "title": "Claims", "text": "Claims for shortage or damage must be filed in writing within 5 business days of receipt. Claims received after this period may not be accepted." },
+        { "title": "Returns", "text": "Returns require prior authorization (RMA number). Goods must be in original packaging and unused condition. A 15% restocking fee may apply." },
+        { "title": "Backorders", "text": "Backordered items will be shipped as soon as available at no additional shipping cost. Estimated restock time is communicated separately." },
+        { "title": "Warranty", "text": "All products carry the manufacturer's warranty. Pacific Hardware Supply provides an additional 12-month warranty on defective goods. Normal wear and tear is excluded." },
+        { "title": "Liability", "text": "Pacific Hardware Supply's liability is limited to the replacement value of defective goods. We are not liable for consequential damages, lost production, or installation costs." },
+        { "title": "Governing Law", "text": "These terms are governed by the laws of the State of Oregon. Disputes shall be resolved by the Multnomah County Circuit Court." }
+      ]
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+	"locale": "en",
+	"data": {
+		"company": {
+			"name": "Meridian Technologies"
+		},
+		"report": {
+			"title": "Quarterly Business Report",
+			"period": "Q2 2026",
+			"author": "Daniel Foster, VP Finance",
+			"date": "2026-07-10T00:00:00Z",
+			"classification": "Confidential",
+			"summary": "Q2 2026 delivered strong revenue growth at USD 18.4M, representing a 22% increase year-over-year. The Cloud Platform division led all segments with 38% growth, driven by enterprise adoption and a successful product launch in May. Operating margins improved to 31%, reflecting economies of scale and disciplined cost management. Customer retention remained strong at 94%, with NPS reaching 58.",
+			"highlights": [
+				{
+					"label": "Q2 Revenue",
+					"value": "USD 18.4M",
+					"icon": "payments",
+					"trend": "up",
+					"change": "22% YoY"
+				},
+				{
+					"label": "Growth Rate",
+					"value": "22%",
+					"icon": "trending_up",
+					"trend": "up",
+					"change": "4pp vs Q1"
+				},
+				{
+					"label": "Operating Margin",
+					"value": "31%",
+					"icon": "savings",
+					"trend": "up",
+					"change": "2.5pp"
+				},
+				{
+					"label": "Active Customers",
+					"value": "1,240",
+					"icon": "groups",
+					"trend": "up",
+					"change": "180 new"
+				}
+			],
+			"chartMaxRevenue": 5500000,
+			"products": [
+				{
+					"name": "Cloud Platform",
+					"shortName": "Cloud",
+					"q1": 3800000,
+					"q2": 5250000
+				},
+				{
+					"name": "Data Analytics",
+					"shortName": "Analytics",
+					"q1": 2900000,
+					"q2": 3400000
+				},
+				{
+					"name": "Professional Services",
+					"shortName": "Services",
+					"q1": 2200000,
+					"q2": 2600000
+				},
+				{
+					"name": "Security Suite",
+					"shortName": "Security",
+					"q1": 1800000,
+					"q2": 2100000
+				},
+				{
+					"name": "Integration Platform",
+					"shortName": "Integrations",
+					"q1": 1500000,
+					"q2": 1650000
+				}
+			],
+			"regions": [
+				{
+					"name": "North America",
+					"q1": 5200000,
+					"q2": 6100000,
+					"yoyGrowth": 18,
+					"margin": 36,
+					"headcount": 145,
+					"pipeline": 15600000,
+					"nps": 60
+				},
+				{
+					"name": "Europe",
+					"q1": 3100000,
+					"q2": 3800000,
+					"yoyGrowth": 25,
+					"margin": 30,
+					"headcount": 85,
+					"pipeline": 9200000,
+					"nps": 55
+				},
+				{
+					"name": "Asia-Pacific",
+					"q1": 1800000,
+					"q2": 2600000,
+					"yoyGrowth": 45,
+					"margin": 24,
+					"headcount": 50,
+					"pipeline": 7400000,
+					"nps": 62
+				},
+				{
+					"name": "Latin America",
+					"q1": 900000,
+					"q2": 1200000,
+					"yoyGrowth": 35,
+					"margin": 22,
+					"headcount": 25,
+					"pipeline": 3100000,
+					"nps": 48
+				},
+				{
+					"name": "Middle East & Africa",
+					"q1": 400000,
+					"q2": 700000,
+					"yoyGrowth": 80,
+					"margin": 18,
+					"headcount": 12,
+					"pipeline": 2200000,
+					"nps": 51
+				}
+			],
+			"regionAnalysis": "Asia-Pacific and Middle East & Africa showed the strongest growth trajectories at 45% and 80% respectively, validating our international expansion strategy. North America remains the largest contributor at 40% of total revenue, with stable margins and a healthy pipeline. Europe continues to mature with improving margins, while Latin America is building momentum through channel partnerships.",
+			"conclusions": [
+				{
+					"title": "Revenue Momentum",
+					"icon": "rocket_launch",
+					"text": "Q2 revenue of USD 18.4M represents the strongest quarter in company history. The Cloud Platform is our growth engine, and the upcoming launch of AI-powered features in Q3 is expected to further accelerate adoption among enterprise customers."
+				},
+				{
+					"title": "International Expansion",
+					"icon": "public",
+					"text": "Our investment in the Asia-Pacific and MEA regions is ahead of plan. While margins are still developing, the growth rates and pipeline coverage justify continued investment. We plan to open a Singapore office in Q3."
+				},
+				{
+					"title": "Operational Excellence",
+					"icon": "speed",
+					"text": "The improvement in operating margin from 28.5% to 31% reflects successful automation initiatives and platform leverage. We remain on track for our full-year margin target of 32%."
+				}
+			],
+			"actions": [
+				{
+					"title": "Open Singapore regional office and hire 10 sales reps",
+					"owner": "VP International",
+					"due": "2026-09-01T00:00:00Z"
+				},
+				{
+					"title": "Launch Cloud Platform v3 with AI features",
+					"owner": "VP Product",
+					"due": "2026-08-15T00:00:00Z"
+				},
+				{
+					"title": "Achieve SOC 2 Type II certification",
+					"owner": "CISO",
+					"due": "2026-10-31T00:00:00Z"
+				},
+				{
+					"title": "Expand channel partner program to 25 partners",
+					"owner": "Head of Partnerships",
+					"due": "2026-12-31T00:00:00Z"
+				}
+			]
+		}
+	}
+}

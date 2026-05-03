@@ -1,0 +1,283 @@
+<!-- Tests that the document ends when the body ends, even if aside has more content -->
+<div
+  class="bg-white text-gray-800 text-sm font-sans flex flex-col gap-6 w-full px-10 pt-8 pb-4"
+>
+  <!-- poli-first: Header for first page only -->
+  <header
+    class="poli-header poli-first bg-teal-700 text-white p-4 rounded-lg"
+  >
+    <h1 class="text-xl font-bold">Project Status Report</h1>
+    <p class="text-sm opacity-90">Q1 2026 — Engineering Department</p>
+  </header>
+
+  <!-- poli-not-first: Header for pages 2+ -->
+  <header class="poli-header poli-not-first bg-teal-600 text-white p-3">
+    <h1 class="text-lg font-bold">Project Status Report (Continued)</h1>
+  </header>
+
+  <!-- poli-last: Footer for last page only -->
+  <footer class="poli-footer poli-last border-t-2 border-teal-600 pt-3">
+    <p class="text-teal-700 font-bold text-sm">End of Report</p>
+    <p class="text-xs text-gray-500">
+      Next review scheduled for July 2026.
+    </p>
+  </footer>
+
+  <!-- poli-not-last: Footer for all pages except last -->
+  <footer class="poli-footer poli-not-last border-t-2 border-gray-300 pt-3">
+    <p class="text-gray-600 text-xs">Report continues on next page...</p>
+  </footer>
+
+  <!-- Main content area with flowing aside -->
+  <div class="flex flex-row gap-6">
+    <!-- Main content column (SHORT — about 1.5 pages on A4) -->
+    <div class="flex-1 min-w-0 space-y-6">
+      <!-- Summary -->
+      <div class="bg-white p-6 border border-gray-200 rounded-lg">
+        <h2 class="poli-title text-2xl font-bold text-gray-900 mb-4">
+          Executive Summary
+        </h2>
+        <p class="text-gray-700 mb-3">
+          This quarter saw significant progress across all engineering
+          workstreams. The platform migration to the new microservices
+          architecture is 78% complete, ahead of schedule. Key milestones
+          include the successful deployment of the document rendering engine
+          and the completion of load testing for the batch processing
+          pipeline.
+        </p>
+        <p class="text-gray-700">
+          Two critical risks have been identified: the dependency on a
+          third-party authentication provider undergoing acquisition, and
+          the potential impact of new EU regulations on data residency
+          requirements. Mitigation plans are in place for both.
+        </p>
+      </div>
+
+      <!-- Key Metrics -->
+      <div class="bg-teal-50 p-6 border-l-4 border-teal-500 rounded">
+        <h2 class="poli-title text-xl font-bold text-teal-900 mb-3">
+          Key Metrics
+        </h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white p-3 rounded">
+            <p class="text-xs text-gray-500">Uptime</p>
+            <p class="text-2xl font-bold text-teal-700">99.97%</p>
+          </div>
+          <div class="bg-white p-3 rounded">
+            <p class="text-xs text-gray-500">API Latency (p95)</p>
+            <p class="text-2xl font-bold text-teal-700">142ms</p>
+          </div>
+          <div class="bg-white p-3 rounded">
+            <p class="text-xs text-gray-500">Documents Generated</p>
+            <p class="text-2xl font-bold text-teal-700">1.2M</p>
+          </div>
+          <div class="bg-white p-3 rounded">
+            <p class="text-xs text-gray-500">Active Users</p>
+            <p class="text-2xl font-bold text-teal-700">8,450</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommendations -->
+      <div class="bg-white p-6 border border-gray-200 rounded-lg">
+        <h2 class="poli-title text-2xl font-bold text-gray-900 mb-4">
+          Recommendations
+        </h2>
+        <ol class="list-decimal list-inside space-y-3 text-gray-700">
+          <li>
+            <strong>Accelerate auth provider migration</strong> — Begin
+            evaluation of alternative providers before the acquisition
+            closes in Q3.
+          </li>
+          <li>
+            <strong>Invest in observability</strong> — Deploy distributed
+            tracing across all services to reduce mean time to resolution.
+          </li>
+          <li>
+            <strong>Plan EU data residency</strong> — Engage legal counsel
+            to assess the impact of the proposed Digital Services Act
+            amendments.
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Aside: Detailed project timeline (LONG — much longer than the body) -->
+    <aside class="poli-aside poli-flow w-56 shrink-0">
+      <div class="bg-gray-50 p-4 rounded-lg space-y-4">
+        <h3
+          class="font-bold text-gray-900 text-sm border-b border-gray-300 pb-2"
+        >
+          Project Timeline
+        </h3>
+
+        <div class="border-l-2 border-teal-400 pl-3">
+          <p class="font-semibold text-teal-800 text-xs">January 6</p>
+          <p class="text-xs text-gray-700">
+            Sprint 1 kickoff. Team onboarding for new microservices
+            framework. Initial architecture review completed.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-teal-400 pl-3">
+          <p class="font-semibold text-teal-800 text-xs">January 13</p>
+          <p class="text-xs text-gray-700">
+            API gateway migration started. Legacy endpoints mapped to new
+            routing layer. 12 of 47 endpoints migrated.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-teal-400 pl-3">
+          <p class="font-semibold text-teal-800 text-xs">January 20</p>
+          <p class="text-xs text-gray-700">
+            Database schema review. Identified 8 tables requiring
+            restructuring for multi-tenancy support.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-teal-400 pl-3">
+          <p class="font-semibold text-teal-800 text-xs">January 27</p>
+          <p class="text-xs text-gray-700">
+            First milestone: authentication service deployed to staging.
+            OAuth2 flow validated with 3 identity providers.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-blue-400 pl-3">
+          <p class="font-semibold text-blue-800 text-xs">February 3</p>
+          <p class="text-xs text-gray-700">
+            Rendering engine POC started. Puppeteer-based measurement
+            pipeline prototyped. Initial tests on A4 format.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-blue-400 pl-3">
+          <p class="font-semibold text-blue-800 text-xs">February 10</p>
+          <p class="text-xs text-gray-700">
+            Pagination algorithm v1 implemented. Handles headers, footers,
+            and basic element splitting. 5 test cases passing.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-blue-400 pl-3">
+          <p class="font-semibold text-blue-800 text-xs">February 17</p>
+          <p class="text-xs text-gray-700">
+            Batch processing pipeline design finalized. SQS-based queue with
+            Lambda consumers. Target throughput: 500 docs/min.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-blue-400 pl-3">
+          <p class="font-semibold text-blue-800 text-xs">February 24</p>
+          <p class="text-xs text-gray-700">
+            Load testing phase 1 completed. System handles 200 concurrent
+            requests with p99 latency under 3 seconds.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-purple-400 pl-3">
+          <p class="font-semibold text-purple-800 text-xs">March 3</p>
+          <p class="text-xs text-gray-700">
+            Layout discovery feature merged. Engine now preserves user's
+            container hierarchy instead of hardcoding layout.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-purple-400 pl-3">
+          <p class="font-semibold text-purple-800 text-xs">March 10</p>
+          <p class="text-xs text-gray-700">
+            poli-aside implementation completed. Sidebar repetition across
+            pages with overflow clipping validated on all formats.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-purple-400 pl-3">
+          <p class="font-semibold text-purple-800 text-xs">March 17</p>
+          <p class="text-xs text-gray-700">
+            Recursive element splitting shipped. Deeply nested content
+            (cards within sections within articles) now splits correctly.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-purple-400 pl-3">
+          <p class="font-semibold text-purple-800 text-xs">March 24</p>
+          <p class="text-xs text-gray-700">
+            Security audit completed. No critical findings. Two
+            medium-severity items addressed within 48 hours.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-orange-400 pl-3">
+          <p class="font-semibold text-orange-800 text-xs">March 31</p>
+          <p class="text-xs text-gray-700">
+            Q1 retrospective. Team velocity increased 23% from Q4. Technical
+            debt backlog reduced by 40%.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-orange-400 pl-3">
+          <p class="font-semibold text-orange-800 text-xs">April 1</p>
+          <p class="text-xs text-gray-700">
+            Q2 planning started. Priority: poli-flow implementation, EU data
+            residency compliance, and performance optimization.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-orange-400 pl-3">
+          <p class="font-semibold text-orange-800 text-xs">April 7</p>
+          <p class="text-xs text-gray-700">
+            poli-flow design review. Decided on persistent column approach —
+            aside column remains on all pages even after content exhaustion.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-gray-400 pl-3">
+          <p class="font-semibold text-gray-600 text-xs">
+            April 14 (planned)
+          </p>
+          <p class="text-xs text-gray-500">
+            poli-flow implementation sprint begins. Test templates ready.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-gray-400 pl-3">
+          <p class="font-semibold text-gray-600 text-xs">
+            April 21 (planned)
+          </p>
+          <p class="text-xs text-gray-500">
+            Integration testing across all formats. Performance benchmarking
+            with flow-enabled documents.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-gray-400 pl-3">
+          <p class="font-semibold text-gray-600 text-xs">
+            April 28 (planned)
+          </p>
+          <p class="text-xs text-gray-500">
+            EU data residency architecture proposal due. Frankfurt region
+            deployment plan finalized.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-gray-400 pl-3">
+          <p class="font-semibold text-gray-600 text-xs">May 5 (planned)</p>
+          <p class="text-xs text-gray-500">
+            Batch pipeline v2 deployment to staging. Target: 1000 docs/min
+            with auto-scaling.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-gray-400 pl-3">
+          <p class="font-semibold text-gray-600 text-xs">
+            May 12 (planned)
+          </p>
+          <p class="text-xs text-gray-500">
+            Public beta preparations. Documentation review, onboarding flow
+            testing, support runbook creation.
+          </p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+{
+	"locale": "en",
+	"data": {
+		"company": {
+			"name": "Skyline Corp",
+			"tagline": "Innovation at every level"
+		},
+		"report": {
+			"title": "Product Overview",
+			"date": "2026-04-20T00:00:00Z",
+			"author": "Engineering Team"
+		},
+		"sidebarItems": [
+			{ "label": "Version", "value": "3.2.0" },
+			{ "label": "Status", "value": "Stable" },
+			{ "label": "License", "value": "MIT" },
+			{ "label": "Downloads", "value": "1.2M" },
+			{ "label": "Stars", "value": "8,400" },
+			{ "label": "Contributors", "value": "142" }
+		],
+		"sections": [
+			{
+				"title": "Welcome",
+				"icon": "waving_hand",
+				"content": "Welcome to the Skyline Corp Product Overview. This document demonstrates a common page layout pattern: a fixed header, a recurring sidebar, flowing main content, and a persistent footer. As the main content grows, it automatically flows across pages while the header, sidebar, and footer repeat on every page."
+			},
+			{
+				"title": "Getting Started",
+				"icon": "rocket_launch",
+				"content": "Setting up Skyline is straightforward. Install the package via your preferred package manager, configure the initialization file, and you are ready to go. The platform supports Node.js 18+, Python 3.10+, and Go 1.21+. Our CLI provides scaffolding commands for all supported frameworks, letting you bootstrap a production-ready project in under two minutes."
+			},
+			{
+				"title": "Core Architecture",
+				"icon": "hub",
+				"content": "The platform is built on a microservices architecture with event-driven communication. Each service is independently deployable and scales horizontally. The API gateway handles authentication, rate limiting, and request routing. Services communicate through a message broker for asynchronous operations and gRPC for synchronous calls. The data layer supports both relational and document databases, with built-in connection pooling and query optimization."
+			},
+			{
+				"title": "Authentication & Security",
+				"icon": "shield",
+				"content": "Security is built into every layer. We support OAuth 2.0, SAML 2.0, and OpenID Connect for authentication. Role-based access control (RBAC) provides fine-grained permissions with support for custom roles and hierarchical organizations. All data is encrypted at rest using AES-256 and in transit using TLS 1.3. We maintain SOC 2 Type II compliance and undergo annual penetration testing by independent security firms."
+			},
+			{
+				"title": "API Reference",
+				"icon": "api",
+				"content": "The REST API follows OpenAPI 3.1 specification with comprehensive documentation. All endpoints support JSON and Protocol Buffers. Rate limits are set at 1,000 requests per minute for standard plans and 10,000 for enterprise. The API provides pagination, filtering, and sorting on all collection endpoints. WebSocket connections are available for real-time data feeds, supporting up to 100 concurrent subscriptions per client."
+			},
+			{
+				"title": "Data Processing",
+				"icon": "database",
+				"content": "The data processing pipeline handles millions of events per second with sub-millisecond latency. Stream processing is powered by Apache Kafka with exactly-once semantics. Batch processing jobs run on a distributed compute cluster with automatic retry and dead-letter queue support. The pipeline includes built-in data validation, transformation, and enrichment stages. Historical data is stored in a columnar format for efficient analytical queries."
+			},
+			{
+				"title": "Monitoring & Observability",
+				"icon": "monitoring",
+				"content": "Comprehensive monitoring is built in from day one. Distributed tracing follows the OpenTelemetry standard, providing end-to-end visibility across all services. Metrics are collected at one-second granularity with 90-day retention. Custom dashboards can be created using our drag-and-drop builder or imported from Grafana. Alerting supports multiple channels including email, Slack, PagerDuty, and webhooks, with configurable escalation policies and maintenance windows."
+			},
+			{
+				"title": "Deployment & Infrastructure",
+				"icon": "cloud_upload",
+				"content": "Deploy anywhere with our infrastructure-agnostic approach. We provide first-class support for AWS, GCP, and Azure, with Terraform modules and Helm charts for each provider. The CI/CD pipeline integrates with GitHub Actions, GitLab CI, and Jenkins. Blue-green deployments and canary releases are supported out of the box. Our control plane manages cluster provisioning, scaling, and upgrades across all environments."
+			}
+		]
+	}
+}

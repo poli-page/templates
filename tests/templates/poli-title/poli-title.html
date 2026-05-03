@@ -1,0 +1,160 @@
+<!-- Tests poli-title: titles should never be orphaned at page bottom -->
+<div class="bg-white text-gray-800 text-sm font-sans flex flex-col gap-6 w-full px-10 pt-8 pb-4">
+  <!-- poli-first: Header for first page only -->
+  <header class="poli-header poli-first bg-rose-700 text-white p-4 rounded-lg">
+    <h1 class="text-xl font-bold">Technical Documentation</h1>
+    <p class="text-sm opacity-90">API Reference Guide — Version 2.1</p>
+  </header>
+
+  <!-- poli-not-first: Header for pages 2+ -->
+  <header class="poli-header poli-not-first bg-rose-600 text-white p-3">
+    <h1 class="text-lg font-bold">Technical Documentation (Continued)</h1>
+  </header>
+
+  <!-- poli-last: Footer for last page only -->
+  <footer class="poli-footer poli-last border-t-2 border-rose-600 pt-3">
+    <p class="text-rose-700 font-bold text-sm">End of Documentation</p>
+  </footer>
+
+  <!-- poli-not-last: Footer for all pages except last -->
+  <footer class="poli-footer poli-not-last border-t-2 border-gray-300 pt-3">
+    <p class="text-gray-600 text-xs">Documentation continues on next page...</p>
+  </footer>
+
+  <!-- Section 1: Introduction (medium) -->
+  <div class="bg-white p-6 border border-gray-200 rounded-lg">
+    <h2 class="poli-title text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
+    <p class="text-gray-700 mb-3">
+      This document provides a comprehensive reference for the Document Generation API. It covers authentication, endpoint descriptions, request/response formats, error handling, and best practices for integration.
+    </p>
+    <p class="text-gray-700 mb-3">
+      The API follows RESTful conventions and uses JSON for all request and response bodies. Authentication is handled via OAuth 2.0 bearer tokens. All timestamps are in ISO 8601 format and all monetary values are in the smallest currency unit (e.g., cents for USD).
+    </p>
+    <p class="text-gray-700">
+      Rate limits are enforced per API key. The default rate limit is 100 requests per minute for standard plans and 1,000 requests per minute for enterprise plans. Rate limit headers are included in all responses.
+    </p>
+  </div>
+
+  <!-- Section 2: Authentication (long, with subsections using poli-title) -->
+  <div class="bg-white p-6 border border-gray-200 rounded-lg">
+    <h2 class="poli-title text-2xl font-bold text-gray-900 mb-4">2. Authentication</h2>
+    <p class="text-gray-700 mb-4">
+      All API requests must include a valid authentication token. The API supports two authentication methods: API keys for server-to-server communication and OAuth 2.0 for user-delegated access.
+    </p>
+    <h3 class="poli-title text-lg font-bold text-gray-900 mb-2">2.1 API Key Authentication</h3>
+    <p class="text-gray-700 mb-3">
+      API keys are long-lived credentials suitable for server-to-server integration. Each key is associated with a specific organization and inherits the organization's permissions. API keys should be passed in the Authorization header using the Bearer scheme.
+    </p>
+    <p class="text-gray-700 mb-4">
+      Keys can be rotated at any time through the dashboard without affecting active sessions. We recommend rotating keys at least every 90 days as a security best practice.
+    </p>
+    <h3 class="poli-title text-lg font-bold text-gray-900 mb-2">2.2 OAuth 2.0 Flow</h3>
+    <p class="text-gray-700 mb-3">
+      For applications that act on behalf of users, the OAuth 2.0 authorization code flow is required. The flow begins with redirecting the user to the authorization endpoint, where they grant permissions to your application.
+    </p>
+    <p class="text-gray-700 mb-4">
+      After authorization, your application exchanges the authorization code for an access token and a refresh token. Access tokens expire after one hour; use the refresh token to obtain new access tokens without requiring user interaction.
+    </p>
+    <h3 class="poli-title text-lg font-bold text-gray-900 mb-2">2.3 Token Refresh</h3>
+    <p class="text-gray-700">
+      Refresh tokens are valid for 30 days from their last use. If a refresh token expires, the user must re-authorize your application. To prevent this, ensure your application refreshes tokens proactively before expiration.
+    </p>
+  </div>
+
+  <!-- Section 3: Endpoints (long, many subsections) -->
+  <div class="bg-white p-6 border border-gray-200 rounded-lg">
+    <h2 class="poli-title text-2xl font-bold text-gray-900 mb-4">3. API Endpoints</h2>
+    <p class="text-gray-700 mb-4">
+      The API exposes endpoints organized by resource type. All endpoints use the base URL https://api.example.com/v2 and require authentication.
+    </p>
+    <h3 class="poli-title text-lg font-bold text-gray-900 mb-2">3.1 Document Creation</h3>
+    <p class="text-gray-700 mb-3">
+      Creates a new document from a template and data payload. The template must be previously registered through the template management endpoints. The data payload is validated against the template's schema before processing begins.
+    </p>
+    <p class="text-gray-700 mb-4">
+      Document creation is asynchronous for payloads larger than 1MB. For smaller payloads, the response includes the generated document directly. For larger payloads, a job ID is returned that can be polled for completion status.
+    </p>
+    <h3 class="poli-title text-lg font-bold text-gray-900 mb-2">3.2 Document Retrieval</h3>
+    <p class="text-gray-700 mb-3">
+      Retrieves a previously generated document by its unique identifier. The response format depends on the Accept header: application/pdf returns the binary PDF, while application/json returns document metadata and a download URL.
+    </p>
+    <p class="text-gray-700 mb-4">
+      Documents are retained for 90 days after generation. After this period, the document is automatically deleted and the endpoint returns a 404 response. Enterprise plans can configure custom retention periods up to 7 years.
+    </p>
+    <h3 class="poli-title text-lg font-bold text-gray-900 mb-2">3.3 Batch Processing</h3>
+    <p class="text-gray-700 mb-3">
+      The batch endpoint accepts an array of document creation requests and processes them concurrently. Each item in the batch is independent: failures in individual items do not affect the processing of other items.
+    </p>
+    <p class="text-gray-700 mb-4">
+      Batch requests are limited to 500 items per request. For larger volumes, submit multiple batch requests. The batch endpoint returns a batch ID that can be used to monitor progress and retrieve results.
+    </p>
+    <h3 class="poli-title text-lg font-bold text-gray-900 mb-2">3.4 Template Management</h3>
+    <p class="text-gray-700 mb-3">
+      Templates define the layout and structure of generated documents. Each template consists of an HTML body with Tailwind CSS styling and optional template expressions for dynamic content. Templates are versioned: updates create new versions while preserving the ability to generate documents from previous versions.
+    </p>
+    <p class="text-gray-700">
+      Template validation occurs at upload time. The system checks for valid HTML structure, resolves all CSS classes, and verifies that template expressions reference valid schema fields. Invalid templates are rejected with detailed error messages.
+    </p>
+  </div>
+
+  <!-- Section 4: Error Handling (designed to create orphan title situations) -->
+  <div class="bg-rose-50 p-6 border-l-4 border-rose-500 rounded">
+    <h2 class="poli-title text-xl font-bold text-rose-900 mb-3">4. Error Handling</h2>
+    <p class="text-rose-800 mb-3">
+      The API uses standard HTTP status codes to indicate success or failure. All error responses include a JSON body with a machine-readable error code, a human-readable message, and an optional details field with additional context.
+    </p>
+    <p class="text-rose-800 mb-3">
+      Client errors (4xx) indicate problems with the request that can be fixed by the caller. Server errors (5xx) indicate temporary issues that should be retried with exponential backoff. The Retry-After header, when present, indicates the recommended wait time before retrying.
+    </p>
+    <p class="text-rose-800">
+      Validation errors (422) include a field-level breakdown in the details array. Each entry specifies the field path, the validation rule that failed, and the expected format. This enables client-side form validation without additional API calls.
+    </p>
+  </div>
+
+  <!-- Section 5: Rate Limiting -->
+  <div class="bg-white p-6 border border-gray-200 rounded-lg">
+    <h2 class="poli-title text-2xl font-bold text-gray-900 mb-4">5. Rate Limiting</h2>
+    <p class="text-gray-700 mb-3">
+      Rate limits protect the API from abuse and ensure fair usage across all clients. Limits are enforced per API key using a sliding window algorithm. When the limit is exceeded, the API returns a 429 Too Many Requests response.
+    </p>
+    <h3 class="poli-title text-lg font-bold text-gray-900 mb-2">5.1 Rate Limit Headers</h3>
+    <p class="text-gray-700 mb-3">
+      Every API response includes rate limit headers: X-RateLimit-Limit (maximum requests per window), X-RateLimit-Remaining (requests remaining in the current window), and X-RateLimit-Reset (Unix timestamp when the window resets).
+    </p>
+    <p class="text-gray-700 mb-4">
+      Applications should monitor these headers and implement proactive throttling to avoid hitting limits. Libraries for most popular programming languages are available in our SDK repository.
+    </p>
+    <h3 class="poli-title text-lg font-bold text-gray-900 mb-2">5.2 Burst Handling</h3>
+    <p class="text-gray-700">
+      Short bursts above the rate limit are tolerated up to 150% of the limit for a maximum of 10 seconds. This accommodates legitimate traffic spikes during batch operations or page loads. Sustained traffic above the limit is rejected immediately.
+    </p>
+  </div>
+
+  <!-- Section 6: Webhooks -->
+  <div class="bg-blue-50 p-6 border-l-4 border-blue-500 rounded">
+    <h2 class="poli-title text-xl font-bold text-blue-900 mb-3">6. Webhooks</h2>
+    <p class="text-blue-800 mb-3">
+      Webhooks provide real-time notifications for asynchronous events such as document generation completion, batch processing progress, and template validation results. Webhook endpoints must use HTTPS and respond with a 2xx status code within 30 seconds.
+    </p>
+    <p class="text-blue-800 mb-3">
+      Each webhook delivery includes a signature in the X-Webhook-Signature header, computed using HMAC-SHA256 with your webhook secret. Always verify this signature before processing the payload to prevent spoofing attacks.
+    </p>
+    <p class="text-blue-800">
+      Failed deliveries are retried up to 5 times with exponential backoff (1min, 5min, 30min, 2hr, 24hr). After all retries are exhausted, the webhook is marked as failed and an email notification is sent to the organization's admin contacts.
+    </p>
+  </div>
+
+  <!-- Section 7: SDKs and Libraries -->
+  <div class="bg-white p-6 border border-gray-200 rounded-lg">
+    <h2 class="poli-title text-2xl font-bold text-gray-900 mb-4">7. SDKs and Libraries</h2>
+    <p class="text-gray-700 mb-3">
+      Official SDKs are available for Python, Node.js, Java, Go, and Ruby. Each SDK wraps the REST API with idiomatic language constructs, handles authentication, implements automatic retry logic, and provides type-safe request and response objects.
+    </p>
+    <p class="text-gray-700 mb-3">
+      Community-maintained SDKs exist for PHP, C#, Rust, and Swift. While not officially supported, these libraries follow our SDK design guidelines and are regularly tested against the latest API version.
+    </p>
+    <p class="text-gray-700">
+      All SDKs are open-source and available on GitHub. Contributions are welcome following our contribution guidelines. Breaking changes are communicated at least 6 months in advance through our developer newsletter and API changelog.
+    </p>
+  </div>
+</div>

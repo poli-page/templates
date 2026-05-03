@@ -1,0 +1,233 @@
+{
+	"locale": "en",
+	"data": {
+		"issuer": {
+			"name": "Horizon Digital",
+			"legalName": "Horizon Digital LLC",
+			"tagline": "Software & consulting",
+			"address": {
+				"street": "320 Mission Street, Suite 400",
+				"city": "San Francisco",
+				"state": "CA",
+				"zip": "94105",
+				"country": "United States"
+			},
+			"email": "billing@horizondigital.io",
+			"phone": "+1 (415) 555-0198",
+			"taxId": "82-4917350",
+			"bank": {
+				"name": "Pacific National Bank",
+				"iban": "US82 PNBK 0000 9241 7350 01",
+				"bic": "PNBKUS33"
+			}
+		},
+
+		"customer": {
+			"name": "Redwood Enterprises",
+			"attn": "Lisa Park, Procurement",
+			"address": {
+				"street": "1200 Broadway, Floor 8",
+				"city": "Oakland",
+				"state": "CA",
+				"zip": "94612"
+			},
+			"email": "ap@redwoodent.com"
+		},
+
+		"invoice": {
+			"number": "INV-2026-0042",
+			"issueDate": "2026-04-15T00:00:00Z",
+			"dueDate": "2026-05-15T00:00:00Z",
+			"currency": "USD",
+			"projectRef": "PROJ-RW-2026-Q1",
+			"projectSummary": "End-to-end redesign and development of the Redwood Enterprises customer portal, including UX research, front-end implementation, API integration, and deployment. All milestones delivered and accepted as of April 10, 2026.",
+
+			"groups": [
+				{
+					"name": "Discovery & Research",
+					"items": [
+						{
+							"lineNumber": 1,
+							"description": "Stakeholder interviews and requirements gathering",
+							"qty": 12,
+							"unit": "hrs",
+							"unitPrice": 175,
+							"amount": 2100
+						},
+						{
+							"lineNumber": 2,
+							"description": "User research — surveys and usability testing",
+							"qty": 8,
+							"unit": "hrs",
+							"unitPrice": 175,
+							"amount": 1400
+						},
+						{
+							"lineNumber": 3,
+							"description": "Competitive analysis and market positioning report",
+							"qty": 1,
+							"unit": "unit",
+							"unitPrice": 850,
+							"amount": 850
+						},
+						{
+							"lineNumber": 4,
+							"description": "Information architecture and wireframes",
+							"qty": 10,
+							"unit": "hrs",
+							"unitPrice": 160,
+							"amount": 1600
+						}
+					]
+				},
+				{
+					"name": "Design & Prototyping",
+					"items": [
+						{
+							"lineNumber": 5,
+							"description": "Design system — tokens, components, documentation",
+							"qty": 16,
+							"unit": "hrs",
+							"unitPrice": 165,
+							"amount": 2640
+						},
+						{
+							"lineNumber": 6,
+							"description": "High-fidelity mockups — customer dashboard (8 views)",
+							"qty": 20,
+							"unit": "hrs",
+							"unitPrice": 165,
+							"amount": 3300
+						},
+						{
+							"lineNumber": 7,
+							"description": "High-fidelity mockups — onboarding flow",
+							"qty": 12,
+							"unit": "hrs",
+							"unitPrice": 165,
+							"amount": 1980
+						},
+						{
+							"lineNumber": 8,
+							"description": "Interactive prototype and client review (3 rounds)",
+							"qty": 14,
+							"unit": "hrs",
+							"unitPrice": 150,
+							"amount": 2100
+						},
+						{
+							"lineNumber": 9,
+							"description": "Responsive design adaptations — tablet and mobile",
+							"qty": 8,
+							"unit": "hrs",
+							"unitPrice": 150,
+							"amount": 1200
+						}
+					]
+				},
+				{
+					"name": "Front-End Development",
+					"items": [
+						{
+							"lineNumber": 10,
+							"description": "Project scaffolding — Angular, Tailwind CSS, CI/CD",
+							"qty": 6,
+							"unit": "hrs",
+							"unitPrice": 180,
+							"amount": 1080
+						},
+						{
+							"lineNumber": 11,
+							"description": "Customer dashboard — charts, tables, filters",
+							"qty": 24,
+							"unit": "hrs",
+							"unitPrice": 180,
+							"amount": 4320
+						},
+						{
+							"lineNumber": 12,
+							"description": "Onboarding and authentication flows",
+							"qty": 14,
+							"unit": "hrs",
+							"unitPrice": 180,
+							"amount": 2520
+						},
+						{
+							"lineNumber": 13,
+							"description": "API integration — REST endpoints and WebSocket feeds",
+							"qty": 18,
+							"unit": "hrs",
+							"unitPrice": 180,
+							"amount": 3240
+						},
+						{
+							"lineNumber": 14,
+							"description": "Accessibility audit and WCAG 2.1 AA compliance",
+							"qty": 6,
+							"unit": "hrs",
+							"unitPrice": 160,
+							"amount": 960
+						},
+						{
+							"lineNumber": 15,
+							"description": "Performance optimization and lazy loading",
+							"qty": 5,
+							"unit": "hrs",
+							"unitPrice": 160,
+							"amount": 800
+						}
+					]
+				},
+				{
+					"name": "Testing & Deployment",
+					"items": [
+						{
+							"lineNumber": 16,
+							"description": "Unit and integration tests (Jest + Cypress)",
+							"qty": 14,
+							"unit": "hrs",
+							"unitPrice": 150,
+							"amount": 2100
+						},
+						{
+							"lineNumber": 17,
+							"description": "End-to-end testing and regression suite",
+							"qty": 10,
+							"unit": "hrs",
+							"unitPrice": 150,
+							"amount": 1500
+						},
+						{
+							"lineNumber": 18,
+							"description": "Staging environment setup and smoke tests",
+							"qty": 4,
+							"unit": "hrs",
+							"unitPrice": 160,
+							"amount": 640
+						},
+						{
+							"lineNumber": 19,
+							"description": "Production deployment and DNS configuration",
+							"qty": 3,
+							"unit": "hrs",
+							"unitPrice": 160,
+							"amount": 480
+						},
+						{
+							"lineNumber": 20,
+							"description": "Monitoring setup (logs, alerts, uptime)",
+							"qty": 4,
+							"unit": "hrs",
+							"unitPrice": 160,
+							"amount": 640
+						}
+					]
+				}
+			],
+
+			"subtotal": 35450,
+			"taxRate": 0.08,
+			"paymentTerms": "Net 30"
+		}
+	}
+}

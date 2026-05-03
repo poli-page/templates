@@ -1,0 +1,161 @@
+{
+  "locale": "en",
+  "data": {
+    "company": {
+      "name": "Acme Digital Solutions"
+    },
+    "report": {
+      "title": "Quarterly Business Report",
+      "period": "H1 2026 (January — June)",
+      "author": "Sarah Chen, VP Finance",
+      "date": "2026-07-15T00:00:00+02:00",
+      "classification": "Confidential — Internal Use Only",
+      "summary": "The first half of 2026 delivered strong results across all business lines. Consolidated revenue reached USD 42.8M, up 26% year-over-year, driven by exceptional growth in the Asia-Pacific region and the successful launch of our AI-powered analytics platform. Operating margin improved by 3 percentage points to 34%, reflecting both revenue scale and operational efficiency gains. Customer retention remained above 95%, and our NPS score reached an all-time high of 62.",
+      "highlights": [
+        { "label": "H1 Revenue", "value": "USD 42.8M", "icon": "payments", "trend": "up", "change": "26% YoY" },
+        { "label": "Operating Margin", "value": "34%", "icon": "trending_up", "trend": "up", "change": "3pp" },
+        { "label": "Customer Retention", "value": "95.2%", "icon": "loyalty", "trend": "up", "change": "1.1pp" },
+        { "label": "NPS Score", "value": "62", "icon": "sentiment_satisfied", "trend": "up", "change": "8 pts" }
+      ],
+      "chartMaxRevenue": 6000000,
+      "products": [
+        { "name": "Platform Subscriptions", "shortName": "Platform", "q1": 5200000, "q2": 5800000 },
+        { "name": "Professional Services", "shortName": "Services", "q1": 4100000, "q2": 4500000 },
+        { "name": "AI Analytics Suite", "shortName": "AI Suite", "q1": 2800000, "q2": 3900000 },
+        { "name": "API & Integrations", "shortName": "API", "q1": 1900000, "q2": 2300000 },
+        { "name": "Support & Training", "shortName": "Support", "q1": 1400000, "q2": 1200000 },
+        { "name": "Data Services", "shortName": "Data", "q1": 2600000, "q2": 3100000 },
+        { "name": "Custom Development", "shortName": "Custom", "q1": 1800000, "q2": 2000000 },
+        { "name": "Marketplace Revenue", "shortName": "Market", "q1": 400000, "q2": 800000 }
+      ],
+      "regions": [
+        {
+          "name": "West Coast",
+          "q1": 5500000,
+          "q2": 6200000,
+          "yoyGrowth": 15,
+          "margin": 38,
+          "headcount": 120,
+          "pipeline": 14200000,
+          "nps": 58
+        },
+        {
+          "name": "East Coast",
+          "q1": 3800000,
+          "q2": 4300000,
+          "yoyGrowth": 22,
+          "margin": 35,
+          "headcount": 85,
+          "pipeline": 11500000,
+          "nps": 61
+        },
+        {
+          "name": "Midwest",
+          "q1": 2900000,
+          "q2": 3400000,
+          "yoyGrowth": 28,
+          "margin": 32,
+          "headcount": 60,
+          "pipeline": 8900000,
+          "nps": 64
+        },
+        {
+          "name": "Mountain",
+          "q1": 1800000,
+          "q2": 2100000,
+          "yoyGrowth": 19,
+          "margin": 40,
+          "headcount": 35,
+          "pipeline": 5600000,
+          "nps": 70
+        },
+        {
+          "name": "Southeast",
+          "q1": 1500000,
+          "q2": 1800000,
+          "yoyGrowth": 25,
+          "margin": 30,
+          "headcount": 40,
+          "pipeline": 4800000,
+          "nps": 55
+        },
+        {
+          "name": "Southwest",
+          "q1": 2200000,
+          "q2": 3100000,
+          "yoyGrowth": 52,
+          "margin": 28,
+          "headcount": 45,
+          "pipeline": 9200000,
+          "nps": 59
+        },
+        {
+          "name": "Asia-Pacific",
+          "q1": 1500000,
+          "q2": 2400000,
+          "yoyGrowth": 68,
+          "margin": 25,
+          "headcount": 30,
+          "pipeline": 7800000,
+          "nps": 63
+        },
+        {
+          "name": "Rest of World",
+          "q1": 800000,
+          "q2": 1100000,
+          "yoyGrowth": 45,
+          "margin": 22,
+          "headcount": 15,
+          "pipeline": 3200000,
+          "nps": 52
+        }
+      ],
+      "regionAnalysis": "Asia-Pacific demonstrated the strongest growth at 68% YoY, driven by new enterprise accounts in Japan, South Korea, and Australia. The Southwest also outperformed expectations at 52% growth, validating our decision to expand our direct sales presence in Austin and Phoenix. The Mountain region maintains the highest margins (40%) and NPS (70), reflecting our mature market position and strong customer relationships in Denver and Salt Lake City. Total pipeline of USD 65.2M provides a 1.5x coverage ratio against our H2 target.",
+      "conclusions": [
+        {
+          "title": "Revenue Momentum",
+          "icon": "rocket_launch",
+          "text": "H1 revenue of USD 42.8M puts us firmly on track to exceed our full-year target of USD 80M. The AI Analytics Suite has been the standout performer, growing 85% YoY and now representing 16% of total revenue, up from 9% a year ago. We expect this trend to accelerate as we release the next generation of AI features in Q3."
+        },
+        {
+          "title": "Geographic Expansion",
+          "icon": "public",
+          "text": "Our investment in direct sales teams in the Southwest and Asia-Pacific is paying off ahead of schedule. While these regions currently operate at lower margins (28% and 25% respectively), the growth trajectories and pipeline coverage ratios justify continued investment. We plan to expand the APAC team by 15 heads in H2."
+        },
+        {
+          "title": "Operational Efficiency",
+          "icon": "speed",
+          "text": "The 3 percentage point improvement in operating margin reflects successful automation of onboarding and support processes, as well as the natural leverage of our platform model. We expect margins to stabilize at 35-37% over the next two years as we balance growth investments with profitability."
+        },
+        {
+          "title": "Product Strategy",
+          "icon": "hub",
+          "text": "The Marketplace revenue, while still small (USD 1.2M in H1), grew 220% YoY and represents a strategic bet on ecosystem development. We aim to have 50+ third-party integrations available by year-end, creating a network effect that strengthens our competitive moat."
+        }
+      ],
+      "actions": [
+        {
+          "title": "Finalize H2 hiring plan for APAC expansion (15 heads)",
+          "owner": "HR Director",
+          "due": "2026-08-01T00:00:00+02:00"
+        },
+        {
+          "title": "Launch AI Analytics Suite v2 with predictive features",
+          "owner": "VP Product",
+          "due": "2026-09-15T00:00:00+02:00"
+        },
+        {
+          "title": "Achieve 50 marketplace integrations",
+          "owner": "Head of Partnerships",
+          "due": "2026-12-31T00:00:00+01:00"
+        },
+        {
+          "title": "Implement automated pricing tier migration",
+          "owner": "VP Engineering",
+          "due": "2026-10-01T00:00:00+02:00"
+        },
+        { "title": "Complete SOC 2 Type II audit", "owner": "CISO", "due": "2026-11-15T00:00:00+01:00" }
+      ]
+    }
+  }
+}

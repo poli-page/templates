@@ -1,0 +1,33 @@
+<div
+  class="bg-white text-gray-800 text-sm font-sans px-10 pt-8 pb-4 flex flex-col gap-4 w-full"
+>
+  <h1 class="text-2xl font-bold text-indigo-900 mb-2">Poli Asset Test</h1>
+
+  <!-- PNG image via poli-asset (base64 data URI) -->
+  <div class="p-3 bg-gray-50 rounded">
+    <h2 class="font-bold mb-2">PNG image (base64)</h2>
+    <img poli-asset="images/logo.png" class="h-16 border rounded" />
+  </div>
+
+  <!-- SVG image via poli-asset (inlined) -->
+  <div class="p-3 bg-gray-50 rounded">
+    <h2 class="font-bold mb-2">SVG diagram (inlined)</h2>
+    <img poli-asset="images/diagram.svg" class="w-64" />
+  </div>
+
+  <!-- SVG with Tailwind color -->
+  <div class="p-3 bg-gray-50 rounded">
+    <h2 class="font-bold mb-2">SVG with Tailwind color class</h2>
+    <img poli-asset="images/diagram.svg" class="w-48 text-indigo-600" />
+  </div>
+
+  <!-- Mixed content: icons + assets -->
+  <div class="p-3 bg-indigo-50 rounded">
+    <h2 class="font-bold mb-2">Mixed: icons + assets</h2>
+    <div class="flex items-center gap-3">
+      <poli-icon name="image" class="w-5 h-5 text-indigo-600" />
+      <span>Image asset:</span>
+      <img poli-asset="images/logo.png" class="h-8 border rounded" />
+    </div>
+  </div>
+</div>

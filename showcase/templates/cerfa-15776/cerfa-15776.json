@@ -1,0 +1,72 @@
+{
+  "locale": "fr",
+  "data": {
+    "form": {
+      "number": "15776*02",
+      "previousOwnerCopy": "Exemplaire 1 destiné à l'ancien propriétaire",
+      "newOwnerCopy": "Exemplaire 1 destiné au nouveau propriétaire"
+    },
+    "vehicle": {
+      "registrationNumber": "FG-327-KL",
+      "vin": "VF1RFE00856743210",
+      "firstRegistrationDate": "2018-03-15",
+      "brand": "Renault",
+      "typeVariantVersion": "RFE0A0GD0H",
+      "nationalGenre": "VP",
+      "commercialName": "Clio V",
+      "mileage": 87432,
+      "registrationCertificatePresent": true,
+      "formulaNumber": "2018AZ45821",
+      "registrationCertificateDate": null,
+      "absenceReason": null
+    },
+    "previousOwner": {
+      "type": "individual",
+      "sex": "M",
+      "fullName": "DUPONT Jean-Pierre",
+      "siret": null,
+      "address": {
+        "streetNumber": "42",
+        "extension": "bis",
+        "streetType": "Rue",
+        "streetName": "du Faubourg Saint-Antoine",
+        "postalCode": "75012",
+        "city": "Paris"
+      },
+      "cessionType": "sell",
+      "cessionDate": "2026-04-10",
+      "cessionTime": "14:30",
+      "certifications": {
+        "administrativeCertificate": true,
+        "noModification": true,
+        "destructionProfessional": false
+      },
+      "vhuApprovalNumber": null,
+      "signaturePlace": "Paris",
+      "signatureDate": "2026-04-10"
+    },
+    "newOwner": {
+      "type": "individual",
+      "sex": "F",
+      "fullName": "MARTIN-LEFEBVRE Sophie",
+      "siret": null,
+      "birthDate": "1992-07-23",
+      "birthPlace": "Lyon (69003)",
+      "address": {
+        "streetNumber": "8",
+        "extension": "",
+        "streetType": "Avenue",
+        "streetName": "des Champs-Elysees",
+        "postalCode": "75008",
+        "city": "Paris"
+      },
+      "certifications": {
+        "acquireVehicle": true,
+        "informedAdministrativeStatus": true
+      },
+      "signaturePlace": "Paris",
+      "signatureDate": "2026-04-10"
+    },
+    "privacyOptOut": false
+  }
+}

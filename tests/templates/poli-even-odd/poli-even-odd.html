@@ -1,0 +1,88 @@
+<div class="bg-white text-gray-800 text-sm font-sans px-10 pt-8 pb-4 flex flex-col gap-6 w-full">
+
+  <!-- Header: different style on even vs odd pages -->
+  <div class="poli-header poli-odd bg-indigo-600 text-white p-3 rounded flex justify-between items-center">
+    <span class="font-bold">Monthly Report</span>
+    <span class="text-indigo-200 text-xs">Odd Page Header</span>
+  </div>
+
+  <div class="poli-header poli-even bg-teal-600 text-white p-3 rounded flex justify-between items-center">
+    <span class="font-bold">Monthly Report</span>
+    <span class="text-teal-200 text-xs">Even Page Header</span>
+  </div>
+
+  <!-- Footer: different style on even vs odd pages -->
+  <div class="poli-footer poli-odd bg-indigo-100 text-indigo-700 p-2 rounded text-center text-xs">
+    Odd Page Footer &mdash; Page {{ poli.currentPage }} of {{ poli.totalPages }}
+  </div>
+
+  <div class="poli-footer poli-even bg-teal-100 text-teal-700 p-2 rounded text-center text-xs">
+    Even Page Footer &mdash; Page {{ poli.currentPage }} of {{ poli.totalPages }}
+  </div>
+
+  <!-- Body conditional: poli-even -->
+  <div class="poli-even bg-teal-50 border-l-4 border-teal-500 p-4 rounded">
+    <h2 class="text-lg font-bold text-teal-800 mb-1">Even Page Notice</h2>
+    <p class="text-teal-700">This block should only appear on even-numbered pages (2, 4, 6...).</p>
+  </div>
+
+  <!-- Body conditional: poli-odd -->
+  <div class="poli-odd bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded">
+    <h2 class="text-lg font-bold text-indigo-800 mb-1">Odd Page Notice</h2>
+    <p class="text-indigo-700">This block should only appear on odd-numbered pages (1, 3, 5...).</p>
+  </div>
+
+  <h1 class="text-2xl font-bold text-gray-900">Monthly Financial Report</h1>
+
+  <div class="bg-gray-50 p-4 rounded">
+    <h2 class="poli-title text-lg font-bold mb-2">1. Executive Summary</h2>
+    <p class="mb-2">This report provides a comprehensive overview of the company's financial performance for the current quarter. Revenue has increased by 15% compared to the same period last year, driven primarily by strong growth in our digital services division.</p>
+    <p class="mb-2">Operating expenses remained stable, with a slight increase in R&D investment reflecting our commitment to innovation. The net profit margin improved by 2.3 percentage points, reaching 18.7% for the quarter.</p>
+    <p>Cash flow from operations was strong at $4.2M, providing ample liquidity for planned capital investments and potential acquisitions in the coming months.</p>
+  </div>
+
+  <div class="bg-gray-50 p-4 rounded">
+    <h2 class="poli-title text-lg font-bold mb-2">2. Revenue Analysis</h2>
+    <p class="mb-2">Total revenue for Q3 reached $28.5M, representing a year-over-year growth of 15.2%. This growth was broad-based across all major business segments, with digital services leading the way.</p>
+    <p class="mb-2">Digital services revenue grew 22% to $12.3M, driven by new enterprise contracts and expansion of existing accounts. Traditional services maintained steady growth at 8%, contributing $10.2M to the total.</p>
+    <p class="mb-2">Consulting revenue showed modest improvement at 5% growth, reaching $6.0M. The consulting pipeline remains strong with several large engagements expected to close in Q4.</p>
+    <p>Geographic diversification continued to improve, with international revenue now accounting for 35% of total revenue, up from 28% in the prior year.</p>
+  </div>
+
+  <div class="bg-gray-50 p-4 rounded">
+    <h2 class="poli-title text-lg font-bold mb-2">3. Cost Structure</h2>
+    <p class="mb-2">Total operating expenses for the quarter were $23.2M, an increase of 10% year-over-year. The cost-to-revenue ratio improved from 85.2% to 81.4%, reflecting ongoing operational efficiency gains.</p>
+    <p class="mb-2">Personnel costs, the largest expense category at $14.8M, grew 12% due to strategic hiring in engineering and sales. We added 45 new team members during the quarter, bringing total headcount to 520.</p>
+    <p>Technology infrastructure costs declined 3% to $4.1M as cloud migration savings offset increased compute requirements for AI workloads.</p>
+  </div>
+
+  <div class="bg-gray-50 p-4 rounded">
+    <h2 class="poli-title text-lg font-bold mb-2">4. Profitability Metrics</h2>
+    <p class="mb-2">Gross profit reached $15.8M with a gross margin of 55.4%, up from 52.1% in Q3 of the prior year. This improvement reflects both revenue growth and operational efficiency gains.</p>
+    <p class="mb-2">EBITDA for the quarter was $6.8M, representing an EBITDA margin of 23.9%. This compares favorably to the industry average of 18.5% for companies of similar size and profile.</p>
+    <p class="mb-2">Net income was $5.3M, translating to earnings per share of $1.42. The effective tax rate was 22.5%, in line with our annual projections.</p>
+    <p>Return on invested capital (ROIC) improved to 28.3%, well above our weighted average cost of capital of 9.2%, indicating strong value creation for shareholders.</p>
+  </div>
+
+  <div class="bg-gray-50 p-4 rounded">
+    <h2 class="poli-title text-lg font-bold mb-2">5. Cash Flow Statement</h2>
+    <p class="mb-2">Cash flow from operations was $4.2M, driven by strong net income and favorable working capital movements. Days sales outstanding (DSO) improved from 42 to 38 days.</p>
+    <p class="mb-2">Capital expenditures totaled $1.8M, primarily allocated to data center upgrades and office expansion in our Austin facility. Free cash flow was $2.4M.</p>
+    <p>The company maintains a strong balance sheet with $18.5M in cash and short-term investments, and no long-term debt. This positions us well for opportunistic acquisitions and continued organic growth investment.</p>
+  </div>
+
+  <div class="bg-gray-50 p-4 rounded">
+    <h2 class="poli-title text-lg font-bold mb-2">6. Market Outlook</h2>
+    <p class="mb-2">The market environment remains favorable for our core business segments. Industry analysts project continued growth in enterprise digital transformation spending, with particular strength in AI-enabled services.</p>
+    <p class="mb-2">Competitive dynamics are evolving, with increased consolidation among mid-tier players. Our strong market position and diversified service portfolio provide a solid foundation for navigating these changes.</p>
+    <p class="mb-2">We are monitoring several macroeconomic factors that could impact our business, including potential changes in corporate tax policy, inflation trends, and technology regulation.</p>
+    <p>For Q4, we are guiding to revenue of $30-31M, representing 12-16% year-over-year growth, with EBITDA margin expected to remain in the 22-25% range.</p>
+  </div>
+
+  <div class="bg-gray-50 p-4 rounded">
+    <h2 class="poli-title text-lg font-bold mb-2">7. Strategic Initiatives</h2>
+    <p class="mb-2">Our AI Center of Excellence, launched in Q2, has already secured three enterprise pilot programs worth a combined $2.5M in annual contract value. Early results from these pilots are exceeding customer expectations.</p>
+    <p class="mb-2">The international expansion strategy is progressing well, with our London office now fully operational and contributing to the European sales pipeline. We are evaluating additional market entry in the Asia-Pacific region.</p>
+    <p>Sustainability initiatives continue to advance, with our carbon neutrality program on track to achieve net-zero emissions by 2027. This aligns with increasing customer demand for environmentally responsible service providers.</p>
+  </div>
+</div>

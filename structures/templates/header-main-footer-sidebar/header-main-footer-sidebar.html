@@ -1,0 +1,23 @@
+<div class="flex">
+  <div class="flex-1 flex flex-col">
+    <header class="poli-header">
+      <div class="p-4 bg-blue-200">
+        <h1 class="text-lg font-bold">{{ title }}</h1>
+      </div>
+    </header>
+    <main class="flex-1 flex flex-col p-4 gap-4">
+      <p>Content goes here.</p>
+    </main>
+    <footer class="poli-footer">
+      <div class="flex justify-between p-4 bg-green-200 text-xs">
+        <span>{{ formatDateTime(poli.generatedAt, 'long', 'short') }}</span>
+        <poli-page-numbers />
+      </div>
+    </footer>
+  </div>
+  <aside class="poli-aside flex w-48">
+    <div class="flex-1 bg-yellow-200 p-4">
+      <p class="font-semibold">Sidebar</p>
+    </div>
+  </aside>
+</div>

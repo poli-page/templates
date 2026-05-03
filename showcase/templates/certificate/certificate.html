@@ -1,0 +1,98 @@
+<div class="p-0.5 gap-0.5 flex flex-col">
+  @for (cert of certificates) {
+    <!-- Certificate — one per A5 landscape page -->
+    <div class="flex-1 flex bg-[#F5F0E1] p-[5mm] font-serif poli-avoid-break">
+      <!-- Outer border -->
+      <div class="flex-1 flex border-[2px] p-[2mm] border-[{{ cert.color }}]">
+        <!-- Inner border -->
+        <div
+          class="flex-1 border-[1px] border-[{{
+            cert.color
+          }}]/40 px-[8mm] py-[4mm] relative overflow-hidden flex flex-col"
+        >
+          <!-- Laurel wreath background — centered -->
+          <img
+            poli-asset="images/couronne-style-vintage-aquarelle-botanique-noir-vecteur.png"
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75mm] h-[75mm] object-contain opacity-[0.07] pointer-events-none"
+          />
+
+          <!-- Content -->
+          <div class="relative flex-1 flex flex-col items-center text-center">
+            <!-- Institution header -->
+            <div class="tracking-[3px] text-[10px] text-[#555] uppercase font-sans">
+              {{ institution }}
+            </div>
+            <div class="tracking-[2px] text-[8px] text-[#888] uppercase mt-0.5 font-sans">
+              {{ academy }}
+            </div>
+
+            <!-- Decorative separator -->
+            <div class="w-12 border-t my-2 border-[{{ cert.color }}]/80"></div>
+
+            <!-- Main title -->
+            <h1 class="text-[28px] leading-none font-bold tracking-wide text-[{{ cert.color }}]">
+              {{ cert.title }}
+            </h1>
+            <h2 class="text-[20px] leading-tight font-bold text-[#333] mt-1 whitespace-pre-line">
+              {{ cert.subtitle }}
+            </h2>
+
+            <!-- Spacer top -->
+            <div class="flex-[0.95]"></div>
+
+            <!-- Awarded to -->
+            <div>
+              <span class="text-[8px] text-[#888] italic font-sans">est décerné à</span>
+              <div class="mt-2 text-[28px] font-bold text-[#333] font-cursive">
+                {{ cert.recipientName }}
+              </div>
+            </div>
+
+            <!-- Description -->
+            <p class="text-[9px] text-[#777] mt-5 max-w-[140mm] leading-relaxed italic font-sans">
+              {{ cert.description }}
+            </p>
+
+            <!-- Spacer bottom -->
+            <div class="flex-1"></div>
+
+            <!-- Bottom section: signature left, location/date right -->
+            <div class="w-full flex items-end justify-between">
+              <!-- Signature area (left) -->
+              <div class="relative text-center w-[45mm]">
+                <!-- Contextual icon behind/below signature -->
+                <poli-icon
+                  name="{{ cert.icon }}"
+                  class="absolute -top-10 left-1/2 -translate-x-1/2 w-[160px] h-[160px] pointer-events-none"
+                  style="color: {{ cert.color }}1A"
+                />
+
+                <!-- Signature -->
+                <div class="relative w-full h-20 mb-0.5 flex items-center justify-center">
+                  <img poli-asset="images/signature-1.png" class="h-[70px] object-contain opacity-80" />
+                </div>
+                <div class="w-24 mx-auto border-t border-[#999] mb-0.5"></div>
+                <div class="text-[7px] text-[#888] italic font-sans">{{ signerTitle }}</div>
+              </div>
+
+              <!-- Location & date (right) -->
+              <div class="flex items-baseline gap-6 text-[9px] text-[#666] font-sans">
+                <div>
+                  <span class="italic">Fait à</span>
+                  <span class="ml-2 font-semibold text-[#333] text-[11px]">{{ cert.location }}</span>
+                </div>
+                <div>
+                  <span class="italic">le</span>
+                  <span class="ml-2 font-semibold text-[#333] text-[11px]">{{ formatDate(cert.date, 'long') }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    @if ($last && $even) {
+      <div class="a4-portrait:flex-1"></div>
+    }
+  }
+</div>

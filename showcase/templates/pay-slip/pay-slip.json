@@ -1,0 +1,101 @@
+{
+  "locale": "en",
+  "data": {
+    "company": {
+      "name": "Meridian Technologies Inc.",
+      "address": "200 Harbor Drive, Suite 1400",
+      "city": "Boston, MA 02210",
+      "ein": "04-3876512",
+      "naics": "541512",
+      "phone": "(617) 555-0142"
+    },
+    "employee": {
+      "name": "Sarah M. Nakamura",
+      "id": "MTI-2023-0194",
+      "ssn": "XXX-XX-7842",
+      "position": "Lead Product Designer",
+      "department": "Design & UX",
+      "level": "IC-4",
+      "contractType": "Full-time — Exempt",
+      "startDate": "2023-06-12T00:00:00Z",
+      "address": "47 Beacon St, Apt 3B, Cambridge, MA 02138"
+    },
+    "payslip": {
+      "period": "March 1 – 31, 2026",
+      "paymentDate": "2026-03-31T00:00:00Z",
+      "checkNumber": "DD-039417",
+      "hoursWorked": 168,
+      "overtime": 12.5,
+      "ptoTaken": 1,
+      "ptoBalance": 14.5,
+      "sickLeaveBalance": 8,
+      "earnings": [
+        { "description": "Base Salary", "hours": 168, "rate": 51.28, "amount": 8615.38 },
+        { "description": "Overtime (1.5×)", "hours": 12.5, "rate": 76.92, "amount": 961.54 },
+        { "description": "Spot Bonus — Q1 Design Sprint", "hours": null, "rate": null, "amount": 1500.00 },
+        { "description": "Commuter Benefit", "hours": null, "rate": null, "amount": 150.00 }
+      ],
+      "grossPay": 11226.92,
+      "deductions": [
+        {
+          "category": "Federal & State Taxes",
+          "icon": "account_balance",
+          "items": [
+            { "description": "Federal Income Tax", "base": 11226.92, "employeeRate": 0.24, "employeeAmount": 2694.46, "employerRate": null, "employerAmount": null },
+            { "description": "State Income Tax (MA)", "base": 11226.92, "employeeRate": 0.05, "employeeAmount": 561.35, "employerRate": null, "employerAmount": null }
+          ]
+        },
+        {
+          "category": "Social Security & Medicare",
+          "icon": "shield",
+          "items": [
+            { "description": "Social Security (OASDI)", "base": 11226.92, "employeeRate": 0.062, "employeeAmount": 696.07, "employerRate": 0.062, "employerAmount": 696.07 },
+            { "description": "Medicare", "base": 11226.92, "employeeRate": 0.0145, "employeeAmount": 162.79, "employerRate": 0.0145, "employerAmount": 162.79 },
+            { "description": "Additional Medicare", "base": null, "employeeRate": 0.009, "employeeAmount": 101.04, "employerRate": null, "employerAmount": null }
+          ]
+        },
+        {
+          "category": "Retirement",
+          "icon": "savings",
+          "items": [
+            { "description": "401(k) — Employee", "base": 11226.92, "employeeRate": 0.08, "employeeAmount": 898.15, "employerRate": null, "employerAmount": null },
+            { "description": "401(k) — Employer Match", "base": null, "employeeRate": null, "employeeAmount": null, "employerRate": 0.04, "employerAmount": 449.08 }
+          ]
+        },
+        {
+          "category": "Health & Insurance",
+          "icon": "health_and_safety",
+          "items": [
+            { "description": "Medical (PPO Plan)", "base": null, "employeeRate": null, "employeeAmount": 287.50, "employerRate": null, "employerAmount": 862.50 },
+            { "description": "Dental", "base": null, "employeeRate": null, "employeeAmount": 32.00, "employerRate": null, "employerAmount": 48.00 },
+            { "description": "Vision", "base": null, "employeeRate": null, "employeeAmount": 12.50, "employerRate": null, "employerAmount": 12.50 },
+            { "description": "Life Insurance (2× salary)", "base": null, "employeeRate": null, "employeeAmount": null, "employerRate": null, "employerAmount": 45.00 },
+            { "description": "Short-Term Disability", "base": null, "employeeRate": null, "employeeAmount": 18.75, "employerRate": null, "employerAmount": 37.50 }
+          ]
+        },
+        {
+          "category": "Unemployment & Workers' Comp",
+          "icon": "gavel",
+          "items": [
+            { "description": "Federal Unemployment (FUTA)", "base": 11226.92, "employeeRate": null, "employeeAmount": null, "employerRate": 0.006, "employerAmount": 67.36 },
+            { "description": "State Unemployment (SUTA)", "base": 11226.92, "employeeRate": null, "employeeAmount": null, "employerRate": 0.0148, "employerAmount": 166.16 },
+            { "description": "Workers' Compensation", "base": 11226.92, "employeeRate": null, "employeeAmount": null, "employerRate": 0.0085, "employerAmount": 95.43 }
+          ]
+        }
+      ],
+      "totalEmployeeDeductions": 5464.61,
+      "totalEmployerContributions": 2642.39,
+      "netPay": 5762.31,
+      "ytd": {
+        "grossPay": 30145.38,
+        "federalTax": 7234.89,
+        "stateTax": 1507.27,
+        "socialSecurity": 1869.01,
+        "medicare": 437.11,
+        "retirement": 2411.63,
+        "netPay": 15480.51
+      },
+      "paymentMethod": "Direct Deposit — Checking ****6291"
+    }
+  }
+}

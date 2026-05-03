@@ -1,0 +1,57 @@
+<div class="bg-white text-gray-800 text-sm font-sans px-10 pt-8 pb-4 flex flex-col gap-6 w-full">
+	<!-- Header (not on first page) -->
+	<div
+		class="poli-header poli-not-first bg-slate-700 text-white px-4 py-2 flex justify-between items-center"
+	>
+		<span class="font-bold">Team Directory</span>
+		<span class="text-slate-300 text-xs">
+			Page {{ poli.currentPage }} / {{ poli.totalPages }}
+		</span>
+	</div>
+
+	<!-- Footer -->
+	<div class="poli-footer bg-slate-100 text-slate-500 text-xs px-4 py-2 text-center">
+		<poli-page-numbers />
+	</div>
+
+	<h1 class="text-2xl font-bold text-gray-900">Team Directory</h1>
+	<p class="text-gray-500">
+		A list of team member cards inside a styled wrapper. This tests generic container
+		splitting — no tables involved, just flex containers with children that span
+		multiple pages.
+	</p>
+
+	<!-- Card list inside a bordered wrapper (2 levels deep) -->
+	<div class="border border-gray-300 rounded-lg overflow-hidden shadow-sm">
+		<div class="flex flex-col bg-blue-50 px-4 py-3 gap-3">
+			<h2 class="text-base font-semibold text-blue-900">All Members</h2>
+
+			@for (member of teamMembers; track $index) {
+				<div class="bg-white rounded border border-gray-200 p-3 flex justify-between items-center">
+					<div class="flex flex-col gap-0.5">
+						<span class="font-medium text-gray-900">{{ member.name }}</span>
+						<span class="text-xs text-gray-500">{{ member.role }} — {{ member.department }}</span>
+					</div>
+					<div class="flex flex-col items-end gap-0.5">
+						<span class="text-xs text-gray-400">{{ member.location }}</span>
+						@if (member.status === 'Active') {
+							<span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Active</span>
+						} @else {
+							<span class="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">On Leave</span>
+						}
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+
+	<!-- Notes section after the wrapper — should appear right after the last card -->
+	<div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+		<h3 class="text-sm font-semibold text-gray-700 mb-2">Notes</h3>
+		<ul class="list-disc list-inside text-xs text-gray-600 space-y-1">
+			@for (note of notes; track $index) {
+				<li>{{ note }}</li>
+			}
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,368 @@
+<div class="flex flex-col font-sans text-slate-700 text-[11px]">
+  <!-- ── Header: company banner (all pages) ── -->
+  <header class="poli-header poli-first">
+    <div class="bg-forest flex items-stretch justify-between">
+      <img poli-asset="images/logo-meridian-technologies.png" class="h-16 a5-portrait:h-12" />
+      <div class="text-right pr-8 a5-portrait:pr-5 py-3 a5-portrait:py-2">
+        <div class="font-display text-base a5-portrait:text-sm font-bold text-white tracking-tight">
+          {{ payslip.period }}
+        </div>
+        <p class="text-[9px] a5-portrait:text-[8px] text-white/50">
+          {{ payslip.checkNumber }} — Paid
+          {{ formatDate(payslip.paymentDate, 'long') }}
+        </p>
+      </div>
+    </div>
+    <div class="bg-emerald py-1.5 text-center">
+      <span class="font-display text-sm a5-portrait:text-xs font-extrabold text-white tracking-widest uppercase">
+        Pay Statement
+      </span>
+    </div>
+  </header>
+
+  <!-- ── Running header (pages 2+) ── -->
+  <header class="poli-header poli-not-first">
+    <div
+      class="bg-emerald text-white px-8 a5-portrait:px-5 py-1.5 flex items-center justify-between text-[10px] a5-portrait:text-[8px]"
+    >
+      <div class="flex items-center gap-3">
+        <span class="font-display text-xs font-bold">{{ company.name }}</span>
+        <span class="text-white/40">|</span>
+        <span class="text-white/70">{{ employee.name }}</span>
+        <span class="text-white/40">|</span>
+        <span class="text-white/70">{{ payslip.period }}</span>
+      </div>
+      <span class="font-display font-semibold text-[9px] tracking-widest uppercase">Pay Statement</span>
+    </div>
+  </header>
+
+  <!-- ── Footer ── -->
+  <footer
+    class="poli-footer border-t border-slate-200 px-8 a5-portrait:px-5 py-2 flex items-center justify-between text-[9px] a5-portrait:text-[8px]"
+  >
+    <span class="text-slate-400 italic">
+      Retain this pay statement indefinitely — In case of dispute, contact HR within 3 years of issuance
+    </span>
+    <span class="font-display font-semibold text-emerald">
+      <poli-page-numbers />
+    </span>
+  </footer>
+
+  <!-- ── Content ── -->
+  <main class="flex-1 flex flex-col px-8 a5-portrait:px-5 py-3 a5-portrait:py-2 gap-3 a5-portrait:gap-2">
+    <!-- ── Employee info cards ── -->
+    <div class="poli-avoid-break flex gap-3 a5-portrait:gap-2">
+      <!-- Employee identity -->
+      <div class="flex-1 border border-slate-200 rounded-lg p-2.5 a5-portrait:p-2">
+        <div class="text-[8px] uppercase tracking-[2px] text-emerald font-semibold mb-1 flex items-center gap-1">
+          <poli-icon name="person" class="w-3 h-3" />
+          Employee
+        </div>
+        <p class="font-display font-bold text-forest text-xs a5-portrait:text-[10px]">
+          {{ employee.name }}
+        </p>
+        <div class="grid grid-cols-2 gap-x-3 gap-y-0.5 mt-1 text-[9px] a5-portrait:text-[8px]">
+          <span class="text-slate-400">ID</span>
+          <span class="font-medium text-slate-600">{{ employee.id }}</span>
+          <span class="text-slate-400">SSN</span>
+          <span class="font-mono text-slate-600">{{ employee.ssn }}</span>
+          <span class="text-slate-400">Start date</span>
+          <span class="text-slate-600">{{ formatDate(employee.startDate, 'medium') }}</span>
+        </div>
+      </div>
+      <!-- Position & contract -->
+      <div class="flex-1 border border-slate-200 rounded-lg p-2.5 a5-portrait:p-2">
+        <div class="text-[8px] uppercase tracking-[2px] text-emerald font-semibold mb-1 flex items-center gap-1">
+          <poli-icon name="work" class="w-3 h-3" />
+          Position
+        </div>
+        <p class="font-display font-bold text-forest text-xs a5-portrait:text-[10px]">
+          {{ employee.position }}
+        </p>
+        <div class="grid grid-cols-2 gap-x-3 gap-y-0.5 mt-1 text-[9px] a5-portrait:text-[8px]">
+          <span class="text-slate-400">Department</span>
+          <span class="font-medium text-slate-600">{{ employee.department }}</span>
+          <span class="text-slate-400">Level</span>
+          <span class="text-slate-600">{{ employee.level }}</span>
+          <span class="text-slate-400">Contract</span>
+          <span class="text-slate-600">{{ employee.contractType }}</span>
+        </div>
+      </div>
+      <!-- Time & leave -->
+      <div class="w-40 a5-portrait:w-32 shrink-0 border border-slate-200 rounded-lg p-3 a5-portrait:p-2">
+        <div class="text-[8px] uppercase tracking-[2px] text-emerald font-semibold mb-1.5 flex items-center gap-1">
+          <poli-icon name="schedule" class="w-3 h-3" />
+          Time & Leave
+        </div>
+        <div class="space-y-0.5 text-[9px] a5-portrait:text-[8px]">
+          <div class="flex justify-between">
+            <span class="text-slate-400">Hours worked</span>
+            <span class="font-bold text-forest">{{ formatNumber(payslip.hoursWorked, 1) }}</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-400">Overtime</span>
+            <span class="font-bold text-forest">{{ formatNumber(payslip.overtime, 1) }}</span>
+          </div>
+          <div class="border-t border-slate-100 pt-1 flex justify-between">
+            <span class="text-slate-400">PTO balance</span>
+            <span class="font-semibold text-emerald">{{ payslip.ptoBalance }}d</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-400">Sick leave</span>
+            <span class="font-semibold text-emerald">{{ payslip.sickLeaveBalance }}d</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Earnings table ── -->
+    <div>
+      <div
+        class="flex items-center gap-1.5 mb-1 text-[9px] uppercase tracking-[2px] text-forest font-display font-bold"
+      >
+        <poli-icon name="trending_up" class="w-3.5 h-3.5 text-emerald" />
+        Earnings
+      </div>
+      <table class="w-full border-collapse text-[10px] a5-portrait:text-[8px]">
+        <thead>
+          <tr class="border-b-2 border-forest">
+            <th
+              class="py-1 pr-2 text-left font-display font-semibold text-[9px] a5-portrait:text-[7px] uppercase tracking-wider text-forest"
+            >
+              Description
+            </th>
+            <th
+              class="py-1 px-2 text-right font-display font-semibold text-[9px] a5-portrait:text-[7px] uppercase tracking-wider text-forest w-16"
+            >
+              Hours
+            </th>
+            <th
+              class="py-1 px-2 text-right font-display font-semibold text-[9px] a5-portrait:text-[7px] uppercase tracking-wider text-forest w-16"
+            >
+              Rate
+            </th>
+            <th
+              class="py-1 pl-2 text-right font-display font-semibold text-[9px] a5-portrait:text-[7px] uppercase tracking-wider text-forest w-24"
+            >
+              Amount
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of payslip.earnings) {
+            <tr class="border-b border-slate-100">
+              <td class="py-0.5 pr-2">{{ item.description }}</td>
+              <td class="py-0.5 px-2 text-right text-slate-400 font-mono">
+                {{ item.hours ? formatNumber(item.hours, 1) : '' }}
+              </td>
+              <td class="py-0.5 px-2 text-right text-slate-400 font-mono">
+                {{ item.rate ? formatMoney(item.rate, 'USD') : '' }}
+              </td>
+              <td class="py-0.5 pl-2 text-right font-semibold text-forest">
+                {{ formatMoney(item.amount, 'USD') }}
+              </td>
+            </tr>
+          }
+        </tbody>
+        <tfoot>
+          <tr class="border-t-2 border-forest">
+            <td
+              colspan="3"
+              class="py-1.5 pr-2 text-right font-display font-bold text-forest text-[11px] a5-portrait:text-[9px]"
+            >
+              Gross Pay
+            </td>
+            <td class="py-1 pl-2 text-right font-display font-bold text-forest text-[11px] a5-portrait:text-[9px]">
+              {{ formatMoney(payslip.grossPay, 'USD') }}
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <!-- ── Deductions & contributions table ── -->
+    <div>
+      <div
+        class="flex items-center gap-1.5 mb-1 text-[9px] uppercase tracking-[2px] text-forest font-display font-bold"
+      >
+        <poli-icon name="receipt_long" class="w-3.5 h-3.5 text-emerald" />
+        Deductions & Employer Contributions
+      </div>
+      <table class="w-full border-collapse text-[10px] a5-portrait:text-[8px]">
+        <thead class="poli-table-header">
+          <tr class="border-b-2 border-forest">
+            <th
+              class="py-1 pr-2 text-left font-display font-semibold text-[9px] a5-portrait:text-[7px] uppercase tracking-wider text-forest"
+            >
+              Description
+            </th>
+            <th
+              class="py-1 px-1 text-right font-display font-semibold text-[9px] a5-portrait:text-[7px] uppercase tracking-wider text-forest w-20"
+            >
+              Base
+            </th>
+            <th
+              class="py-1 px-1 text-center font-display font-semibold text-[9px] a5-portrait:text-[7px] uppercase tracking-wider text-emerald w-14"
+            >
+              EE %
+            </th>
+            <th
+              class="py-1 px-1 text-right font-display font-semibold text-[9px] a5-portrait:text-[7px] uppercase tracking-wider text-emerald w-20"
+            >
+              Employee
+            </th>
+            <th
+              class="py-1 px-1 text-center font-display font-semibold text-[9px] a5-portrait:text-[7px] uppercase tracking-wider text-slate-400 w-14"
+            >
+              ER %
+            </th>
+            <th
+              class="py-1 pl-1 text-right font-display font-semibold text-[9px] a5-portrait:text-[7px] uppercase tracking-wider text-slate-400 w-20"
+            >
+              Employer
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (group of payslip.deductions) {
+            <!-- Category header -->
+            <tr class="bg-mint">
+              <td
+                colspan="6"
+                class="py-0.5 px-2 font-display font-semibold text-forest text-[10px] a5-portrait:text-[8px]"
+              >
+                <div class="flex items-center gap-1">
+                  <poli-icon name="{{ group.icon }}" class="w-3 h-3 text-emerald" />
+                  {{ group.category }}
+                </div>
+              </td>
+            </tr>
+            @for (item of group.items) {
+              <tr class="border-b border-slate-100 {{ $even ? 'bg-slate-50/50' : '' }}">
+                <td class="py-0.5 pr-2 pl-4">{{ item.description }}</td>
+                <td class="py-0.5 px-1 text-right text-slate-400 font-mono">
+                  {{ item.base ? formatMoney(item.base, 'USD') : '' }}
+                </td>
+                <td class="py-0.5 px-1 text-center text-slate-400 font-mono">
+                  {{ item.employeeRate ? formatPercent(item.employeeRate) : '' }}
+                </td>
+                <td class="py-0.5 px-1 text-right font-medium">
+                  @if (item.employeeAmount) {
+                    <span class="text-red-600">−{{ formatMoney(item.employeeAmount, 'USD') }}</span>
+                  } @else {
+                    <span class="text-slate-300">—</span>
+                  }
+                </td>
+                <td class="py-0.5 px-1 text-center text-slate-400 font-mono">
+                  {{ item.employerRate ? formatPercent(item.employerRate) : '' }}
+                </td>
+                <td class="py-0.5 pl-1 text-right font-medium text-slate-400">
+                  @if (item.employerAmount) {
+                    {{ formatMoney(item.employerAmount, 'USD') }}
+                  } @else {
+                    <span class="text-slate-300">—</span>
+                  }
+                </td>
+              </tr>
+            }
+          }
+        </tbody>
+        <tfoot>
+          <tr class="border-t-2 border-forest">
+            <td
+              colspan="3"
+              class="py-1 pr-1 text-right font-display font-bold text-forest text-[11px] a5-portrait:text-[9px]"
+            >
+              Totals
+            </td>
+            <td class="py-1 px-1 text-right font-display font-bold text-red-600 text-[11px] a5-portrait:text-[9px]">
+              −{{ formatMoney(payslip.totalEmployeeDeductions, 'USD') }}
+            </td>
+            <td class="py-1 px-1"></td>
+            <td class="py-1 pl-1 text-right font-display font-bold text-slate-500 text-[11px] a5-portrait:text-[9px]">
+              {{ formatMoney(payslip.totalEmployerContributions, 'USD') }}
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <!-- ── Net Pay highlight ── -->
+    <div class="poli-avoid-break bg-forest rounded-xl p-3 a5-portrait:p-2.5 flex items-center justify-between">
+      <div>
+        <div class="text-[9px] uppercase tracking-[2px] text-emerald font-semibold mb-0.5">Net Pay</div>
+        <div class="font-display text-xl a5-portrait:text-base font-extrabold text-white">
+          {{ formatMoney(payslip.netPay, 'USD') }}
+        </div>
+        <p class="text-[9px] text-white/50 mt-1 flex items-center gap-1">
+          <poli-icon name="account_balance_wallet" class="w-3 h-3" />
+          {{ payslip.paymentMethod }}
+        </p>
+      </div>
+      <div class="text-right space-y-0.5">
+        <div class="text-[9px] text-white/50">Gross</div>
+        <div class="font-display font-bold text-white text-sm">
+          {{ formatMoney(payslip.grossPay, 'USD') }}
+        </div>
+        <div class="text-[9px] text-white/50 mt-1">Deductions</div>
+        <div class="font-display font-bold text-red-400 text-sm">
+          −{{ formatMoney(payslip.totalEmployeeDeductions, 'USD') }}
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Year-to-Date cumulative ── -->
+    <div class="poli-avoid-break">
+      <div
+        class="flex items-center gap-1.5 mb-1 text-[9px] uppercase tracking-[2px] text-forest font-display font-bold"
+      >
+        <poli-icon name="calendar_month" class="w-3.5 h-3.5 text-emerald" />
+        Year-to-Date Summary
+      </div>
+      <div class="grid grid-cols-7 gap-px bg-slate-200 rounded-lg overflow-hidden text-[9px] a5-portrait:text-[8px]">
+        <div class="bg-white p-2 text-center">
+          <p class="text-slate-400 mb-0.5">Gross</p>
+          <p class="font-display font-bold text-forest">
+            {{ formatMoney(payslip.ytd.grossPay, 'USD') }}
+          </p>
+        </div>
+        <div class="bg-white p-2 text-center">
+          <p class="text-slate-400 mb-0.5">Federal Tax</p>
+          <p class="font-display font-bold text-forest">
+            {{ formatMoney(payslip.ytd.federalTax, 'USD') }}
+          </p>
+        </div>
+        <div class="bg-white p-2 text-center">
+          <p class="text-slate-400 mb-0.5">State Tax</p>
+          <p class="font-display font-bold text-forest">
+            {{ formatMoney(payslip.ytd.stateTax, 'USD') }}
+          </p>
+        </div>
+        <div class="bg-white p-2 text-center">
+          <p class="text-slate-400 mb-0.5">Soc. Sec.</p>
+          <p class="font-display font-bold text-forest">
+            {{ formatMoney(payslip.ytd.socialSecurity, 'USD') }}
+          </p>
+        </div>
+        <div class="bg-white p-2 text-center">
+          <p class="text-slate-400 mb-0.5">Medicare</p>
+          <p class="font-display font-bold text-forest">
+            {{ formatMoney(payslip.ytd.medicare, 'USD') }}
+          </p>
+        </div>
+        <div class="bg-white p-2 text-center">
+          <p class="text-slate-400 mb-0.5">401(k)</p>
+          <p class="font-display font-bold text-forest">
+            {{ formatMoney(payslip.ytd.retirement, 'USD') }}
+          </p>
+        </div>
+        <div class="bg-mint p-2 text-center">
+          <p class="text-emerald mb-0.5 font-semibold">Net Pay</p>
+          <p class="font-display font-bold text-forest">
+            {{ formatMoney(payslip.ytd.netPay, 'USD') }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

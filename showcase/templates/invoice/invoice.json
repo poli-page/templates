@@ -1,0 +1,135 @@
+{
+  "locale": "en",
+  "data": {
+    "issuer": {
+      "name": "Northwind Traders",
+      "legalName": "Northwind Traders LLC",
+      "tagline": "Premium goods & supplies",
+      "initial": "N",
+      "address": "742 Evergreen Terrace, Suite 200, Portland, OR 97205",
+      "email": "billing@northwind.com",
+      "phone": "+1 (503) 555-0142",
+      "ein": "84-2936710",
+      "bank": {
+        "beneficiary": "Northwind Traders LLC",
+        "name": "First National Bank",
+        "account": "8294-7610-3355",
+        "routing": "021000021"
+      }
+    },
+
+    "customer": {
+      "name": "Acme Corporation",
+      "attn": "James Wheeler, Accounts Payable",
+      "address": {
+        "street": "1600 Amphitheatre Parkway",
+        "city": "Mountain View",
+        "state": "CA",
+        "zip": "94043"
+      },
+      "email": "ap@acmecorp.com"
+    },
+
+    "invoice": {
+      "number": "INV-2026-0047",
+      "issueDate": "2026-03-15T00:00:00Z",
+      "dueDate": "2026-04-14T00:00:00Z",
+      "currency": "USD",
+      "projectRef": "PROJ-ACM-2026",
+      "projectSummary": "Full-cycle design and development of the Acme Corporation e-commerce platform and internal admin dashboard, carried out between January and March 2026. All deliverables accepted and signed off on March 31, 2026.",
+
+      "subtotal": 55430,
+      "taxRate": 0.085,
+      "taxLabel": "Sales Tax",
+
+      "paymentTerms": {
+        "days": 30,
+        "method": "Bank transfer only — details at right",
+        "lateInterest": "1.5% monthly interest",
+        "earlyDiscount": "No discount for early payment unless agreed in writing"
+      },
+
+      "groups": [
+        {
+          "name": "UX Research & Strategy",
+          "items": [
+            { "lineNumber": 1, "description": "Stakeholder interviews & discovery workshops", "qty": 8, "unit": "hrs", "unitPrice": 150, "amount": 1200 },
+            { "lineNumber": 2, "description": "Competitive analysis report", "qty": 1, "unit": "unit", "unitPrice": 600, "amount": 600 },
+            { "lineNumber": 3, "description": "User personas & journey mapping", "qty": 6, "unit": "hrs", "unitPrice": 150, "amount": 900 },
+            { "lineNumber": 4, "description": "Information architecture & sitemap", "qty": 4, "unit": "hrs", "unitPrice": 150, "amount": 600 }
+          ]
+        },
+        {
+          "name": "UI Design",
+          "items": [
+            { "lineNumber": 5, "description": "Wireframes — marketing site (12 pages)", "qty": 14, "unit": "hrs", "unitPrice": 130, "amount": 1820 },
+            { "lineNumber": 6, "description": "Wireframes — admin dashboard (10 views)", "qty": 12, "unit": "hrs", "unitPrice": 130, "amount": 1560 },
+            { "lineNumber": 7, "description": "Design system — tokens, components, guidelines", "qty": 18, "unit": "hrs", "unitPrice": 150, "amount": 2700 },
+            { "lineNumber": 8, "description": "High-fidelity mockups — marketing site", "qty": 22, "unit": "hrs", "unitPrice": 150, "amount": 3300 },
+            { "lineNumber": 9, "description": "High-fidelity mockups — admin dashboard", "qty": 18, "unit": "hrs", "unitPrice": 150, "amount": 2700 },
+            { "lineNumber": 10, "description": "Interactive prototype & design review (2 rounds)", "qty": 10, "unit": "hrs", "unitPrice": 130, "amount": 1300 }
+          ]
+        },
+        {
+          "name": "Front-End Development",
+          "items": [
+            { "lineNumber": 11, "description": "Project setup — Next.js, TypeScript, Tailwind CSS", "qty": 4, "unit": "hrs", "unitPrice": 160, "amount": 640 },
+            { "lineNumber": 12, "description": "Marketing site — homepage & landing pages", "qty": 14, "unit": "hrs", "unitPrice": 160, "amount": 2240 },
+            { "lineNumber": 13, "description": "Marketing site — product catalog & detail pages", "qty": 12, "unit": "hrs", "unitPrice": 160, "amount": 1920 },
+            { "lineNumber": 14, "description": "Admin dashboard — authentication & role management", "qty": 10, "unit": "hrs", "unitPrice": 160, "amount": 1600 },
+            { "lineNumber": 15, "description": "Admin dashboard — order management & analytics", "qty": 16, "unit": "hrs", "unitPrice": 160, "amount": 2560 },
+            { "lineNumber": 16, "description": "Shopping cart & checkout flow", "qty": 14, "unit": "hrs", "unitPrice": 160, "amount": 2240 },
+            { "lineNumber": 17, "description": "Responsive & cross-browser adjustments", "qty": 8, "unit": "hrs", "unitPrice": 160, "amount": 1280 },
+            { "lineNumber": 18, "description": "Accessibility audit & WCAG 2.1 AA compliance", "qty": 6, "unit": "hrs", "unitPrice": 160, "amount": 960 }
+          ]
+        },
+        {
+          "name": "Back-End & API Integration",
+          "items": [
+            { "lineNumber": 19, "description": "REST API design & documentation (OpenAPI)", "qty": 8, "unit": "hrs", "unitPrice": 170, "amount": 1360 },
+            { "lineNumber": 20, "description": "Payment gateway integration (Stripe)", "qty": 10, "unit": "hrs", "unitPrice": 170, "amount": 1700 },
+            { "lineNumber": 21, "description": "Inventory & order management service", "qty": 12, "unit": "hrs", "unitPrice": 170, "amount": 2040 },
+            { "lineNumber": 22, "description": "Email notifications (SendGrid) & webhooks", "qty": 5, "unit": "hrs", "unitPrice": 170, "amount": 850 },
+            { "lineNumber": 23, "description": "Database schema & migrations (PostgreSQL)", "qty": 6, "unit": "hrs", "unitPrice": 170, "amount": 1020 }
+          ]
+        },
+        {
+          "name": "QA & Testing",
+          "items": [
+            { "lineNumber": 24, "description": "Test plan & test case writing", "qty": 4, "unit": "hrs", "unitPrice": 120, "amount": 480 },
+            { "lineNumber": 25, "description": "Manual functional testing (all modules)", "qty": 12, "unit": "hrs", "unitPrice": 120, "amount": 1440 },
+            { "lineNumber": 26, "description": "End-to-end automated tests (Playwright)", "qty": 10, "unit": "hrs", "unitPrice": 150, "amount": 1500 },
+            { "lineNumber": 27, "description": "Regression testing & bug-fix cycle", "qty": 8, "unit": "hrs", "unitPrice": 150, "amount": 1200 }
+          ]
+        },
+        {
+          "name": "Infrastructure & Deployment",
+          "items": [
+            { "lineNumber": 28, "description": "CI/CD pipeline (GitHub Actions)", "qty": 5, "unit": "hrs", "unitPrice": 160, "amount": 800 },
+            { "lineNumber": 29, "description": "Cloud provisioning (AWS ECS + RDS + S3)", "qty": 6, "unit": "hrs", "unitPrice": 160, "amount": 960 },
+            { "lineNumber": 30, "description": "Production deployment, SSL & DNS configuration", "qty": 3, "unit": "hrs", "unitPrice": 160, "amount": 480 },
+            { "lineNumber": 31, "description": "Monitoring & alerting (Datadog)", "qty": 3, "unit": "hrs", "unitPrice": 160, "amount": 480 }
+          ]
+        },
+        {
+          "name": "Project Management & Documentation",
+          "items": [
+            { "lineNumber": 32, "description": "Weekly status calls & meeting notes (12 weeks)", "qty": 12, "unit": "hrs", "unitPrice": 110, "amount": 1320 },
+            { "lineNumber": 33, "description": "Sprint planning, backlog grooming & reviews", "qty": 10, "unit": "hrs", "unitPrice": 110, "amount": 1100 },
+            { "lineNumber": 34, "description": "Technical documentation & ADRs", "qty": 6, "unit": "hrs", "unitPrice": 110, "amount": 660 },
+            { "lineNumber": 35, "description": "Client handover session & training (half-day)", "qty": 4, "unit": "hrs", "unitPrice": 110, "amount": 440 }
+          ]
+        },
+        {
+          "name": "Licenses & Third-Party Services",
+          "items": [
+            { "lineNumber": 36, "description": "Stock photography license (25 images)", "qty": 25, "unit": "img", "unitPrice": 29, "amount": 725 },
+            { "lineNumber": 37, "description": "Font license (Söhne typeface, perpetual web)", "qty": 1, "unit": "unit", "unitPrice": 320, "amount": 320 },
+            { "lineNumber": 38, "description": "AWS infrastructure costs (Jan–Mar 2026, pass-through)", "qty": 3, "unit": "mo", "unitPrice": 210, "amount": 630 },
+            { "lineNumber": 39, "description": "Figma Organization plan (3 seats, 3 months)", "qty": 3, "unit": "mo", "unitPrice": 135, "amount": 405 }
+          ]
+        }
+      ]
+    }
+  }
+}

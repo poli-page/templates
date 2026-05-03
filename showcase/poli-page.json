@@ -1,0 +1,141 @@
+{
+	"project": {
+		"name": "Poli Page Showcase",
+		"version": "1.0.0",
+		"description": "Professional showcase templates demonstrating Poli Page capabilities"
+	},
+	"engine": {
+		"paginationOptions": {
+			"orphanThreshold": 0.08
+		}
+	},
+	"fonts": [
+		{
+			"family": "DM Sans",
+			"src": "fonts/dm-sans-latin.woff2",
+			"weight": 400
+		},
+		{
+			"family": "DM Sans",
+			"src": "fonts/dm-sans-latin.woff2",
+			"weight": 500
+		},
+		{
+			"family": "DM Sans",
+			"src": "fonts/dm-sans-latin.woff2",
+			"weight": 600
+		},
+		{
+			"family": "DM Sans",
+			"src": "fonts/dm-sans-latin.woff2",
+			"weight": 700
+		},
+		{
+			"family": "DM Serif Display",
+			"src": "fonts/dm-serif-display-latin.woff2",
+			"weight": 400
+		},
+		{
+			"family": "Work Sans",
+			"src": "fonts/work-sans-latin.woff2",
+			"weight": 400
+		},
+		{
+			"family": "Work Sans",
+			"src": "fonts/work-sans-latin.woff2",
+			"weight": 500
+		},
+		{
+			"family": "Work Sans",
+			"src": "fonts/work-sans-latin.woff2",
+			"weight": 600
+		},
+		{
+			"family": "Sora",
+			"src": "fonts/sora-latin.woff2",
+			"weight": 400
+		},
+		{
+			"family": "Sora",
+			"src": "fonts/sora-latin.woff2",
+			"weight": 500
+		},
+		{
+			"family": "Sora",
+			"src": "fonts/sora-latin.woff2",
+			"weight": 600
+		},
+		{
+			"family": "Sora",
+			"src": "fonts/sora-latin.woff2",
+			"weight": 700
+		},
+		{
+			"family": "Sora",
+			"src": "fonts/sora-latin.woff2",
+			"weight": 800
+		},
+		{
+			"family": "Dancing Script",
+			"src": "fonts/dancing-script-latin.woff2",
+			"weight": 700
+		},
+		{
+			"family": "Ephesis",
+			"src": "fonts/ephesis-400.woff2",
+			"weight": 400,
+			"style": "normal"
+		}
+	],
+	"templates": [
+		{
+			"name": "invoice",
+			"template": "invoice.html",
+			"mock": "invoice.json",
+			"format": "A4",
+			"orientation": "portrait"
+		},
+		{
+			"name": "contract",
+			"template": "contract.html",
+			"mock": "contract.json",
+			"format": "A4",
+			"orientation": "portrait"
+		},
+		{
+			"name": "report",
+			"template": "report.html",
+			"mock": "report.json",
+			"format": "A4",
+			"orientation": "portrait"
+		},
+		{
+			"name": "certificate",
+			"template": "certificate.html",
+			"mock": "certificate.json",
+			"format": "A5",
+			"orientation": "landscape"
+		},
+		{
+			"name": "delivery-note",
+			"template": "delivery-note.html",
+			"mock": "delivery-note.json",
+			"format": "A4",
+			"orientation": "portrait"
+		},
+		{
+			"name": "pay-slip",
+			"template": "pay-slip.html",
+			"mock": "pay-slip.json",
+			"format": "A4",
+			"orientation": "portrait"
+		},
+		{
+			"name": "cerfa-15776",
+			"template": "cerfa-15776.html",
+			"mock": "cerfa-15776.json",
+			"format": "A4",
+			"orientation": "portrait"
+		}
+	]
+}

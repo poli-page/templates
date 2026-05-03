@@ -1,0 +1,129 @@
+{
+  "project": {
+    "name": "Poli Page Engine Tests",
+    "version": "1.0.0",
+    "description": "Test templates exercising all rendering engine features"
+  },
+  "fonts": [
+    {
+      "family": "Stardos Stencil",
+      "src": "fonts/stardos-stencil-400.woff2",
+      "weight": 400,
+      "style": "normal"
+    },
+    {
+      "family": "Inter",
+      "src": "fonts/inter-400.woff2",
+      "weight": 400,
+      "style": "normal"
+    },
+    {
+      "family": "Inter",
+      "src": "fonts/inter-700.woff2",
+      "weight": 700,
+      "style": "normal"
+    }
+  ],
+  "templates": [
+    {
+      "name": "poli-aside-content",
+      "template": "poli-aside-content.html",
+      "mock": "poli-aside-content.json"
+    },
+    {
+      "name": "poli-aside-flow-short-body",
+      "template": "poli-aside-flow-short-body.html",
+      "mock": "poli-aside-flow-short-body.json"
+    },
+    {
+      "name": "poli-aside-flow",
+      "template": "poli-aside-flow.html",
+      "mock": "poli-aside-flow.json"
+    },
+    {
+      "name": "poli-aside-left",
+      "template": "poli-aside-left.html",
+      "mock": "poli-aside-left.json"
+    },
+    {
+      "name": "poli-asset",
+      "template": "poli-asset.html",
+      "mock": "poli-asset.json"
+    },
+    {
+      "name": "poli-avoid-break",
+      "template": "poli-avoid-break.html",
+      "mock": "poli-avoid-break.json"
+    },
+    {
+      "name": "poli-break",
+      "template": "poli-break.html",
+      "mock": "poli-break.json"
+    },
+    {
+      "name": "poli-conditional",
+      "template": "poli-conditional.html",
+      "mock": "poli-conditional.json"
+    },
+    {
+      "name": "poli-even-odd",
+      "template": "poli-even-odd.html",
+      "mock": "poli-even-odd.json"
+    },
+    {
+      "name": "poli-font",
+      "template": "poli-font.html",
+      "mock": "poli-font.json"
+    },
+    {
+      "name": "poli-footer",
+      "template": "poli-footer.html",
+      "mock": "poli-footer.json"
+    },
+    {
+      "name": "poli-format-responsive",
+      "template": "poli-format-responsive.html",
+      "mock": "poli-format-responsive.json"
+    },
+    {
+      "name": "poli-header",
+      "template": "poli-header.html",
+      "mock": "poli-header.json"
+    },
+    {
+      "name": "poli-icon",
+      "template": "poli-icon.html",
+      "mock": "poli-icon.json"
+    },
+    {
+      "name": "poli-landscape",
+      "template": "poli-landscape.html",
+      "mock": "poli-landscape.json"
+    },
+    {
+      "name": "poli-svg",
+      "template": "poli-svg.html",
+      "mock": "poli-svg.json"
+    },
+    {
+      "name": "poli-split-container",
+      "template": "poli-split-container.html",
+      "mock": "poli-split-container.json"
+    },
+    {
+      "name": "poli-table-header",
+      "template": "poli-table-header.html",
+      "mock": "poli-table-header.json"
+    },
+    {
+      "name": "poli-table-header-nested",
+      "template": "poli-table-header-nested.html",
+      "mock": "poli-table-header-nested.json"
+    },
+    {
+      "name": "poli-title",
+      "template": "poli-title.html",
+      "mock": "poli-title.json"
+    }
+  ]
+}

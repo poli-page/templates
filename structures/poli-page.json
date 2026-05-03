@@ -1,0 +1,40 @@
+{
+  "project": {
+    "name": "Poli Page Structures",
+    "version": "1.0.0",
+    "description": "Layout structure templates used by the editor wizard when creating new templates"
+  },
+  "fonts": [],
+  "templates": [
+    {
+      "name": "blank",
+      "template": "blank.html",
+      "mock": "blank.json"
+    },
+    {
+      "name": "header-main-footer",
+      "template": "header-main-footer.html",
+      "mock": "header-main-footer.json"
+    },
+    {
+      "name": "header-sidebar-main-footer",
+      "template": "header-sidebar-main-footer.html",
+      "mock": "header-sidebar-main-footer.json"
+    },
+    {
+      "name": "header-main-sidebar-footer",
+      "template": "header-main-sidebar-footer.html",
+      "mock": "header-main-sidebar-footer.json"
+    },
+    {
+      "name": "sidebar-header-main-footer",
+      "template": "sidebar-header-main-footer.html",
+      "mock": "sidebar-header-main-footer.json"
+    },
+    {
+      "name": "header-main-footer-sidebar",
+      "template": "header-main-footer-sidebar.html",
+      "mock": "header-main-footer-sidebar.json"
+    }
+  ]
+}

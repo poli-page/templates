@@ -1,0 +1,78 @@
+	<div
+		class="bg-white text-gray-800 text-sm font-sans px-10 pt-8 pb-4 flex flex-col gap-6 w-full"
+	>
+		<div
+			class="poli-header poli-not-first bg-slate-700 text-white px-4 py-2 flex justify-between items-center"
+		>
+			<span class="font-bold">Nested Table Header Test</span>
+			<span class="text-slate-300 text-xs">
+				Page {{ poli.currentPage }} / {{ poli.totalPages }}
+			</span>
+		</div>
+
+		<div class="poli-footer bg-slate-100 text-slate-500 text-xs px-4 py-2 text-center">
+			<poli-page-numbers />
+		</div>
+
+		<h1 class="text-2xl font-bold text-gray-900">Nested Table Header Test</h1>
+		<p class="text-gray-600">
+			This template wraps the table inside styled divs to test poli-table-header when the
+			&lt;table&gt; is not a direct child of the content slot.
+		</p>
+
+		<!-- Table wrapped in 2 levels of divs with styling -->
+		<div class="mt-4 border border-gray-300 rounded-lg overflow-hidden shadow-sm">
+			<div class="flex flex-col bg-red-100 px-4 py-2 border-b border-red-300 gap-6">
+				<h2 class="text-sm font-semibold text-gray-700">Project Deliverables</h2>
+				<table class="w-full text-xs border-collapse">
+					<thead class="poli-table-header">
+						<tr class="bg-indigo-600 text-white">
+							<th class="text-left py-2 px-3 font-semibold w-12">#</th>
+							<th class="text-left py-2 px-3 font-semibold">Deliverable</th>
+							<th class="text-center py-2 px-3 font-semibold w-20">Status</th>
+							<th class="text-right py-2 px-3 font-semibold w-24">Hours</th>
+							<th class="text-right py-2 px-3 font-semibold w-24">Cost</th>
+						</tr>
+					</thead>
+					<tbody>
+						@for (item of deliverables; track $index) {
+							<tr class="even:bg-gray-50 border-b border-gray-200">
+								<td class="py-2 px-3 text-gray-500">{{ $index + 1 }}</td>
+								<td class="py-2 px-3">{{ item.name }}</td>
+								<td class="py-2 px-3 text-center">
+									@if (item.status === 'Done') {
+										<span class="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded-full">
+											Done
+										</span>
+									} @else if (item.status === 'In Progress') {
+										<span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-0.5 rounded-full">
+											In Progress
+										</span>
+									} @else {
+										<span class="bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full">
+											Pending
+										</span>
+									}
+								</td>
+								<td class="py-2 px-3 text-right">{{ item.hours ?? '—' }}</td>
+								<td class="py-2 px-3 text-right font-medium">{{ item.cost }}</td>
+							</tr>
+						}
+						<tr class="bg-indigo-50 border-t-2 border-indigo-600">
+							<td colspan="3" class="py-2 px-3 text-right font-bold">Total</td>
+							<td class="py-2 px-3 text-right font-bold">{{ totalHours }}</td>
+							<td class="py-2 px-3 text-right font-bold text-indigo-700">
+								{{ totalCost }}
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<h2 class="text-sm font-semibold text-gray-700">No More Deliverables</h2>
+			</div>
+		</div>
+
+		<p class="text-sm text-gray-500">
+			The table above is nested inside two wrapper divs (border card + padding container).
+			The table header should repeat on every page.
+		</p>
+	</div>

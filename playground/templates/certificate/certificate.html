@@ -1,0 +1,159 @@
+<div class="p-0.5 gap-0.5 flex flex-col a4-landscape:p-1 a4-landscape:gap-1">
+	@for (cert of certificates) {
+		<!-- Certificate — one per A5 landscape page -->
+		<div class="flex-1 flex bg-[#F5F0E1] p-[5mm] font-serif poli-avoid-break a4-landscape:p-[7mm]">
+			<!-- Outer border -->
+			<div
+				class="flex-1 flex border-[2px] p-[2mm] border-[{{ cert.color }}]
+					a4-landscape:border-[3px] a4-landscape:p-[3mm]"
+			>
+				<!-- Inner border -->
+				<div
+					class="flex-1 border-[1px] border-[{{
+						cert.color
+					}}]/40 px-[8mm] py-[4mm] relative overflow-hidden flex flex-col
+						a4-landscape:px-[11mm] a4-landscape:py-[6mm]"
+				>
+					<!-- Laurel wreath background — centered -->
+					<img
+						src="{{ laurelImage }}"
+						class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75mm] h-[75mm] object-contain opacity-[0.07] pointer-events-none
+							a4-landscape:w-[106mm] a4-landscape:h-[106mm]"
+					/>
+
+					<!-- Content -->
+					<div class="relative flex-1 flex flex-col items-center text-center">
+						<!-- Institution header -->
+						<div
+							class="tracking-[3px] text-[10px] text-[#555] uppercase font-sans
+								a4-landscape:tracking-[4px] a4-landscape:text-[14px]"
+						>
+							{{ institution }}
+						</div>
+						<div
+							class="tracking-[2px] text-[8px] text-[#888] uppercase mt-0.5 font-sans
+								a4-landscape:tracking-[3px] a4-landscape:text-[11px] a4-landscape:mt-1"
+						>
+							{{ academy }}
+						</div>
+
+						<!-- Decorative separator -->
+						<div
+							class="w-12 border-t my-2 border-[{{ cert.color }}]/80
+								a4-landscape:w-16 a4-landscape:my-3"
+						></div>
+
+						<!-- Main title -->
+						<h1
+							class="text-[28px] leading-none font-bold tracking-wide text-[{{ cert.color }}]
+								a4-landscape:text-[40px]"
+						>
+							{{ cert.title }}
+						</h1>
+						<h2
+							class="text-[20px] leading-tight font-bold text-[#333] mt-1 whitespace-pre-line
+								a4-landscape:text-[28px] a4-landscape:mt-1.5"
+						>
+							{{ cert.subtitle }}
+						</h2>
+
+						<!-- Spacer top -->
+						<div class="flex-[0.95]"></div>
+
+						<!-- Awarded to -->
+						<div>
+							<span
+								class="text-[8px] text-[#888] italic font-sans
+									a4-landscape:text-[11px]"
+							>Awarded to</span>
+							<div
+								class="mt-2 text-[28px] font-bold text-[#333] font-cursive
+									a4-landscape:mt-3 a4-landscape:text-[40px]"
+							>
+								{{ cert.recipientName }}
+							</div>
+						</div>
+
+						<!-- Description -->
+						<p
+							class="text-[9px] text-[#777] mt-5 max-w-[140mm] leading-relaxed italic font-sans
+								a4-landscape:text-[13px] a4-landscape:mt-7 a4-landscape:max-w-[198mm]"
+						>
+							{{ cert.description }}
+						</p>
+
+						<!-- Spacer bottom -->
+						<div class="flex-1"></div>
+
+						<!-- Bottom section: signature left, location/date right -->
+						<div class="w-full flex items-end justify-between">
+							<!-- Signature area (left) -->
+							<div
+								class="relative text-center w-[45mm]
+									a4-landscape:w-[64mm]"
+							>
+								<!-- Contextual icon behind/below signature -->
+								<poli-icon
+									name="{{ cert.icon }}"
+									class="absolute -top-10 left-1/2 -translate-x-1/2 w-[160px] h-[160px] pointer-events-none
+										a4-landscape:-top-14 a4-landscape:w-[226px] a4-landscape:h-[226px]"
+									style="color: {{ cert.color }}1A"
+								/>
+
+								<!-- Signature -->
+								<div
+									class="relative w-full h-20 mb-0.5 flex items-center justify-center
+										a4-landscape:h-28 a4-landscape:mb-1"
+								>
+									<img
+										src="{{ signatureImage }}"
+										class="h-[70px] object-contain opacity-80
+											a4-landscape:h-[99px]"
+									/>
+								</div>
+								<div
+									class="w-24 mx-auto border-t border-[#999] mb-0.5
+										a4-landscape:w-32 a4-landscape:mb-1"
+								></div>
+								<div
+									class="text-[7px] text-[#888] italic font-sans
+										a4-landscape:text-[10px]"
+								>
+									{{ signerTitle }}
+								</div>
+							</div>
+
+							<!-- Location & date (right) -->
+							<div
+								class="flex items-baseline gap-6 text-[9px] text-[#666] font-sans
+									a4-landscape:gap-8 a4-landscape:text-[13px]"
+							>
+								<div>
+									<span class="italic">Issued in</span>
+									<span
+										class="ml-2 font-semibold text-[#333] text-[11px]
+											a4-landscape:ml-3 a4-landscape:text-[16px]"
+									>
+										{{ cert.location }}
+									</span>
+								</div>
+								<div>
+									<span class="italic">on</span>
+									<span
+										class="ml-2 font-semibold text-[#333] text-[11px]
+											a4-landscape:ml-3 a4-landscape:text-[16px]"
+									>
+										{{ formatDate(cert.date, 'long') }}
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		@if ($last && $even) {
+			<div class="a4-portrait:flex-1"></div>
+		}
+	}
+</div>

@@ -1,0 +1,120 @@
+{
+  "locale": "en",
+  "data": {
+    "contract": {
+      "title": "Software Development Services",
+      "reference": "AGR-2026-0187",
+      "date": "2026-04-01T00:00:00+02:00",
+      "articles": [
+        {
+          "title": "Purpose",
+          "paragraphs": [
+            "This Service Agreement (\"Agreement\") is entered into between the Service Provider and the Client as identified above, for the provision of software development services as described herein.",
+            "The Service Provider agrees to design, develop, and deliver a custom web application platform (\"the Project\") in accordance with the specifications set forth in Annex 1, subject to the terms and conditions of this Agreement."
+          ]
+        },
+        {
+          "title": "Scope of Services",
+          "paragraphs": [
+            "The Service Provider shall deliver the following services: (a) Requirements analysis and technical architecture design; (b) User interface and user experience design; (c) Full-stack application development; (d) Quality assurance and testing; (e) Deployment and infrastructure setup; (f) Documentation and knowledge transfer.",
+            "Any services not explicitly described in this Agreement or its Annexes shall be considered out of scope and may be subject to a separate agreement or change order as described in Article 7."
+          ]
+        },
+        {
+          "title": "Duration and Milestones",
+          "paragraphs": [
+            "This Agreement shall commence on the date of signature and shall remain in effect until the completion of all deliverables, estimated at six (6) months from the start date.",
+            "The Project shall be delivered in four phases: Phase 1 — Design and Architecture (6 weeks); Phase 2 — Core Development (10 weeks); Phase 3 — Integration and Testing (4 weeks); Phase 4 — Deployment and Handover (4 weeks). Detailed milestones are specified in Annex 2.",
+            "Delays caused by the Client's failure to provide required inputs, feedback, or approvals within the agreed timeframes shall result in a corresponding extension of the Project timeline at no additional cost to the Service Provider."
+          ]
+        },
+        {
+          "title": "Financial Terms",
+          "paragraphs": [
+            "The total fixed price for the Project is USD 82,014.00 (eighty-two thousand and fourteen dollars), exclusive of applicable taxes. This amount is based on the scope defined in this Agreement and Annex 1.",
+            "Payment shall be made according to the following schedule: 30% upon signature of this Agreement; 30% upon completion of Phase 2; 20% upon completion of Phase 3; 20% upon final acceptance. All invoices are payable within thirty (30) days of issuance.",
+            "Late payments shall bear interest at a rate of 1.5% per month, calculated from the due date until the date of actual payment. The Service Provider reserves the right to suspend services if any payment is overdue by more than fifteen (15) days."
+          ]
+        },
+        {
+          "title": "Intellectual Property",
+          "paragraphs": [
+            "Upon full payment of all amounts due under this Agreement, the Service Provider shall transfer to the Client all intellectual property rights in the deliverables specifically created for the Project.",
+            "The Service Provider retains all intellectual property rights in pre-existing materials, tools, libraries, and frameworks used in the Project (\"Provider Tools\"). The Client is granted a perpetual, non-exclusive, royalty-free license to use the Provider Tools as incorporated in the deliverables.",
+            "The Client acknowledges that the deliverables may incorporate open-source software components. The Service Provider shall provide a complete list of open-source components and their respective licenses as part of the project documentation."
+          ]
+        },
+        {
+          "title": "Confidentiality",
+          "paragraphs": [
+            "Each party agrees to maintain the confidentiality of all proprietary information disclosed by the other party in connection with this Agreement. Confidential information includes, but is not limited to, business plans, technical specifications, customer data, pricing information, and trade secrets.",
+            "The obligations of confidentiality shall survive the termination of this Agreement for a period of three (3) years. These obligations shall not apply to information that is publicly available, independently developed, or lawfully obtained from third parties."
+          ]
+        },
+        {
+          "title": "Change Management",
+          "paragraphs": [
+            "Any changes to the scope, timeline, or deliverables defined in this Agreement must be documented in a written Change Order signed by authorized representatives of both parties.",
+            "The Service Provider shall provide a written estimate of the impact of any proposed change on the Project timeline and budget within five (5) business days of receiving a Change Order request. No work on the change shall commence until the Change Order is formally approved."
+          ]
+        },
+        {
+          "title": "Warranties and Liability",
+          "paragraphs": [
+            "The Service Provider warrants that the deliverables shall conform to the specifications set forth in Annex 1 and shall be free from material defects for a period of ninety (90) days following final acceptance (\"Warranty Period\").",
+            "During the Warranty Period, the Service Provider shall correct, at no additional cost, any defects reported by the Client that are reproducible and attributable to the Service Provider's work.",
+            "The Service Provider's total aggregate liability under this Agreement shall not exceed the total fees paid by the Client. Neither party shall be liable for indirect, incidental, consequential, or punitive damages."
+          ]
+        },
+        {
+          "title": "Termination",
+          "paragraphs": [
+            "Either party may terminate this Agreement upon thirty (30) days written notice if the other party commits a material breach that remains uncured after fifteen (15) days following written notice of such breach.",
+            "In the event of termination, the Client shall pay the Service Provider for all services performed and expenses incurred up to the effective date of termination. The Service Provider shall deliver to the Client all completed and in-progress deliverables."
+          ]
+        },
+        {
+          "title": "Governing Law and Disputes",
+          "paragraphs": [
+            "This Agreement shall be governed by and construed in accordance with the laws of the State of California. Any dispute arising out of or in connection with this Agreement shall be submitted to the exclusive jurisdiction of the courts of San Francisco County.",
+            "Prior to initiating any legal proceedings, the parties agree to attempt to resolve disputes through good-faith negotiation for a period of thirty (30) days, followed by mediation if negotiation is unsuccessful."
+          ]
+        }
+      ],
+      "annexes": [
+        {
+          "title": "Technical Specifications",
+          "paragraphs": [
+            "The application shall be developed using the following technology stack: Frontend — Next.js 15 with React 19, TypeScript 5.x, Tailwind CSS v4; Backend — Node.js 22 LTS, PostgreSQL 17, Redis 8; Infrastructure — AWS (ECS Fargate, RDS, ElastiCache, S3, CloudFront); CI/CD — GitHub Actions with automated testing and deployment.",
+            "The application shall support the following browsers: Chrome 120+, Firefox 120+, Safari 17+, Edge 120+. The application shall be responsive and functional on devices with screen widths from 375px (mobile) to 2560px (ultra-wide desktop).",
+            "Performance targets: Time to Interactive (TTI) under 3 seconds on 4G connection; Largest Contentful Paint (LCP) under 2.5 seconds; Cumulative Layout Shift (CLS) under 0.1; API response time under 200ms for 95th percentile."
+          ]
+        },
+        {
+          "title": "Project Milestones",
+          "paragraphs": [
+            "Milestone 1 (Week 6): Completion of technical architecture document, database schema, API design, and UI/UX mockups. Deliverable: Architecture Decision Records, Figma design files, API specification (OpenAPI 3.1).",
+            "Milestone 2 (Week 16): Core application features implemented and deployed to staging environment. All CRUD operations functional, authentication and authorization working, core business logic implemented. Deliverable: Staging environment URL, test credentials, progress report.",
+            "Milestone 3 (Week 20): Integration testing complete, performance optimization done, security audit passed. All critical and high-severity issues resolved. Deliverable: Test report, security audit report, performance benchmarks.",
+            "Milestone 4 (Week 24): Production deployment complete, documentation delivered, team training conducted. Deliverable: Production environment, technical documentation, API reference, training materials, source code repository access."
+          ]
+        }
+      ]
+    },
+    "provider": {
+      "name": "Dunmore & Associates",
+      "tagline": "Technology Law & Advisory",
+      "address": "One Embarcadero Center, Suite 3200",
+      "postalCode": "94111",
+      "city": "San Francisco, CA",
+      "representative": "Victoria Dunmore, Managing Partner"
+    },
+    "client": {
+      "name": "Helios Ventures Ltd.",
+      "address": "200 Congress Avenue, Suite 1400",
+      "postalCode": "78701",
+      "city": "Austin, TX",
+      "representative": "Marcus Rivera, Chief Executive Officer"
+    }
+  }
+}

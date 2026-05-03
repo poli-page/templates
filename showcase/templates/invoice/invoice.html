@@ -1,0 +1,247 @@
+<div class="flex font-sans text-slate-700">
+  <!-- Left accent stripe (repeated on every page) -->
+  <aside class="poli-aside flex w-1.5 shrink-0">
+    <div class="flex-1 bg-gradient-to-b from-accent to-navy"></div>
+  </aside>
+
+  <!-- Header / Main / Footer -->
+  <div class="flex-1 flex flex-col min-w-0">
+    <!-- ── First-page header ── -->
+    <header class="poli-header poli-first flex justify-between items-start pt-12 px-12 pb-0">
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 bg-navy rounded-xl flex items-center justify-center text-white font-serif text-xl">
+          {{ issuer.initial }}
+        </div>
+        <div>
+          <h1 class="font-serif text-[22px] a5-portrait:text-[18px] text-navy tracking-tight">{{ issuer.name }}</h1>
+          <p class="text-[11px] a5-portrait:text-[9px] text-slate-400 mt-0.5 tracking-widest uppercase">
+            {{ issuer.tagline }}
+          </p>
+        </div>
+      </div>
+      <div class="text-right">
+        <div class="text-[11px] uppercase tracking-[3px] text-slate-400 font-medium">Invoice</div>
+        <div class="font-serif text-4xl a5-portrait:text-2xl text-accent leading-tight tracking-tight mt-0.5">
+          #{{ invoice.number }}
+        </div>
+        <div class="text-[11px] text-slate-500 mt-1.5">
+          Issued
+          <strong class="text-slate-700 font-semibold">{{ formatDate(invoice.issueDate, 'long') }}</strong>
+        </div>
+        <div class="text-[11px] text-slate-500">
+          Due
+          <strong class="text-slate-700 font-semibold">{{ formatDate(invoice.dueDate, 'long') }}</strong>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── Compact running header (pages 2+) ── -->
+    <header class="poli-header poli-not-first flex items-center justify-between px-12 py-2.5 border-b border-stone-200">
+      <span class="text-xs font-bold text-navy tracking-tight">{{ issuer.name }}</span>
+      <div class="flex items-center gap-3 text-xs text-slate-500">
+        <span>Invoice</span>
+        <span class="font-semibold text-slate-700">#{{ invoice.number }}</span>
+        <span class="text-slate-300">&middot;</span>
+        <span>{{ customer.name }}</span>
+      </div>
+    </header>
+
+    <!-- ── Footer ── -->
+    <footer
+      class="poli-footer bg-warm-gray border-t border-stone-200 px-12 py-4 flex items-center justify-between text-[10px] a5-portrait:text-[8px] text-slate-400"
+    >
+      <div>
+        <span class="font-semibold text-slate-600">{{ issuer.legalName }}</span>
+        &mdash; EIN {{ issuer.ein }} &mdash; Portland, OR
+      </div>
+      <div class="flex gap-4">
+        <span>{{ issuer.email }} &middot; {{ issuer.phone }}</span>
+        <span class="font-semibold"><poli-page-numbers /></span>
+      </div>
+    </footer>
+
+    <!-- ── Main content ── -->
+    <main class="flex-1 flex flex-col px-12 py-7 gap-7">
+      <!-- Divider -->
+      <div class="h-px bg-stone-200"></div>
+
+      <!-- Addresses -->
+      <div class="flex gap-12">
+        <div class="flex-1">
+          <div class="text-[9px] uppercase tracking-[2.5px] text-accent font-semibold mb-2.5 flex items-center gap-1.5">
+            <poli-icon name="home" class="w-3.5 h-3.5 opacity-80" />
+            From
+          </div>
+          <div class="font-semibold text-sm text-navy mb-1">{{ issuer.legalName }}</div>
+          <div class="text-xs text-slate-500 leading-relaxed">
+            {{ issuer.address }}
+            <div class="flex items-center gap-1.5 mt-1.5">
+              <poli-icon name="mail" class="w-3 h-3 text-slate-400 shrink-0" />
+              {{ issuer.email }}
+            </div>
+            <div class="flex items-center gap-1.5">
+              <poli-icon name="call" class="w-3 h-3 text-slate-400 shrink-0" />
+              {{ issuer.phone }}
+            </div>
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="text-[9px] uppercase tracking-[2.5px] text-accent font-semibold mb-2.5 flex items-center gap-1.5">
+            <poli-icon name="person" class="w-3.5 h-3.5 opacity-80" />
+            Bill to
+          </div>
+          <div class="font-semibold text-sm text-navy mb-1">{{ customer.name }}</div>
+          <div class="text-xs text-slate-500 leading-relaxed">
+            @if (customer.attn) {
+              Attn: {{ customer.attn }}
+              <br />
+            }
+            {{ customer.address.street }}
+            <br />
+            {{ customer.address.city }}, {{ customer.address.state }} {{ customer.address.zip }}
+            <div class="flex items-center gap-1.5 mt-1.5">
+              <poli-icon name="mail" class="w-3 h-3 text-slate-400 shrink-0" />
+              {{ customer.email }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project summary -->
+      <div class="bg-warm-gray border border-stone-200 rounded-lg p-4">
+        <div class="text-[9px] uppercase tracking-[2px] text-accent font-semibold mb-1.5">
+          Project Reference &mdash; {{ invoice.projectRef }}
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed">{{ invoice.projectSummary }}</p>
+      </div>
+
+      <!-- Items table -->
+      <table class="w-full border-collapse text-xs">
+        <thead class="poli-table-header">
+          <tr>
+            <th
+              class="bg-navy text-white py-2.5 px-4 text-left font-medium text-[10px] uppercase tracking-wider rounded-tl-md pl-5 w-8"
+            >
+              #
+            </th>
+            <th class="bg-navy text-white py-2.5 px-4 text-left font-medium text-[10px] uppercase tracking-wider">
+              Description
+            </th>
+            <th
+              class="bg-navy text-white py-2.5 px-4 text-center font-medium text-[10px] uppercase tracking-wider w-14"
+            >
+              Qty
+            </th>
+            <th
+              class="bg-navy text-white py-2.5 px-4 text-center font-medium text-[10px] uppercase tracking-wider w-14"
+            >
+              Unit
+            </th>
+            <th class="bg-navy text-white py-2.5 px-4 text-right font-medium text-[10px] uppercase tracking-wider w-24">
+              Unit Price
+            </th>
+            <th
+              class="bg-navy text-white py-2.5 px-4 text-right font-medium text-[10px] uppercase tracking-wider rounded-tr-md pr-5 w-24"
+            >
+              Amount
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (group of invoice.groups) {
+            <tr class="poli-title">
+              <td
+                colspan="6"
+                class="bg-warm-gray py-1.5 pl-5 pr-4 font-semibold text-[11px] text-navy border-b border-stone-200 border-l-[3px] border-l-accent"
+              >
+                {{ group.name }}
+              </td>
+            </tr>
+            @for (item of group.items) {
+              <tr class="{{ $even ? 'bg-warm-gray/50' : '' }}">
+                <td class="py-2 pl-5 pr-4 text-slate-400 border-b border-stone-100">{{ item.lineNumber }}</td>
+                <td class="py-2 px-4 border-b border-stone-100">{{ item.description }}</td>
+                <td class="py-2 px-4 text-center border-b border-stone-100">{{ item.qty }}</td>
+                <td class="py-2 px-4 text-center border-b border-stone-100">{{ item.unit }}</td>
+                <td class="py-2 px-4 text-right border-b border-stone-100">
+                  {{ formatMoney(item.unitPrice, invoice.currency) }}
+                </td>
+                <td class="py-2 pr-5 pl-4 text-right font-medium border-b border-stone-100">
+                  {{ formatMoney(item.amount, invoice.currency) }}
+                </td>
+              </tr>
+            }
+          }
+
+          @let taxAmount = invoice.subtotal * invoice.taxRate;
+          @let totalDue = invoice.subtotal + taxAmount;
+
+          <tr class="border-t-2 border-stone-200">
+            <td colspan="5" class="py-2.5 px-4 text-right font-medium text-slate-500">Subtotal</td>
+            <td class="py-2.5 pr-5 pl-4 text-right font-semibold text-navy">
+              {{ formatMoney(invoice.subtotal, invoice.currency) }}
+            </td>
+          </tr>
+          <tr>
+            <td colspan="5" class="py-1.5 px-4 text-right text-slate-400">
+              {{ invoice.taxLabel }} ({{ formatPercent(invoice.taxRate) }})
+            </td>
+            <td class="py-1.5 pr-5 pl-4 text-right text-slate-600">{{ formatMoney(taxAmount, invoice.currency) }}</td>
+          </tr>
+          <tr>
+            <td colspan="5" class="bg-accent py-3 px-4 text-right font-bold text-sm text-white rounded-bl-md">
+              Total Due
+            </td>
+            <td class="bg-accent py-3 pr-5 pl-4 text-right font-extrabold text-sm text-white rounded-br-md">
+              {{ formatMoney(totalDue, invoice.currency) }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Payment & Bank details -->
+      <div class="poli-avoid-break flex gap-8 mt-8">
+        <div class="flex-1">
+          <div class="text-[9px] uppercase tracking-[2px] text-accent font-semibold mb-2 flex items-center gap-1.5">
+            <poli-icon name="credit_card" class="w-3 h-3" />
+            Payment Terms
+          </div>
+          <ul class="text-[10.5px] text-slate-500 space-y-0.5 list-disc list-inside leading-relaxed">
+            <li>
+              Payment due within
+              <strong class="text-slate-700">{{ invoice.paymentTerms.days }} days</strong>
+              of invoice date
+            </li>
+            <li>{{ invoice.paymentTerms.method }}</li>
+            <li>Late payments subject to {{ invoice.paymentTerms.lateInterest }}</li>
+            <li>{{ invoice.paymentTerms.earlyDiscount }}</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <div class="text-[9px] uppercase tracking-[2px] text-accent font-semibold mb-2 flex items-center gap-1.5">
+            <poli-icon name="account_balance" class="w-3 h-3" />
+            Bank Details
+          </div>
+          <div class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5 text-[10.5px]">
+            <span class="text-slate-400">Beneficiary</span>
+            <span class="text-slate-700 font-medium">{{ issuer.bank.beneficiary }}</span>
+            <span class="text-slate-400">Bank</span>
+            <span class="text-slate-700">{{ issuer.bank.name }}</span>
+            <span class="text-slate-400">Account</span>
+            <span class="text-slate-700 font-mono">{{ issuer.bank.account }}</span>
+            <span class="text-slate-400">Routing</span>
+            <span class="text-slate-700 font-mono">{{ issuer.bank.routing }}</span>
+            <span class="text-slate-400">Reference</span>
+            <span class="text-slate-700 font-medium">#{{ invoice.number }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thank you -->
+      <div class="poli-last p-4 mt-auto flex items-center gap-2">
+        <poli-icon name="favorite" fill class="w-5 h-5 text-red-500" />
+        <span class="font-serif text-base text-navy/70 italic">Thank you for your business.</span>
+      </div>
+    </main>
+  </div>
+</div>

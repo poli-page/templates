@@ -1,0 +1,44 @@
+{
+	"project": {
+		"name": "playground",
+		"version": "1.0.0",
+		"description": "Poli Page Playground — starter templates for the online playground"
+	},
+	"templates": [
+		{
+			"name": "invoice",
+			"template": "invoice.html",
+			"mock": "invoice.json",
+			"format": "A4",
+			"orientation": "portrait"
+		},
+		{
+			"name": "report",
+			"template": "report.html",
+			"mock": "report.json",
+			"format": "A4",
+			"orientation": "portrait"
+		},
+		{
+			"name": "certificate",
+			"template": "certificate.html",
+			"mock": "certificate.json",
+			"format": "A5",
+			"orientation": "landscape"
+		},
+		{
+			"name": "empty",
+			"template": "empty.html",
+			"mock": "empty.json",
+			"format": "A4",
+			"orientation": "portrait"
+		},
+		{
+			"name": "header-sidebar-main-footer",
+			"template": "header-sidebar-main-footer.html",
+			"mock": "header-sidebar-main-footer.json",
+			"format": "A4",
+			"orientation": "portrait"
+		}
+	]
+}

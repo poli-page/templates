@@ -1,0 +1,66 @@
+<div class="bg-white text-gray-800 text-sm font-sans px-10 pt-8 pb-4 flex flex-col gap-6 w-full">
+
+  <!-- Header with meta-variables -->
+  <div class="poli-header poli-not-first bg-slate-700 text-white p-3 rounded flex justify-between items-center">
+    <span class="font-bold">Annual Report 2026</span>
+    <span class="text-slate-300 text-xs">Page {{ poli.currentPage }} of {{ poli.totalPages }}</span>
+  </div>
+
+  <!-- Footer with meta-variables -->
+  <div class="poli-footer bg-slate-100 text-slate-500 p-2 rounded text-center text-xs">
+    Annual Report &mdash; Page {{ poli.currentPage }} / {{ poli.totalPages }} &mdash; Confidential
+  </div>
+
+  <!-- Chapter 1: No break (first page) -->
+  <div>
+    <h1 class="text-2xl font-bold text-slate-900 mb-4">Annual Report 2026</h1>
+    <div class="bg-slate-50 p-4 rounded">
+      <h2 class="poli-title text-lg font-bold mb-2">Chapter 1: Company Overview</h2>
+      <p class="mb-2">Founded in 2015, our company has grown from a small startup to a leading provider of enterprise software solutions. Our mission remains unchanged: to empower organizations with intelligent tools that drive productivity and innovation.</p>
+      <p class="mb-2">This year marked a significant milestone as we surpassed 10,000 active enterprise customers across 45 countries. Our platform processes over 2 billion transactions daily, maintaining 99.99% uptime throughout the year.</p>
+      <p>The following chapters detail our financial performance, strategic initiatives, and outlook for the coming year.</p>
+    </div>
+  </div>
+
+  <!-- Chapter 2: poli-break (always starts new page) -->
+  <div class="poli-break">
+    <div class="bg-slate-50 p-4 rounded">
+      <h2 class="poli-title text-lg font-bold mb-2">Chapter 2: Financial Performance</h2>
+      <p class="mb-2">Revenue for fiscal year 2026 reached $185M, representing a 28% year-over-year increase. This growth was driven by strong demand for our AI-powered analytics suite and expansion in the Asia-Pacific region.</p>
+      <p class="mb-2">Gross margin improved to 72%, up from 68% in the prior year, reflecting economies of scale in our cloud infrastructure and improved operational efficiency. Operating expenses grew at a more moderate 15%, resulting in significant operating leverage.</p>
+      <p class="mb-2">Net income was $42M with earnings per share of $2.85, exceeding analyst consensus by 12%. Free cash flow generation was robust at $55M, providing ample capital for both organic investment and potential acquisitions.</p>
+      <p>Our balance sheet remains strong with $320M in cash and equivalents, zero long-term debt, and a current ratio of 3.2x.</p>
+    </div>
+  </div>
+
+  <!-- Chapter 3: poli-break (always starts new page) -->
+  <div class="poli-break">
+    <div class="bg-slate-50 p-4 rounded">
+      <h2 class="poli-title text-lg font-bold mb-2">Chapter 3: Product Innovation</h2>
+      <p class="mb-2">This year we launched three major product updates that significantly enhanced our platform capabilities. The AI Assistant feature, released in Q2, uses large language models to help users automate routine tasks and generate insights from complex datasets.</p>
+      <p class="mb-2">Our new collaboration suite, launched in Q3, enables real-time multi-user editing with conflict resolution, bringing our platform closer to the seamless experience users expect from modern productivity tools.</p>
+      <p class="mb-2">The Advanced Security Module, deployed in Q4, adds zero-trust architecture support, automated threat detection, and compliance reporting for SOC 2, HIPAA, and GDPR requirements.</p>
+      <p>Customer adoption of these new features has been encouraging, with the AI Assistant seeing 78% activation rates within the first month of availability across our enterprise base.</p>
+    </div>
+  </div>
+
+  <!-- Chapter 4: poli-break poli-even (starts on odd/right page — inserts blank page if needed) -->
+  <div class="poli-break poli-even bg-amber-50 border-l-4 border-amber-500 p-4 rounded">
+    <h2 class="poli-title text-lg font-bold text-amber-800 mb-2">Chapter 4: Strategic Outlook (starts on odd page)</h2>
+    <p class="mb-2 text-amber-700"><em>This chapter uses <code>poli-break poli-even</code> to ensure it starts on an odd-numbered page (right side in book layout). If the previous chapter ended on an odd page, a blank page is inserted.</em></p>
+    <p class="mb-2">Looking ahead to 2027, we are positioning the company for continued growth through three strategic pillars: geographic expansion, product portfolio deepening, and strategic partnerships.</p>
+    <p class="mb-2">Our expansion into Southeast Asian markets is progressing well, with offices opening in Singapore, Jakarta, and Ho Chi Minh City. We expect these markets to contribute 15% of total revenue within three years.</p>
+    <p class="mb-2">On the product front, we are investing heavily in generative AI capabilities that will transform how our customers interact with data. Our R&D budget has increased to 22% of revenue, reflecting the strategic importance of these initiatives.</p>
+    <p>Partnership discussions with several major cloud providers are in advanced stages, which we expect will accelerate our go-to-market in key verticals including healthcare, financial services, and government.</p>
+  </div>
+
+  <!-- Chapter 5: poli-break (always starts new page) -->
+  <div class="poli-break">
+    <div class="bg-slate-50 p-4 rounded">
+      <h2 class="poli-title text-lg font-bold mb-2">Chapter 5: People & Culture</h2>
+      <p class="mb-2">Our team grew to 1,200 employees this year, a 30% increase from the prior year. We maintained our commitment to diversity, with women representing 42% of our workforce and 38% of leadership positions.</p>
+      <p class="mb-2">Employee satisfaction scores remained high at 4.3/5.0, and our annual turnover rate of 8% continues to be well below the industry average of 15%. We attribute this to our focus on professional development, flexible work arrangements, and competitive compensation.</p>
+      <p>Our engineering team completed over 2,000 deployments this year with zero critical incidents, a testament to our investment in engineering practices, automated testing, and observability infrastructure.</p>
+    </div>
+  </div>
+</div>

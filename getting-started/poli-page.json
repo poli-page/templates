@@ -1,0 +1,36 @@
+{
+  "project": {
+    "name": "getting-started",
+    "version": "1.0.0",
+    "description": "The 4 getting-started templates"
+  },
+  "engine": {
+    "paginationOptions": {
+      "orphanThreshold": 0.08,
+      "cssRenderingPrecision": 3
+    },
+    "imageSizeWarningThreshold": 256000
+  },
+  "templates": [
+    {
+      "name": "welcome",
+      "template": "welcome.html",
+      "mock": "welcome.json"
+    },
+    {
+      "name": "01-layout-essentials",
+      "template": "01-layout-essentials.html",
+      "mock": "01-layout-essentials.json"
+    },
+    {
+      "name": "02-data-and-content",
+      "template": "02-data-and-content.html",
+      "mock": "02-data-and-content.json"
+    },
+    {
+      "name": "03-multi-format-and-flow",
+      "template": "03-multi-format-and-flow.html",
+      "mock": "03-multi-format-and-flow.json"
+    }
+  ]
+}

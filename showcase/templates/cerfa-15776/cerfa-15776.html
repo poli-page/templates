@@ -1,0 +1,670 @@
+<!-- Cerfa 15776*02 — Certificat de cession d'un véhicule d'occasion -->
+<div poli-clone="2" class="flex flex-col font-cerfa text-[8pt] leading-tight text-black pt-[26px] px-[37px] pb-[13px]">
+  <!-- HEADER -->
+  <header class="flex justify-between items-start">
+    <!-- Logo Ministère -->
+    <div class="pl-1 w-[34mm] -mt-[5px] -ml-[16px] mr-[31px]">
+      <img poli-asset="images/logo-ministere-interieur.svg" alt="Ministère de l'Intérieur" />
+    </div>
+
+    <!-- Title -->
+    <div class="text-center flex-1 pt-[9px]">
+      <h1 class="text-cerfa font-bold tracking-[0.005em] text-[10pt] uppercase mb-[7px]">
+        Certificat de cession d'un véhicule d'occasion
+      </h1>
+      <p class="text-cerfa font-bold text-[10pt] mb-[3px]">
+        (à remplir par l'ancien propriétaire et le nouveau propriétaire)
+      </p>
+      <p class="font-bold text-[9pt] tracking-[-0.005em] pr-[4px] mb-[0.5px]">
+        Articles R322-4 et R322-9 du code de la route
+      </p>
+      <p class="poli-first text-right italic text-[8pt] font-extralight tracking-[-0.017em] -mr-[140px]">
+        {{ form.previousOwnerCopy }}
+      </p>
+      <p class="poli-not-first text-right italic text-[8pt] font-extralight tracking-[-0.017em] -mr-[140px]">
+        {{ form.newOwnerCopy }}
+      </p>
+    </div>
+    <!-- Logo Cerfa -->
+    <div class="w-[142px] flex justify-end pr-[1px]">
+      <div class="flex flex-col items-center justify-center">
+        <img poli-asset="images/logo-cerfa.png" alt="Cerfa" class="w-[52px] h-[21px]" />
+        <p class="font-bold text-[9pt] text-center mt-[1px]">N° 15776*02</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="flex-1 flex flex-col justify-between gap-[10px]">
+    <!-- VEHICULE -->
+    <div class="border-[1.2pt] border-cerfa shrink-0 relative mt-[3px] pt-[24px] pb-[1px] pl-[7px] pr-[10px]">
+      <div
+        class="tracking-[0.06em] text-cerfa text-[9pt] px-[4px] bg-white uppercase absolute font-bold top-[-7px] left-[21px]"
+      >
+        Le véhicule
+        <span class="normal-case font-bold text-[9pt] tracking-[0.055em]">(à remplir par l'ancien propriétaire)</span>
+      </div>
+      <div class="flex justify-between gap-[8px] mb-[5px]">
+        <div class="flex flex-col pt-[7px]">
+          <div class="comb">
+            @let immat = stringToArray(vehicle.registrationNumber, 9);
+            <div class="comb-cell">{{ immat[0] }}</div>
+            <div class="comb-cell">{{ immat[1] }}</div>
+            <div class="comb-cell">{{ immat[2] }}</div>
+            <div class="comb-cell">{{ immat[3] }}</div>
+            <div class="comb-cell">{{ immat[4] }}</div>
+            <div class="comb-cell">{{ immat[5] }}</div>
+            <div class="comb-cell">{{ immat[6] }}</div>
+            <div class="comb-cell">{{ immat[7] }}</div>
+            <div class="comb-cell">{{ immat[8] }}</div>
+          </div>
+          <div class="text-[6pt] mt-[1px] tracking-[0.019em]">(A) Numéro d'immatriculation du véhicule</div>
+        </div>
+        <div class="flex flex-col pt-[7px]">
+          <div class="comb">
+            @let vin = stringToArray(vehicle.vin, 17);
+            <div class="comb-cell">{{ vin[0] }}</div>
+            <div class="comb-cell">{{ vin[1] }}</div>
+            <div class="comb-cell">{{ vin[2] }}</div>
+            <div class="comb-cell">{{ vin[3] }}</div>
+            <div class="comb-cell">{{ vin[4] }}</div>
+            <div class="comb-cell">{{ vin[5] }}</div>
+            <div class="comb-cell">{{ vin[6] }}</div>
+            <div class="comb-cell">{{ vin[7] }}</div>
+            <div class="comb-cell">{{ vin[8] }}</div>
+            <div class="comb-cell">{{ vin[9] }}</div>
+            <div class="comb-cell">{{ vin[10] }}</div>
+            <div class="comb-cell">{{ vin[11] }}</div>
+            <div class="comb-cell">{{ vin[12] }}</div>
+            <div class="comb-cell">{{ vin[13] }}</div>
+            <div class="comb-cell">{{ vin[14] }}</div>
+            <div class="comb-cell">{{ vin[15] }}</div>
+            <div class="comb-cell">{{ vin[16] }}</div>
+          </div>
+          <div class="text-[6pt] mt-[1px] tracking-[0.019em]">(E) Numéro d'identification du véhicule</div>
+        </div>
+        <div class="ml-[20px] flex flex-col pt-[7px]">
+          <div class="flex gap-[5px]">
+            @let firstRegDate = formatDate(vehicle.firstRegistrationDate, 'short');
+            @let reg = stringToArray(firstRegDate, 10);
+            <div class="comb">
+              <div class="comb-cell-2">{{ reg[0] }}</div>
+              <div class="comb-cell-2">{{ reg[1] }}</div>
+            </div>
+            <div class="comb">
+              <div class="comb-cell-2">{{ reg[3] }}</div>
+              <div class="comb-cell-2">{{ reg[4] }}</div>
+            </div>
+            <div class="comb">
+              <div class="comb-cell-2">{{ reg[6] }}</div>
+              <div class="comb-cell-2">{{ reg[7] }}</div>
+              <div class="comb-cell-2">{{ reg[8] }}</div>
+              <div class="comb-cell-2">{{ reg[9] }}</div>
+            </div>
+          </div>
+          <div class="text-[6pt] mt-[1px] tracking-[0.019em]">
+            (B) Date de 1
+            <sup>re</sup>
+            immatriculation du véhicule
+          </div>
+        </div>
+      </div>
+      <div class="flex mb-[12px]">
+        <div class="flex flex-col pt-[7px] mr-[11px]">
+          <div class="comb">
+            <span class="text-field w-[175px] px-1">{{ vehicle.brand }}</span>
+          </div>
+          <div class="text-[6pt] mt-[1px] tracking-[0.019em]">(D.1 Marque)</div>
+        </div>
+        <div class="flex flex-col pt-[7px] mr-[18px]">
+          <div class="comb">
+            <span class="text-field w-[179px] px-1">{{ vehicle.typeVariantVersion }}</span>
+          </div>
+          <div class="text-[6pt] mt-[1px] tracking-[0.019em]">(D.2 Type, variante, version)</div>
+        </div>
+        <div class="flex flex-col pt-[7px] mr-[12px]">
+          <div class="comb">
+            <span class="text-field w-[148px] px-1">{{ vehicle.nationalGenre }}</span>
+          </div>
+          <div class="text-[6pt] mt-[1px] tracking-[0.019em]">(J.1 Genre national)</div>
+        </div>
+        <div class="flex flex-col pt-[7px]">
+          <div class="comb">
+            <span class="text-field w-[157px] px-1">{{ vehicle.commercialName }}</span>
+          </div>
+          <div class="text-[6pt] mt-[1px] tracking-[0.019em]">(D.3 Dénomination commerciale)</div>
+        </div>
+      </div>
+      <div class="flex gap-[3px] items-center mb-[7px]">
+        <span class="tracking-wide">Kilométrage inscrit au compteur du véhicule :</span>
+        <div class="comb">
+          <span class="text-field w-[90px] px-1">{{ formatNumber(vehicle.mileage) }}</span>
+        </div>
+      </div>
+      <div class="flex gap-[3px] items-center mb-[5px]">
+        <span class="tracking-wide">Présence du certificat d'immatriculation :</span>
+      </div>
+      <div class="flex justify-between gap-1">
+        <div class="flex-1 flex flex-col justify-start">
+          <div class="flex items-center">
+            <!-- OUI -->
+            @if (vehicle.registrationCertificatePresent) {
+              <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+            } @else {
+              <poli-icon
+                name="check_box_outline_blank"
+                style-name="sharp"
+                class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]"
+              />
+            }
+            <span class="font-bold mr-[2px] uppercase">Oui</span>
+            <span>— numéro de formule</span>
+            <div class="comb ml-1">
+              @let formula = stringToArray(vehicle.formulaNumber, 11);
+              <div class="comb-cell">{{ formula[0] }}</div>
+              <div class="comb-cell">{{ formula[1] }}</div>
+              <div class="comb-cell">{{ formula[2] }}</div>
+              <div class="comb-cell">{{ formula[3] }}</div>
+              <div class="comb-cell">{{ formula[4] }}</div>
+              <div class="comb-cell">{{ formula[5] }}</div>
+              <div class="comb-cell">{{ formula[6] }}</div>
+              <div class="comb-cell">{{ formula[7] }}</div>
+              <div class="comb-cell">{{ formula[8] }}</div>
+              <div class="comb-cell">{{ formula[9] }}</div>
+              <div class="comb-cell">{{ formula[10] }}</div>
+            </div>
+          </div>
+          <div class="flex flex-col ml-[49px]">
+            <div class="text-[6pt] mt-[1px] tracking-[0.019em]">
+              (figure sur le 1er volet du certificat d'immatriculation de type AB-123-CD)
+            </div>
+            <div class="flex items-center mt-[3px]">
+              <span>ou (I) date du certificat d'immatriculation</span>
+              <div class="flex gap-[5px] mr-[2px]">
+                @let regDate = formatDate(vehicle.registrationCertificateDate, 'short');
+                @let reg2 = stringToArray(regDate, 10);
+                <div class="comb ml-1">
+                  <div class="comb-cell-2">{{ reg2[0] }}</div>
+                  <div class="comb-cell-2">{{ reg2[1] }}</div>
+                </div>
+                <div class="comb">
+                  <div class="comb-cell-2">{{ reg2[3] }}</div>
+                  <div class="comb-cell-2">{{ reg2[4] }}</div>
+                </div>
+                <div class="comb">
+                  <div class="comb-cell-2">{{ reg2[6] }}</div>
+                  <div class="comb-cell-2">{{ reg2[7] }}</div>
+                  <div class="comb-cell-2">{{ reg2[8] }}</div>
+                  <div class="comb-cell-2">{{ reg2[9] }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="text-[6pt] tracking-[0.019em]">(si ancien format d'immatriculation de type 123 AB 45)</div>
+          </div>
+        </div>
+        <div class="flex-none w-[296px] flex flex-col gap-[5px] -mt-[5px] justify-start">
+          <div class="flex items-center">
+            <!-- NON -->
+            <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+            <span class="font-bold mr-[2px] uppercase">Non</span>
+            <span>— Motif d'absence de certificat d'immatriculation :</span>
+          </div>
+
+          @let reason = wrapText(vehicle.absenceReason, 34, 2);
+          <div class="comb">
+            <span class="text-field border-x-0 w-full px-1">{{ reason[0] }}</span>
+          </div>
+          <div class="comb mt-[2px]">
+            <span class="text-field border-x-0 w-full px-1">{{ reason[1] }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANCIEN PROPRIETAIRE -->
+    <div class="border-[1.2pt] border-cerfa shrink-0 relative mt-[3px] pt-[18px] pb-[39px] pl-[7px] pr-[10px]">
+      <div class="tracking-[0.06em] text-cerfa text-[9pt] px-[4px] bg-white absolute font-bold top-[-7px] left-[21px]">
+        Ancien propriétaire
+      </div>
+
+      <div class="flex items-center">
+        @if (previousOwner.type === 'individual') {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        }
+        <span class="font-bold mr-[8px]">Personne physique ou entreprise individuelle</span>
+        <span class="mr-[9px]">—</span>
+        <span class="mr-[10px]">Sexe :</span>
+        <span class="mr-[2px]">M</span>
+
+        @if (previousOwner.sex === 'M') {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] mr-[9px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] mr-[9px]" />
+        }
+        <span class="mr-[2px]">F</span>
+        @if (previousOwner.sex === 'F') {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] mr-[2px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] mr-[2px]" />
+        }
+      </div>
+      <div class="flex items-center mb-[12px]">
+        @if (previousOwner.type !== 'individual') {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        }
+        <span class="font-bold mr-[8px]">Personne morale</span>
+      </div>
+      <div class="flex items-end mt-2 mb-[1px]">
+        <span class="text-[7pt] mr-[4px]">Je soussigné(e),</span>
+
+        <div class="comb">
+          <span class="text-field w-[384px] px-1">{{ previousOwner.fullName }}</span>
+        </div>
+        <div class="comb ml-6">
+          @let siret = stringToArray(previousOwner.siret, 14);
+          <div class="comb-cell-2">{{ siret[0] }}</div>
+          <div class="comb-cell-2">{{ siret[1] }}</div>
+          <div class="comb-cell-2">{{ siret[2] }}</div>
+          <div class="comb-cell-2">{{ siret[3] }}</div>
+          <div class="comb-cell-2">{{ siret[4] }}</div>
+          <div class="comb-cell-2">{{ siret[5] }}</div>
+          <div class="comb-cell-2">{{ siret[6] }}</div>
+          <div class="comb-cell-2">{{ siret[7] }}</div>
+          <div class="comb-cell-2">{{ siret[8] }}</div>
+          <div class="comb-cell-2">{{ siret[9] }}</div>
+          <div class="comb-cell-2">{{ siret[10] }}</div>
+          <div class="comb-cell-2">{{ siret[11] }}</div>
+          <div class="comb-cell-2">{{ siret[12] }}</div>
+          <div class="comb-cell-2">{{ siret[13] }}</div>
+        </div>
+      </div>
+      <div class="flex items-center justify-start ml-[77px] mb-[18px]">
+        <div class="text-[6pt] tracking-[0.019em] mr-[134px]">
+          NOM, NOM D'USAGE le cas échéant et PRENOM ou RAISON SOCIALE
+        </div>
+        <div class="text-[6pt] tracking-[0.019em]">N° SIRET, (le cas échéant)</div>
+      </div>
+
+      <div class="flex mb-[12px]">
+        <span class="flex-none mr-[4px]">Adresse complète :</span>
+        <div class="flex-1 flex flex-col gap-[7px] pt-[2px] w-full">
+          <div class="flex gap-[7px] w-full">
+            <!-- Line 1 -->
+            <div class="flex-none flex flex-col">
+              <div class="comb">
+                <span class="text-field w-[58px] px-1">{{ previousOwner.address.streetNumber }}</span>
+              </div>
+              <div class="text-[6pt] mt-[1px] tracking-[0.019em]">N° de la voie</div>
+            </div>
+            <div class="flex-none flex flex-col">
+              <div class="comb">
+                <span class="text-field w-[76px] px-1">{{ previousOwner.address.extension }}</span>
+              </div>
+              <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Extension (bis, ter, .)</div>
+            </div>
+            <div class="flex-none flex flex-col">
+              <div class="comb">
+                <span class="text-field w-[104px] px-1">{{ previousOwner.address.streetType }}</span>
+              </div>
+              <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Type de voie (avenue, etc.)</div>
+            </div>
+            <div class="flex-1 flex flex-col">
+              <div class="comb">
+                <span class="text-field w-full px-1">{{ previousOwner.address.streetName }}</span>
+              </div>
+              <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Nom de la voie</div>
+            </div>
+          </div>
+          <div class="flex gap-[7px] w-full">
+            <!-- Line 2 -->
+            <div class="flex-none flex flex-col">
+              <div class="comb">
+                @let cp = stringToArray(previousOwner.address.postalCode, 5);
+                <div class="comb-cell">{{ cp[0] }}</div>
+                <div class="comb-cell">{{ cp[1] }}</div>
+                <div class="comb-cell">{{ cp[2] }}</div>
+                <div class="comb-cell">{{ cp[3] }}</div>
+                <div class="comb-cell">{{ cp[4] }}</div>
+              </div>
+              <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Code postal</div>
+            </div>
+            <div class="flex-1 flex flex-col">
+              <div class="comb">
+                <span class="text-field w-full px-1">{{ previousOwner.address.city }}</span>
+              </div>
+              <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Commune</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center mb-[9px]">
+        <span class="mr-[5px]">
+          Certifie
+          <span class="text-[6pt] tracking-[0.019em]">(veuillez cocher la case correspondante)</span>
+          :
+        </span>
+        @if (previousOwner.cessionType === 'sell') {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] mr-[4px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] mr-[4px]" />
+        }
+        <span class="mr-[22px]">céder</span>
+        @if (previousOwner.cessionType !== 'sell') {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] mr-[4px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] mr-[4px]" />
+        }
+        <span class="mr-[2px]">céder pour destruction</span>
+      </div>
+
+      <div class="flex items-center gap-[4px] mb-[15px]">
+        <span>Le</span>
+        <div class="flex gap-[4px]">
+          @let cessionDate = formatDate(previousOwner.cessionDate, 'short');
+          @let cession = stringToArray(cessionDate, 10);
+          <div class="comb">
+            <div class="comb-cell-2">{{ cession[0] }}</div>
+            <div class="comb-cell-2">{{ cession[1] }}</div>
+          </div>
+          <div class="comb">
+            <div class="comb-cell-2">{{ cession[3] }}</div>
+            <div class="comb-cell-2">{{ cession[4] }}</div>
+          </div>
+          <div class="comb">
+            <div class="comb-cell-2">{{ cession[6] }}</div>
+            <div class="comb-cell-2">{{ cession[7] }}</div>
+            <div class="comb-cell-2">{{ cession[8] }}</div>
+            <div class="comb-cell-2">{{ cession[9] }}</div>
+          </div>
+        </div>
+        <span>à</span>
+
+        @let cessionTime = stringToArray(previousOwner.cessionTime, 5);
+        <div class="comb">
+          <div class="comb-cell-2">{{ cessionTime[0] }}</div>
+          <div class="comb-cell-2">{{ cessionTime[1] }}</div>
+        </div>
+        <span>h</span>
+        <div class="comb">
+          <div class="comb-cell-2">{{ cessionTime[3] }}</div>
+          <div class="comb-cell-2">{{ cessionTime[4] }}</div>
+        </div>
+        <span class="ml-[4px]">le véhicule désigné ci-dessus.</span>
+      </div>
+      <div>
+        Je certifie en outre
+        <span class="text-[6pt] tracking-[0.019em]">(veuillez cocher la case correspondante)</span>
+        :
+      </div>
+      <div class="flex items-start">
+        @if (previousOwner.certifications.administrativeCertificate) {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        }
+        <p class="text-[8pt] tracking-[0.019em]">
+          Avoir remis au nouveau propriétaire un certificat établi depuis moins de quinze jours par le ministre de
+          l'Intérieur, attestant à sa date d'édition de la situation administrative du véhicule ;
+        </p>
+      </div>
+      <div class="flex items-start">
+        @if (previousOwner.certifications.noModification) {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        }
+        <p class="text-[8pt] tracking-[0.019em]">
+          Que ce véhicule n'a pas subi de transformation notable susceptible de modifier les indications du certificat
+          de conformité ou de l'actuel certificat d'immatriculation ;
+        </p>
+      </div>
+      <div class="flex items-start">
+        @if (previousOwner.certifications.destructionProfessional) {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        }
+        <div class="flex flex-col">
+          <p class="text-[8pt] tracking-[0.019em]">
+            Que ce véhicule est cédé pour destruction à un professionnel de la destruction des véhicules hors d'usage
+            (VHU)
+          </p>
+          <div class="flex flex-row text-[8pt] tracking-[0.019em]">
+            <span class="mr-[3px]">portant le n° d'agrément :</span>
+            <div class="comb mt-[3px]">
+              <span class="text-field border-x-0 w-[139px] px-1">{{ previousOwner.vhuApprovalNumber }}</span>
+            </div>
+            <span class="text-[8pt] tracking-[0.019em]">
+              . (Le numero d'agrément VHU du professionnel acquéreur est obligatoire si le
+            </span>
+          </div>
+          <span class="text-[8pt] tracking-[0.018em]">
+            véhicule est une voiture particuliere, une camionnette ou un cyclomoteur a trois roues. La liste des
+            professionnels agréés est disponible sur https://immatriculation.ants.gouv.fr).
+          </span>
+        </div>
+      </div>
+      <div class="flex justify-between items-start mt-[11px]">
+        <div class="flex-none flex w-[400px]">
+          <span class="text-[10pt] mr-[4px]">Fait à</span>
+          <div class="comb mt-[6px]">
+            <span class="text-field border-x-0 w-[154px] px-1">{{ previousOwner.signaturePlace }}</span>
+          </div>
+          <span class="text-[10pt] mr-[4px]">, le</span>
+          <div class="comb mt-[6px]">
+            <span class="text-field border-x-0 w-[110px] px-1">
+              {{ formatDate(previousOwner.signatureDate, 'short') }}
+            </span>
+          </div>
+        </div>
+
+        <div class="flex-1 text-right pr-[13px]">
+          <p class="font-bold text-[10pt] -mt-[2px] tracking-[-0.015em]">Signature de l'ancien propriétaire,</p>
+          <p class="text-[8pt] leading-tight tracking-[0.019em] text-center pl-[98px] pr-[20px]">
+            (Pour les sociétés : nom et qualité du signataire et cachet)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOUVEAU PROPRIETAIRE -->
+    <div class="border-[1.2pt] border-cerfa shrink-0 relative mt-[3px] pt-[19px] pb-[35px] pl-[7px] pr-[10px]">
+      <div class="tracking-[0.06em] text-cerfa text-[9pt] px-[4px] bg-white absolute font-bold top-[-7px] left-[21px]">
+        Nouveau propriétaire
+      </div>
+
+      <div class="flex items-center">
+        @if (newOwner.type === 'individual') {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        }
+        <span class="font-bold mr-[8px]">Personne physique ou entreprise individuelle</span>
+        <span class="mr-[9px]">—</span>
+        <span class="mr-[10px]">Sexe :</span>
+        <span class="mr-[2px]">M</span>
+
+        @if (newOwner.sex === 'M') {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] mr-[9px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] mr-[9px]" />
+        }
+        <span class="mr-[2px]">F</span>
+        @if (newOwner.sex === 'F') {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] mr-[2px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] mr-[2px]" />
+        }
+      </div>
+      <div class="flex items-center mb-[12px]">
+        @if (newOwner.type !== 'individual') {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        }
+        <span class="font-bold mr-[8px]">Personne morale</span>
+      </div>
+      <div class="flex items-end mt-2 mb-[1px]">
+        <span class="text-[7pt] mr-[4px]">Je soussigné(e),</span>
+
+        <div class="comb">
+          <span class="text-field w-[384px] px-1">{{ newOwner.fullName }}</span>
+        </div>
+        <div class="comb ml-6">
+          @let siret2 = stringToArray(newOwner.siret, 14);
+          <div class="comb-cell-2">{{ siret2[0] }}</div>
+          <div class="comb-cell-2">{{ siret2[1] }}</div>
+          <div class="comb-cell-2">{{ siret2[2] }}</div>
+          <div class="comb-cell-2">{{ siret2[3] }}</div>
+          <div class="comb-cell-2">{{ siret2[4] }}</div>
+          <div class="comb-cell-2">{{ siret2[5] }}</div>
+          <div class="comb-cell-2">{{ siret2[6] }}</div>
+          <div class="comb-cell-2">{{ siret2[7] }}</div>
+          <div class="comb-cell-2">{{ siret2[8] }}</div>
+          <div class="comb-cell-2">{{ siret2[9] }}</div>
+          <div class="comb-cell-2">{{ siret2[10] }}</div>
+          <div class="comb-cell-2">{{ siret2[11] }}</div>
+          <div class="comb-cell-2">{{ siret2[12] }}</div>
+          <div class="comb-cell-2">{{ siret2[13] }}</div>
+        </div>
+      </div>
+      <div class="flex items-center justify-start ml-[77px] mb-[7px]">
+        <div class="text-[6pt] tracking-[0.019em] mr-[134px]">
+          NOM, NOM D'USAGE le cas échéant et PRENOM ou RAISON SOCIALE
+        </div>
+        <div class="text-[6pt] tracking-[0.019em]">N° SIRET, (le cas échéant)</div>
+      </div>
+      <div class="flex items-center gap-[6px] mb-4">
+        <span>Né(e) le</span>
+        <div class="flex gap-[4px]">
+          @let birthDate = formatDate(newOwner.birthDate, 'short');
+          @let birth = stringToArray(birthDate, 10);
+          <div class="comb">
+            <div class="comb-cell-2">{{ birth[0] }}</div>
+            <div class="comb-cell-2">{{ birth[1] }}</div>
+          </div>
+          <div class="comb">
+            <div class="comb-cell-2">{{ birth[3] }}</div>
+            <div class="comb-cell-2">{{ birth[4] }}</div>
+          </div>
+          <div class="comb">
+            <div class="comb-cell-2">{{ birth[6] }}</div>
+            <div class="comb-cell-2">{{ birth[7] }}</div>
+            <div class="comb-cell-2">{{ birth[8] }}</div>
+            <div class="comb-cell-2">{{ birth[9] }}</div>
+          </div>
+        </div>
+        <span>à</span>
+        <div class="flex-1 comb">
+          <span class="text-field w-full px-1">{{ newOwner.birthPlace }}</span>
+        </div>
+      </div>
+      <div class="flex mb-[10px]">
+        <span class="flex-none mr-[4px]">Adresse complète :</span>
+        <div class="flex-1 flex flex-col gap-[7px] pt-[2px] w-full">
+          <div class="flex gap-[7px] w-full">
+            <!-- Line 1 -->
+            <div class="flex-none flex flex-col">
+              <div class="comb">
+                <span class="text-field w-[58px] px-1">{{ newOwner.address.streetNumber }}</span>
+              </div>
+              <div class="text-[6pt] mt-[1px] tracking-[0.019em]">N° de la voie</div>
+            </div>
+            <div class="flex-none flex flex-col">
+              <div class="comb">
+                <span class="text-field w-[76px] px-1">{{ newOwner.address.extension }}</span>
+              </div>
+              <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Extension (bis, ter, .)</div>
+            </div>
+            <div class="flex-none flex flex-col">
+              <div class="comb">
+                <span class="text-field w-[104px] px-1">{{ newOwner.address.streetType }}</span>
+              </div>
+              <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Type de voie (avenue, etc.)</div>
+            </div>
+            <div class="flex-1 flex flex-col">
+              <div class="comb">
+                <span class="text-field w-full px-1">{{ newOwner.address.streetName }}</span>
+              </div>
+              <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Nom de la voie</div>
+            </div>
+          </div>
+          <div class="flex gap-[7px] w-full">
+            <!-- Line 2 -->
+            <div class="flex-none flex flex-col">
+              <div class="comb">
+                @let cp2 = stringToArray(newOwner.address.postalCode, 5);
+                <div class="comb-cell">{{ cp2[0] }}</div>
+                <div class="comb-cell">{{ cp2[1] }}</div>
+                <div class="comb-cell">{{ cp2[2] }}</div>
+                <div class="comb-cell">{{ cp2[3] }}</div>
+                <div class="comb-cell">{{ cp2[4] }}</div>
+              </div>
+              <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Code postal</div>
+            </div>
+            <div class="flex-1 flex flex-col">
+              <div class="comb">
+                <span class="text-field w-full px-1">{{ newOwner.address.city }}</span>
+              </div>
+              <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Commune</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-[4px]">
+        Certifie
+        <span class="text-[6pt] tracking-[0.019em]">(veuillez cocher la case correspondante)</span>
+        :
+      </div>
+      <div class="flex items-start mb-[2px]">
+        @if (newOwner.certifications.acquireVehicle) {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        }
+        <p class="text-[8pt] tracking-[0.019em]">
+          Acquérir le véhicule désigné ci-dessus aux dates et heures indiquées par l'ancien propriétaire ;
+        </p>
+      </div>
+      <div class="flex items-start mb-[2px]">
+        @if (newOwner.certifications.informedAdministrativeStatus) {
+          <poli-icon name="check_box" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        } @else {
+          <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[11pt] h-[11pt] -ml-[2px] mr-[2px]" />
+        }
+        <p class="text-[8pt] tracking-[0.019em]">Avoir été informé de la situation administrative du véhicule.</p>
+      </div>
+
+      <div class="flex justify-between items-start mt-[15px]">
+        <div class="flex-none flex w-[400px]">
+          <span class="text-[10pt] mr-[4px]">Fait à</span>
+          <div class="comb mt-[6px]">
+            <span class="text-field border-x-0 w-[154px] px-1">{{ newOwner.signaturePlace }}</span>
+          </div>
+          <span class="text-[10pt] mr-[4px]">, le</span>
+          <div class="comb mt-[6px]">
+            <span class="text-field border-x-0 w-[110px] px-1">{{ formatDate(newOwner.signatureDate, 'short') }}</span>
+          </div>
+        </div>
+
+        <div class="flex-1 text-right pr-[11px]">
+          <p class="font-bold text-[10pt] -mt-[2px] tracking-[-0.015em]">Signature du nouveau propriétaire,</p>
+          <p class="text-[8pt] leading-tight tracking-[0.019em] text-center pl-[98px] pr-[20px]">
+            (Pour les sociétés : nom et qualité du signataire et cachet)
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="text-center font-bold text-[9pt] flex justify-center items-center">
+    Je m'oppose à la réutilisation de mes données personnelles à des fins de prospection commerciale
+    <poli-icon name="check_box_outline_blank" style-name="sharp" class="w-[16pt] ml-[12px]" />
+  </div>
+</div>

@@ -1,0 +1,60 @@
+{
+  "locale": "fr",
+  "data": {
+    "institution": "Ministère de la Vie Quotidienne",
+    "academy": "Académie des Arts Domestiques",
+    "signerTitle": "Le Président du Jury",
+    "certificates": [
+      {
+        "color": "#C5A55A",
+        "title": "DIPLÔME",
+        "subtitle": "D'ALLUMAGE DE BBQ\nEN MOINS D'UNE MINUTE",
+        "recipientName": "Jean-Michel Durand",
+        "description": "Vu les délibérations du jury après observation attentive des techniques employées, chronométrage officiel certifié conforme et dégustation des premières grillades",
+        "icon": "outdoor_grill",
+        "location": "Lyon",
+        "date": "2026-06-15T00:00:00Z"
+      },
+      {
+        "color": "#B05C4B",
+        "title": "CERTIFICAT",
+        "subtitle": "DE BINGE-WATCHING\nININTERROMPU",
+        "recipientName": "Sophie Martin-Lefèvre",
+        "description": "Après vérification du temps d'écran, analyse des historiques de streaming et audition des témoins oculaires ayant constaté l'immobilité prolongée du sujet",
+        "icon": "live_tv",
+        "location": "Bordeaux",
+        "date": "2026-04-02T00:00:00Z"
+      },
+      {
+        "color": "#5B7F67",
+        "title": "ATTESTATION",
+        "subtitle": "DE PARTICIPATION OCCASIONNELLE\nÀ LA VIE FAMILIALE",
+        "recipientName": "Thierry Blanchard",
+        "description": "Suite à l'examen minutieux des preuves photographiques et au recoupement des témoignages familiaux confirmant sa présence physique lors de certains repas dominicaux",
+        "icon": "family_restroom",
+        "location": "Nantes",
+        "date": "2026-09-21T00:00:00Z"
+      },
+      {
+        "color": "#7B6BA4",
+        "title": "DIPLÔME",
+        "subtitle": "DE CONCEPTEUR\nDE REPAS ALTERNATIFS",
+        "recipientName": "Émilie Rousseau-Petit",
+        "description": "Au regard de sa capacité exceptionnelle à transformer trois ingrédients improbables en un plat comestible, validée par un jury ayant survécu à la dégustation",
+        "icon": "restaurant",
+        "location": "Toulouse",
+        "date": "2026-03-08T00:00:00Z"
+      },
+      {
+        "color": "#4A7FA5",
+        "title": "DIPLÔME",
+        "subtitle": "D'ANTI-BRICOLAGE\nAVEC MENTION",
+        "recipientName": "Patrick Moreau",
+        "description": "Vu le nombre remarquable d'étagères tombées, de trous rebouchés puis repercés et d'appels au voisin compétent, constituant un dossier d'une richesse exceptionnelle",
+        "icon": "construction",
+        "location": "Strasbourg",
+        "date": "2026-11-30T00:00:00Z"
+      }
+    ]
+  }
+}
