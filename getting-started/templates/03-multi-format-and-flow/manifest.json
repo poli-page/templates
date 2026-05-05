@@ -1,0 +1,9 @@
+{
+  "template": {
+    "name": "03-multi-format-and-flow",
+    "template": "03-multi-format-and-flow.html",
+    "mock": "03-multi-format-and-flow.json"
+  },
+  "images": [],
+  "fonts": []
+}

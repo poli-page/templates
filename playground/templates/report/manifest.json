@@ -1,0 +1,11 @@
+{
+  "template": {
+    "name": "report",
+    "template": "report.html",
+    "mock": "report.json",
+    "format": "A4",
+    "orientation": "portrait"
+  },
+  "images": [],
+  "fonts": []
+}

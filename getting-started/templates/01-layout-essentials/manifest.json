@@ -1,0 +1,9 @@
+{
+  "template": {
+    "name": "01-layout-essentials",
+    "template": "01-layout-essentials.html",
+    "mock": "01-layout-essentials.json"
+  },
+  "images": [],
+  "fonts": []
+}

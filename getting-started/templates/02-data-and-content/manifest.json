@@ -1,0 +1,9 @@
+{
+  "template": {
+    "name": "02-data-and-content",
+    "template": "02-data-and-content.html",
+    "mock": "02-data-and-content.json"
+  },
+  "images": [],
+  "fonts": []
+}

@@ -1,0 +1,117 @@
+{
+  "$schema": "poli-page/templates/v1",
+  "collections": {
+    "showcase": {
+      "title": "Showcase",
+      "description": "Production-grade templates",
+      "templates": [
+        {
+          "name": "invoice",
+          "description": "Modern invoice with brand accent stripe"
+        },
+        {
+          "name": "contract",
+          "description": "Formal contract with signature block"
+        },
+        {
+          "name": "report",
+          "description": "Multi-page business report"
+        },
+        {
+          "name": "certificate",
+          "description": "A5 landscape achievement certificate"
+        },
+        {
+          "name": "delivery-note",
+          "description": "Delivery note with itemized table"
+        },
+        {
+          "name": "pay-slip",
+          "description": "French-style monthly pay slip"
+        },
+        {
+          "name": "cerfa-15776",
+          "description": "Official French CERFA 15776 form"
+        }
+      ]
+    },
+    "structures": {
+      "title": "Layouts",
+      "description": "Empty structural layouts ready to fill in",
+      "templates": [
+        {
+          "name": "blank",
+          "description": "Empty page — start from scratch"
+        },
+        {
+          "name": "header-main-footer",
+          "description": "Classic 3-band layout"
+        },
+        {
+          "name": "header-main-footer-sidebar",
+          "description": "Header, main, footer with sidebar below"
+        },
+        {
+          "name": "header-main-sidebar-footer",
+          "description": "Header, main, sidebar, footer"
+        },
+        {
+          "name": "header-sidebar-main-footer",
+          "description": "Header on top, sidebar + main, footer"
+        },
+        {
+          "name": "sidebar-header-main-footer",
+          "description": "Side bar full height, header + main + footer"
+        }
+      ]
+    },
+    "playground": {
+      "title": "Playground",
+      "description": "Quick demos for the online playground",
+      "templates": [
+        {
+          "name": "empty",
+          "description": "Minimal starting point"
+        },
+        {
+          "name": "invoice",
+          "description": "Invoice demo"
+        },
+        {
+          "name": "report",
+          "description": "Report demo"
+        },
+        {
+          "name": "certificate",
+          "description": "Certificate demo"
+        },
+        {
+          "name": "header-sidebar-main-footer",
+          "description": "Layout demo with sidebar"
+        }
+      ]
+    },
+    "getting-started": {
+      "title": "Getting Started",
+      "description": "Tutorial sequence for newcomers",
+      "templates": [
+        {
+          "name": "welcome",
+          "description": "Welcome page — start here"
+        },
+        {
+          "name": "01-layout-essentials",
+          "description": "Lesson 1 — layout essentials"
+        },
+        {
+          "name": "02-data-and-content",
+          "description": "Lesson 2 — data binding and content"
+        },
+        {
+          "name": "03-multi-format-and-flow",
+          "description": "Lesson 3 — multi-format and flow"
+        }
+      ]
+    }
+  }
+}

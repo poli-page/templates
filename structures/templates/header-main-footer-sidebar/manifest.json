@@ -1,0 +1,9 @@
+{
+  "template": {
+    "name": "header-main-footer-sidebar",
+    "template": "header-main-footer-sidebar.html",
+    "mock": "header-main-footer-sidebar.json"
+  },
+  "images": [],
+  "fonts": []
+}

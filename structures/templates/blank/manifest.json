@@ -1,0 +1,9 @@
+{
+  "template": {
+    "name": "blank",
+    "template": "blank.html",
+    "mock": "blank.json"
+  },
+  "images": [],
+  "fonts": []
+}

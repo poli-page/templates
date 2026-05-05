@@ -1,0 +1,11 @@
+{
+  "template": {
+    "name": "empty",
+    "template": "empty.html",
+    "mock": "empty.json",
+    "format": "A4",
+    "orientation": "portrait"
+  },
+  "images": [],
+  "fonts": []
+}

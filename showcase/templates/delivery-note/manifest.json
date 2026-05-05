@@ -1,0 +1,90 @@
+{
+  "template": {
+    "name": "delivery-note",
+    "template": "delivery-note.html",
+    "mock": "delivery-note.json",
+    "format": "A4",
+    "orientation": "portrait"
+  },
+  "images": [
+    "pacific-hardware-logo.svg"
+  ],
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "src": "fonts/dm-sans-latin.woff2",
+      "weight": 400
+    },
+    {
+      "family": "DM Sans",
+      "src": "fonts/dm-sans-latin.woff2",
+      "weight": 500
+    },
+    {
+      "family": "DM Sans",
+      "src": "fonts/dm-sans-latin.woff2",
+      "weight": 600
+    },
+    {
+      "family": "DM Sans",
+      "src": "fonts/dm-sans-latin.woff2",
+      "weight": 700
+    },
+    {
+      "family": "DM Serif Display",
+      "src": "fonts/dm-serif-display-latin.woff2",
+      "weight": 400
+    },
+    {
+      "family": "Work Sans",
+      "src": "fonts/work-sans-latin.woff2",
+      "weight": 400
+    },
+    {
+      "family": "Work Sans",
+      "src": "fonts/work-sans-latin.woff2",
+      "weight": 500
+    },
+    {
+      "family": "Work Sans",
+      "src": "fonts/work-sans-latin.woff2",
+      "weight": 600
+    },
+    {
+      "family": "Sora",
+      "src": "fonts/sora-latin.woff2",
+      "weight": 400
+    },
+    {
+      "family": "Sora",
+      "src": "fonts/sora-latin.woff2",
+      "weight": 500
+    },
+    {
+      "family": "Sora",
+      "src": "fonts/sora-latin.woff2",
+      "weight": 600
+    },
+    {
+      "family": "Sora",
+      "src": "fonts/sora-latin.woff2",
+      "weight": 700
+    },
+    {
+      "family": "Sora",
+      "src": "fonts/sora-latin.woff2",
+      "weight": 800
+    },
+    {
+      "family": "Dancing Script",
+      "src": "fonts/dancing-script-latin.woff2",
+      "weight": 700
+    },
+    {
+      "family": "Ephesis",
+      "src": "fonts/ephesis-400.woff2",
+      "weight": 400,
+      "style": "normal"
+    }
+  ]
+}

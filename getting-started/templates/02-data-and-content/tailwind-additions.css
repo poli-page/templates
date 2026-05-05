@@ -1,0 +1,9 @@
+/* Tailwind v4 theme customization for this project.
+ * Override default fonts, colors, spacing, etc.
+ * See: https://tailwindcss.com/docs/theme */
+
+/* @theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --color-primary: oklch(55.1% 0.215 264.53);
+} */

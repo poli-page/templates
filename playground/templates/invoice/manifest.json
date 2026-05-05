@@ -1,0 +1,11 @@
+{
+  "template": {
+    "name": "invoice",
+    "template": "invoice.html",
+    "mock": "invoice.json",
+    "format": "A4",
+    "orientation": "portrait"
+  },
+  "images": [],
+  "fonts": []
+}

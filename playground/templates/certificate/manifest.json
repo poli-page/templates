@@ -1,0 +1,11 @@
+{
+  "template": {
+    "name": "certificate",
+    "template": "certificate.html",
+    "mock": "certificate.json",
+    "format": "A5",
+    "orientation": "landscape"
+  },
+  "images": [],
+  "fonts": []
+}

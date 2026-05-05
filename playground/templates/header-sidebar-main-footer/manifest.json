@@ -1,0 +1,11 @@
+{
+  "template": {
+    "name": "header-sidebar-main-footer",
+    "template": "header-sidebar-main-footer.html",
+    "mock": "header-sidebar-main-footer.json",
+    "format": "A4",
+    "orientation": "portrait"
+  },
+  "images": [],
+  "fonts": []
+}

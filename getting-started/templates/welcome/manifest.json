@@ -1,0 +1,9 @@
+{
+  "template": {
+    "name": "welcome",
+    "template": "welcome.html",
+    "mock": "welcome.json"
+  },
+  "images": [],
+  "fonts": []
+}
