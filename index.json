@@ -45,23 +45,23 @@
         },
         {
           "name": "header-main-footer",
-          "description": "Classic 3-band layout"
+          "description": "Classic 3-band layout Header + main + footer"
         },
         {
           "name": "header-main-footer-sidebar",
-          "description": "Header, main, footer with sidebar below"
+          "description": "Header + main + footer, full-height sidebar on the right"
         },
         {
           "name": "header-main-sidebar-footer",
-          "description": "Header, main, sidebar, footer"
+          "description": "Header, main + sidebar on the right, footer"
         },
         {
           "name": "header-sidebar-main-footer",
-          "description": "Header on top, sidebar + main, footer"
+          "description": "Header, sidebar on the left + main, footer"
         },
         {
           "name": "sidebar-header-main-footer",
-          "description": "Side bar full height, header + main + footer"
+          "description": "Sidebar full height on the left, header + main + footer"
         }
       ]
     },
