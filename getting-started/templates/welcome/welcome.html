@@ -1,6 +1,52 @@
-<div class="flex flex-col p-4">
-	<main class="flex-1 flex flex-col gap-2">
-		<h1 class="text-lg font-bold">{{ title }}</h1>
-		<p>Content goes here.</p>
-	</main>
+<div class="flex flex-col font-inter p-4 text-body text-ink">
+    <header class="poli-header flex items-center justify-between pb-3 border-b-1 border-surface">
+        <span class="flex space-x-gap items-center">
+            <img poli-asset="images/logo.svg" class="w-10 h-10" />
+            <h2 class="text-xl font-bold">Poli Page</h2>
+        </span>
+        <h2 class="text-meta text-muted">Welcome</h2>
+    </header>
+    <main class="flex-1 flex flex-col space-y-gap p-10 text-center">
+        <div
+            class="inline-flex items-center gap-3 text-xs text-primary tracking-widest justify-center font-medium before:content-[''] before:inline-block before:w-10 before:h-[1.7px] before:opacity-30 before:bg-primary after:content-[''] after:inline-block after:w-10 after:h-[1.7px] after:opacity-30 after:bg-primary">
+            A WARM WELCOME
+        </div>
+        <h1 class="text-title">Welcome to <span class="text-primary">Poli Page</span></h1>
+        <p class="italic text-muted">Your first PDF, generated in just a few seconds.</p>
+        <section class="grid gap-10 py-10">
+            <p>If you're reading this, your SDK call succeeded. Your API key is valid, the network is fine, and the Poli
+                Page rendering engine returned a PDF — exactly what your code expected.</p>
+            <p>This is a simple template. Three richer ones ship alongside it in your getting-started project:</p>
+                <ul class="mx-auto text-left list-disc">
+                  <li><a>01-layout-essentials</a></li>
+                  <li><a>02-data-and-content</a></li>
+                  <li><a>03-multi-format-and-flow</a></li>
+                </ul>
+                <p>Each is an interactive tutorial — open them in the desktop editor to learn Poli Page features hands-on, with live preview as you edit.</p>
+            <p>Full documentation: <a href="https://docs.poli.page/" target="_blank" rel="noopener noreferrer">docs.poli.page</a></p>
+        </section>
+        <section class="flex justify-around w-full">
+            <div class="grid justify-items-center">
+                <poli-icon name="sdk" class="mb-3 w-10 h-10 text-primary border-2 border-primary rounded-full p-1" />
+                <div class="font-bold text-xs">SDK</div>
+                <div class="font-thin text-xs text-muted">Node · Go · PHP · Python</div>
+            </div>
+            <div class="grid justify-items-center">
+                <poli-icon name="palette"
+                    class="mb-3 w-10 h-10 text-primary border-2 border-primary rounded-full p-1" />
+                <div class="font-bold text-xs">THEMED</div>
+                <div class="font-thin text-xs text-muted">Font & Brand</div>
+            </div>
+            <div class="grid justify-items-center">
+                <poli-icon name="space_dashboard"
+                    class="mb-3 w-10 h-10 text-primary border-2 border-primary rounded-full p-1" />
+                <div class="font-bold text-xs">MULTI-FORMAT</div>
+                <div class="font-thin text-xs text-muted">A4 · A5 · And 10 more</div>
+            </div>
+        </section>
+    </main>
+    <footer class="poli-footer flex justify-between text-meta text-muted border-t-1 border-surface pt-4">
+        <p class="uppercase">{{poli.environment}} · {{formatDate(poli.generatedAt)}}</p>
+        <poli-page-numbers />
+    </footer>
 </div>

@@ -2,14 +2,14 @@
   "project": {
     "name": "getting-started",
     "version": "1.0.0",
-    "description": "The 4 getting-started templates"
+    "description": ""
   },
   "engine": {
     "paginationOptions": {
       "orphanThreshold": 0.08,
       "cssRenderingPrecision": 3
     },
-    "imageSizeWarningThreshold": 256000
+    "imageSizeWarningThreshold": 512000
   },
   "templates": [
     {
@@ -21,16 +21,20 @@
       "name": "01-layout-essentials",
       "template": "01-layout-essentials.html",
       "mock": "01-layout-essentials.json"
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Inter",
+      "src": "fonts/inter-400.woff2",
+      "weight": 400,
+      "style": "normal"
     },
     {
-      "name": "02-data-and-content",
-      "template": "02-data-and-content.html",
-      "mock": "02-data-and-content.json"
-    },
-    {
-      "name": "03-multi-format-and-flow",
-      "template": "03-multi-format-and-flow.html",
-      "mock": "03-multi-format-and-flow.json"
+      "family": "Inter",
+      "src": "fonts/inter-700.woff2",
+      "weight": 700,
+      "style": "normal"
     }
   ]
 }
