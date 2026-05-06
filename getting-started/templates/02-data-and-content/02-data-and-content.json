@@ -1,6 +1,38 @@
 {
   "locale": "en",
   "data": {
-    "title": "02-data-and-content"
+    "title": "02-data-and-content",
+    "discount": "0.1",
+    "webInvoice": {
+      "items": [
+          { "description": "Web design (homepage)", "discount": "0", "qty": "1" , "unit": "2400.00" },
+          { "description": "Monthly hosting", "discount": "0.1", "qty": "12", "unit": "30.00" },
+          { "description": "Custom CMS development", "discount": "0", "qty": "1", "unit": "6500.00"  },
+          { "description": "Email setup", "discount": "0", "qty": "5", "unit": "25.00" },
+          { "description": "Logo redesign", "discount": "0.2", "qty": "1", "unit": "800.00" },
+          { "description": "Perf. Optimization", "discount": "0", "qty": "1", "unit": "1000.00" },
+          { "description": "SEO", "discount": "0", "qty": "1", "unit": "2300.00" },
+          { "description": "GEO", "discount": "0", "qty": "2", "unit": "4000.00" },
+          { "description": "Mobile app", "discount": "0", "qty": "5", "unit": "20.00" },
+          { "description": "Accessibility audit", "discount": "0", "qty": "12", "unit": "450.00" },
+          { "description": "Web security audit", "discount": "0", "qty": "3", "unit": "10.00" },
+          { "description": "DB Migration", "discount": "0", "qty": "2", "unit": "5.00" },
+          { "description": "Photography session", "discount": "0", "qty": "1", "unit": "1200.00" }
+       ] 
+    },
+    "helpers": {
+      "items": [
+        { "function": "formatMoney(1250, 'EUR')", "frOutput": "1 250,00 €", "enOutput": "€1,250.00" },
+        { "function": "formatDate('2026-04-30')", "frOutput": "30 avril 2026", "enOutput": "April 30, 2026" },
+        { "function": "formatPercent(0.175)", "frOutput": "17,5 %", "enOutput": "17.5%"},
+        { "function": "formatNumber(1234.56)", "frOutput": "1 234,56", "enOutput": "1,234.56"} 
+      ]
+    },
+    "invoice": {
+      "items": [
+        { "name": "item1" }
+      ]
+    },
+    "status": "pending"
   }
 }
