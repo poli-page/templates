@@ -124,7 +124,7 @@ async function processCollection(collName, coll) {
 
 	const collManifest = JSON.parse(await fs.readFile(collManifestPath, 'utf-8'));
 	const collTailwind = await readOrEmpty(collTailwindPath);
-	const availableFonts = await listAssetsIn(collDir, 'fonts');
+	const fontTokenToFamily = parseFontTokens(collTailwind);
 	const availableImages = await listAssetsIn(collDir, 'images');
 
 	for (const tplName of Object.keys(coll.templates)) {
@@ -145,13 +145,21 @@ async function processCollection(collName, coll) {
 			continue;
 		}
 
-		const fonts = (collManifest.fonts ?? []).filter((f) => {
-			if (availableFonts.has(path.basename(f.src))) return true;
-			warnings.push(
-				`${collName}/${tplName}: declared font "${f.family}" (${f.src}) is missing on disk — excluded from manifest`
-			);
-			return false;
-		});
+		// Match font-<name> tokens used in the template against the
+		// collection's @theme mapping; declare every matching family in
+		// the manifest, regardless of whether the .woff2 file is on disk
+		// (the contributor may add it later, or the user may rely on a
+		// system font with that name).
+		const tplTailwind = await readOrEmpty(path.join(tplDir, 'tailwind-additions.css'));
+		const usedTokens = collectFontTokens(html + '\n' + tplTailwind);
+		const usedFamilies = new Set();
+		for (const tok of usedTokens) {
+			const family = fontTokenToFamily.get(tok);
+			if (family) usedFamilies.add(family);
+		}
+		const fonts = (collManifest.fonts ?? []).filter((f) =>
+			usedFamilies.has(f.family)
+		);
 
 		const images = extractImageBasenames(html).filter((img) => {
 			if (availableImages.has(img)) return true;
@@ -175,19 +183,24 @@ async function processCollection(collName, coll) {
 
 		const manifestPath = path.join(tplDir, 'manifest.json');
 		const tailwindPath = path.join(tplDir, 'tailwind-additions.css');
-		const tailwindAdditions =
+		const tailwindBootstrap =
 			collTailwind ||
 			'/* No collection-level tailwind tokens. Add template-specific @theme directives here if needed. */\n';
 
-		const wroteManifest = await writeIfAllowed(
+		// manifest.json is rewritten on --force (it is mechanically derivable
+		// from the HTML + collection manifest + tailwind-additions, so a
+		// regen is safe). tailwind-additions.css is bootstrap-only: once it
+		// exists, contributors hand-tune it down to template-only tokens, and
+		// the script must never clobber that work — even with --force.
+		const wroteManifest = await writeIfForced(
 			manifestPath,
 			JSON.stringify(manifest, null, 2) + '\n'
 		);
-		const wroteTailwind = await writeIfAllowed(tailwindPath, tailwindAdditions);
+		const wroteTailwind = await writeIfMissing(tailwindPath, tailwindBootstrap);
 
 		const flags = [
 			wroteManifest ? 'manifest' : 'manifest skipped (exists)',
-			wroteTailwind ? 'tailwind-additions' : 'tailwind-additions skipped (exists)',
+			wroteTailwind ? 'tailwind-additions bootstrapped' : 'tailwind-additions left intact',
 		];
 		console.log(
 			`✓ ${collName}/${tplName} (${images.length} image(s), ${fonts.length} font(s)) — ${flags.join(', ')}`
@@ -195,7 +208,7 @@ async function processCollection(collName, coll) {
 	}
 }
 
-async function writeIfAllowed(filePath, content) {
+async function writeIfForced(filePath, content) {
 	if (!FORCE) {
 		try {
 			await fs.access(filePath);
@@ -206,6 +219,32 @@ async function writeIfAllowed(filePath, content) {
 	}
 	await fs.writeFile(filePath, content, 'utf-8');
 	return true;
+}
+
+async function writeIfMissing(filePath, content) {
+	try {
+		await fs.access(filePath);
+		return false;
+	} catch {
+		await fs.writeFile(filePath, content, 'utf-8');
+		return true;
+	}
+}
+
+function parseFontTokens(css) {
+	const map = new Map();
+	for (const m of css.matchAll(/--font-([a-z0-9-]+)\s*:\s*['"]([^'"]+)['"]/g)) {
+		map.set(`font-${m[1]}`, m[2]);
+	}
+	return map;
+}
+
+function collectFontTokens(text) {
+	const found = new Set();
+	for (const m of text.matchAll(/\bfont-[a-z0-9-]+\b/g)) {
+		found.add(m[0]);
+	}
+	return found;
 }
 
 async function listAssetsIn(collDir, subdir) {

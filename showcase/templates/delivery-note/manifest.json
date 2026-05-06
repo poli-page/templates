@@ -6,15 +6,49 @@
     "format": "A4",
     "orientation": "portrait"
   },
-  "images": ["pacific-hardware-logo.svg"],
+  "images": [
+    "pacific-hardware-logo.svg"
+  ],
   "fonts": [
-    { "family": "Work Sans", "src": "fonts/work-sans-latin.woff2", "weight": 400 },
-    { "family": "Work Sans", "src": "fonts/work-sans-latin.woff2", "weight": 500 },
-    { "family": "Work Sans", "src": "fonts/work-sans-latin.woff2", "weight": 600 },
-    { "family": "Sora", "src": "fonts/sora-latin.woff2", "weight": 400 },
-    { "family": "Sora", "src": "fonts/sora-latin.woff2", "weight": 500 },
-    { "family": "Sora", "src": "fonts/sora-latin.woff2", "weight": 600 },
-    { "family": "Sora", "src": "fonts/sora-latin.woff2", "weight": 700 },
-    { "family": "Sora", "src": "fonts/sora-latin.woff2", "weight": 800 }
+    {
+      "family": "Work Sans",
+      "src": "fonts/work-sans-latin.woff2",
+      "weight": 400
+    },
+    {
+      "family": "Work Sans",
+      "src": "fonts/work-sans-latin.woff2",
+      "weight": 500
+    },
+    {
+      "family": "Work Sans",
+      "src": "fonts/work-sans-latin.woff2",
+      "weight": 600
+    },
+    {
+      "family": "Sora",
+      "src": "fonts/sora-latin.woff2",
+      "weight": 400
+    },
+    {
+      "family": "Sora",
+      "src": "fonts/sora-latin.woff2",
+      "weight": 500
+    },
+    {
+      "family": "Sora",
+      "src": "fonts/sora-latin.woff2",
+      "weight": 600
+    },
+    {
+      "family": "Sora",
+      "src": "fonts/sora-latin.woff2",
+      "weight": 700
+    },
+    {
+      "family": "Sora",
+      "src": "fonts/sora-latin.woff2",
+      "weight": 800
+    }
   ]
 }

@@ -8,10 +8,30 @@
   },
   "images": [],
   "fonts": [
-    { "family": "DM Sans", "src": "fonts/dm-sans-latin.woff2", "weight": 400 },
-    { "family": "DM Sans", "src": "fonts/dm-sans-latin.woff2", "weight": 500 },
-    { "family": "DM Sans", "src": "fonts/dm-sans-latin.woff2", "weight": 600 },
-    { "family": "DM Sans", "src": "fonts/dm-sans-latin.woff2", "weight": 700 },
-    { "family": "DM Serif Display", "src": "fonts/dm-serif-display-latin.woff2", "weight": 400 }
+    {
+      "family": "DM Sans",
+      "src": "fonts/dm-sans-latin.woff2",
+      "weight": 400
+    },
+    {
+      "family": "DM Sans",
+      "src": "fonts/dm-sans-latin.woff2",
+      "weight": 500
+    },
+    {
+      "family": "DM Sans",
+      "src": "fonts/dm-sans-latin.woff2",
+      "weight": 600
+    },
+    {
+      "family": "DM Sans",
+      "src": "fonts/dm-sans-latin.woff2",
+      "weight": 700
+    },
+    {
+      "family": "DM Serif Display",
+      "src": "fonts/dm-serif-display-latin.woff2",
+      "weight": 400
+    }
   ]
 }

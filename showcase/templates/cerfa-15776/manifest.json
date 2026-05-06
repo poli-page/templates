@@ -6,7 +6,10 @@
     "format": "A4",
     "orientation": "portrait"
   },
-  "images": ["logo-cerfa.png", "logo-ministere-interieur.svg"],
+  "images": [
+    "logo-cerfa.png",
+    "logo-ministere-interieur.svg"
+  ],
   "fonts": [
     {
       "family": "Ephesis",
