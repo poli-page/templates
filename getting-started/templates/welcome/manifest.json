@@ -4,8 +4,6 @@
     "template": "welcome.html",
     "mock": "welcome.json"
   },
-  "images": [
-    "logo.svg"
-  ],
+  "images": [],
   "fonts": []
 }

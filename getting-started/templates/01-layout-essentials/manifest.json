@@ -4,8 +4,6 @@
     "template": "01-layout-essentials.html",
     "mock": "01-layout-essentials.json"
   },
-  "images": [
-    "logo.png"
-  ],
+  "images": [],
   "fonts": []
 }

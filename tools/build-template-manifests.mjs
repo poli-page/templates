@@ -1,13 +1,21 @@
 #!/usr/bin/env node
 /**
  * Generates the CLI-import surface of the templates repo:
- *   - <repo>/index.json (root discovery)
+ *   - <repo>/index.json (root discovery, always regenerated)
  *   - <coll>/templates/<tpl>/manifest.json (per-template manifest)
  *   - <coll>/templates/<tpl>/tailwind-additions.css (per-template tailwind block)
  *
- * Run after editing CONFIG below or after adding/removing a template.
+ *   node tools/build-template-manifests.mjs           # bootstrap-friendly:
+ *                                                    # skips manifest.json
+ *                                                    # and tailwind-additions.css
+ *                                                    # if they already exist
+ *   node tools/build-template-manifests.mjs --force   # overwrite everything
+ *                                                    # (use to re-bootstrap)
  *
- *   node tools/build-template-manifests.mjs
+ * The default behavior preserves manual refines: once a contributor has
+ * trimmed fonts to the actually-used set or scoped a tailwind-additions
+ * block to template-specific tokens, future runs will not clobber that
+ * work. Add --force to regenerate from scratch.
  *
  * The collection-level poli-page.json and tailwind.css remain the source
  * of truth; this script derives the per-template files from them.
@@ -19,6 +27,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
+const FORCE = process.argv.includes('--force');
 
 const CONFIG = {
 	collections: {
@@ -40,11 +49,11 @@ const CONFIG = {
 			description: 'Empty structural layouts ready to fill in',
 			templates: {
 				blank: 'Empty page — start from scratch',
-				'header-main-footer': 'Classic 3-band layout',
-				'header-main-footer-sidebar': 'Header, main, footer with sidebar below',
-				'header-main-sidebar-footer': 'Header, main, sidebar, footer',
-				'header-sidebar-main-footer': 'Header on top, sidebar + main, footer',
-				'sidebar-header-main-footer': 'Side bar full height, header + main + footer',
+				'header-main-footer': 'Classic 3-band layout Header + main + footer',
+				'header-main-footer-sidebar': 'Header + main + footer, full-height sidebar on the right',
+				'header-main-sidebar-footer': 'Header, main + sidebar on the right, footer',
+				'header-sidebar-main-footer': 'Header, sidebar on the left + main, footer',
+				'sidebar-header-main-footer': 'Sidebar full height on the left, header + main + footer',
 			},
 		},
 		playground: {
@@ -115,7 +124,8 @@ async function processCollection(collName, coll) {
 
 	const collManifest = JSON.parse(await fs.readFile(collManifestPath, 'utf-8'));
 	const collTailwind = await readOrEmpty(collTailwindPath);
-	const availableFonts = await listFontsInCollection(collDir);
+	const availableFonts = await listAssetsIn(collDir, 'fonts');
+	const availableImages = await listAssetsIn(collDir, 'images');
 
 	for (const tplName of Object.keys(coll.templates)) {
 		const tplDir = path.join(collDir, 'templates', tplName);
@@ -143,7 +153,13 @@ async function processCollection(collName, coll) {
 			return false;
 		});
 
-		const images = extractImageBasenames(html);
+		const images = extractImageBasenames(html).filter((img) => {
+			if (availableImages.has(img)) return true;
+			warnings.push(
+				`${collName}/${tplName}: referenced image "${img}" is missing on disk — excluded from manifest`
+			);
+			return false;
+		});
 
 		const manifest = {
 			template: {
@@ -157,29 +173,45 @@ async function processCollection(collName, coll) {
 			fonts,
 		};
 
-		await fs.writeFile(
-			path.join(tplDir, 'manifest.json'),
-			JSON.stringify(manifest, null, 2) + '\n',
-			'utf-8'
-		);
-
+		const manifestPath = path.join(tplDir, 'manifest.json');
+		const tailwindPath = path.join(tplDir, 'tailwind-additions.css');
 		const tailwindAdditions =
 			collTailwind ||
 			'/* No collection-level tailwind tokens. Add template-specific @theme directives here if needed. */\n';
-		await fs.writeFile(
-			path.join(tplDir, 'tailwind-additions.css'),
-			tailwindAdditions,
-			'utf-8'
-		);
 
-		console.log(`✓ ${collName}/${tplName} (${images.length} image(s), ${fonts.length} font(s))`);
+		const wroteManifest = await writeIfAllowed(
+			manifestPath,
+			JSON.stringify(manifest, null, 2) + '\n'
+		);
+		const wroteTailwind = await writeIfAllowed(tailwindPath, tailwindAdditions);
+
+		const flags = [
+			wroteManifest ? 'manifest' : 'manifest skipped (exists)',
+			wroteTailwind ? 'tailwind-additions' : 'tailwind-additions skipped (exists)',
+		];
+		console.log(
+			`✓ ${collName}/${tplName} (${images.length} image(s), ${fonts.length} font(s)) — ${flags.join(', ')}`
+		);
 	}
 }
 
-async function listFontsInCollection(collDir) {
-	const fontDir = path.join(collDir, 'assets', 'fonts');
+async function writeIfAllowed(filePath, content) {
+	if (!FORCE) {
+		try {
+			await fs.access(filePath);
+			return false;
+		} catch {
+			// doesn't exist — proceed
+		}
+	}
+	await fs.writeFile(filePath, content, 'utf-8');
+	return true;
+}
+
+async function listAssetsIn(collDir, subdir) {
+	const dir = path.join(collDir, 'assets', subdir);
 	try {
-		const entries = await fs.readdir(fontDir);
+		const entries = await fs.readdir(dir);
 		return new Set(entries);
 	} catch {
 		return new Set();

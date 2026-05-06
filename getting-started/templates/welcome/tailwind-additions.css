@@ -1,36 +1,16 @@
-/* Tailwind v4 theme customization for this project.
- * Override default fonts, colors, spacing, etc.
- * See: https://tailwindcss.com/docs/theme */
+@theme {
+	--font-inter: 'Inter', sans-serif;
 
- @theme {
-    --font-inter: 'Inter', sans-serif;
-                                                                                                                                                
-    --color-primary: #4869A4;
-    --color-surface: #DEDEDF;                                                                                                                   
-    --color-muted:   #7B7B7B;                                                                                                                 
-    --color-ink:     #444444;    
-    --color-info:    #0F6F7A;                                                                                                    
-    --color-info:    #0EA5E9;   
-    --color-success: #22C55E;                                                                                               
-    --color-warning: #F59E0B;                                                                                               
-    --color-error:   #EF4444;                                                                                                   
-   
-    --color-info-soft:    #E0F2FE;                                                                                                            
-    --color-success-soft: #DCFCE7;                                                                                                              
-    --color-warning-soft: #FEF3C7;
-    --color-error-soft:   #FEE2E2; 
-   
-    --text-title:  3rem;                                                                                                
-    --text-body:   1rem;                                                                                              
-    --text-meta:   0.75rem;
-                                                                                                                                                
-    --space-pad:   1rem;
-    --space-section: 1.5rem;
-    --space-gap:   0.5rem;                                                                                             
-    --space-aside: 4rem;                                                                                                
-} 
+	--color-primary: #4869a4;
+	--color-surface: #dedeDF;
+	--color-muted: #7b7b7b;
+	--color-ink: #444444;
 
+	--text-title: 3rem;
+	--text-body: 1rem;
+	--text-meta: 0.75rem;
+}
 
 a {
-  color: var(--color-primary);
+	color: var(--color-primary);
 }
