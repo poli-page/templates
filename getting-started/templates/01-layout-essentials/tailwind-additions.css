@@ -5,7 +5,6 @@
   --color-surface: #dededf;
   --color-muted: #7b7b7b;
   --color-ink: #444444;
-  --color-info: #0f6f7a;
   --color-info: #0ea5e9;
   --color-success: #22c55e;
   --color-warning: #f59e0b;
@@ -14,7 +13,6 @@
   --color-info-soft: #e0f2fe;
   --color-success-soft: #dcfce7;
   --color-warning-soft: #fef3c7;
-  --color-error-soft: #fee2e2;
 }
 
 html {

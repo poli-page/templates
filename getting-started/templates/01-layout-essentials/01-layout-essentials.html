@@ -1,157 +1,216 @@
-<div class="flex flex-col p-4 text-ink">
+<div class="flex flex-col p-8 text-lg text-ink">
   <header class="poli-header poli-first flex justify-between items-center pb-4">
     <span class="bg-primary text-white rounded-2xl tracking-widest py-1 px-4">LESSON 01 · LAYOUT ESSENTIALS</span>
-    <span class="text-muted text-meta">BEGINNER · {{poli.totalPages}} PAGES</span>
+    <span class="text-muted text-xs">BEGINNER · {{ poli.totalPages }} PAGES</span>
   </header>
 
-  <header class="poli-header text-meta poli-not-first flex justify-between border-b-2 border-surface mb-3 items-center pb-4">
+  <header
+    class="poli-header text-xs poli-not-first flex justify-between border-b-2 border-surface mb-3 items-center pb-4"
+  >
     <span class="text-muted tracking-widest py-1 px-4">LAYOUT ESSENTIALS</span>
-    <span class="text-muted">BEGINNER · {{poli.totalPages}} PAGES</span>
+    <span class="text-muted">BEGINNER · {{ poli.totalPages }} PAGES</span>
   </header>
 
-  <main class="flex-1 flex space-y-gap">
+  <main class="flex-1 flex gap-5">
     <aside class="poli-aside space-x-aside shrink-0 p-6 border-r-2 border-surface">
       <div class="text-lg tracking-widest text-primary font-bold">STEP</div>
-      <div class="text-5xl">0{{poli.currentPage}}</div>
-      
+      <div class="text-5xl">0{{ poli.currentPage }}</div>
+
       <ul class="poli-first font-semibold py-10 text-muted">
-          <li class="poli-first list-disc text-primary">Intro</li>
-          <li>Headers</li>
-          <li>Conditionals</li>
-          <li>Icons</li>
-          <li>Assets</li>
-          <li>Partials</li>
+        <li class="poli-first list-disc text-primary">Intro</li>
+        <li>Headers</li>
+        <li>Conditionals</li>
+        <li>Icons</li>
+        <li>Assets</li>
+        <li>Partials</li>
       </ul>
 
       <ul class="poli-not-first poli-not-last font-semibold py-10 text-muted">
-          <li>Intro</li>
-          <li class="list-disc text-primary">Headers</li>
-          <li class="list-disc text-primary">Conditionals</li>
-          <li>Conditionals</li>
-          <li>Icons</li>
-          <li>Assets</li>
-          <li>Partials</li>
+        <li>Intro</li>
+        <li class="list-disc text-primary">Headers</li>
+        <li class="list-disc text-primary">Conditionals</li>
+        <li>Conditionals</li>
+        <li>Icons</li>
+        <li>Assets</li>
+        <li>Partials</li>
       </ul>
 
       <ul class="poli-last font-semibold py-10 text-muted">
-          <li>Intro</li>
-          <li>Headers</li>
-          <li>Conditionals</li>
-          <li class="list-disc text-primary">Icons</li>
-          <li class="list-disc text-primary">Assets</li>
-          <li class="list-disc text-primary">Partials</li>
+        <li>Intro</li>
+        <li>Headers</li>
+        <li>Conditionals</li>
+        <li class="list-disc text-primary">Icons</li>
+        <li class="list-disc text-primary">Assets</li>
+        <li class="list-disc text-primary">Partials</li>
       </ul>
-
     </aside>
 
-    <div class="flex flex-col">    
-        <article class="m-5 flex flex-col gap-10">
-          <span class="grid space-y-gap">
-            <h1 class="text-title font-bold">Layout <span class="text-primary">Essentials.</span></h1>
-            <p>The structural building blocks for pagination, headers, footers, and embedded assets — the things every Poli Page template uses.</p>
-          </span>
-          
-          <section class="space-y-section">
-            <div class="font-bold flex items-center space-x-gap text-xl"><span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">SCOPE</span><span>What you'll learn</span></div>
-            <ul class="list-disc pl-4">
-              <li>Headers/footers that repeat per page</li>
-              <li>poli-first, poli-not-first, poli-last</li>
-              <li><code>&lt;poli-page-numbers /&gt;</code></li>
-              <li><code>&lt;poli-icon /&gt;</code> and poli-asset</li>
-              <li><code>&lt;poli-partial /&gt;</code></li>
-            </ul>
+    <div class="grid w-full">
+      <article class="m-5 flex flex-col gap-10">
+        <span class="grid gap-3">
+          <h1 class="text-5xl font-bold">
+            Layout
+            <span class="text-primary">Essentials.</span>
+          </h1>
+          <p>
+            The structural building blocks for pagination, headers, footers, and embedded assets — the things every Poli
+            Page template uses.
+          </p>
+        </span>
 
-            <div class="border-2 border-warning bg-warning-soft p-4 space-y-gap grid rounded-lg">
-              <span class="text-warning flex items-center">
-                <poli-icon name="electric_bolt" class="w-4 h-4" />
-                <span>TRY THIS</span>
-              </span>
-              <p>Open templates/01-layout-essentials/01-layout-essentials.html in the editor. Edit while you read — preview updates live.</p>
-            </div>
-          </section>
+        <section class="grid gap-5">
+          <div class="font-bold flex items-center gap-3 text-xl">
+            <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">SCOPE</span>
+            <span>What you'll learn</span>
+          </div>
+          <ul class="list-disc pl-4">
+            <li>Headers/footers that repeat per page</li>
+            <li>poli-first, poli-not-first, poli-last</li>
+            <li><code>&lt;poli-page-numbers /&gt;</code></li>
+            <li>
+              <code>&lt;poli-icon /&gt;</code>
+              and poli-asset
+            </li>
+            <li><code>&lt;poli-partial /&gt;</code></li>
+          </ul>
 
-          <section class="grid space-y-section">
-            <div class="font-bold flex items-center space-x-gap text-xl"><span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">GO</span><span>Start at page 2</span></div>
+          <div class="border-2 border-warning bg-warning-soft p-4 gap-3 grid rounded-lg">
+            <span class="text-warning flex items-center">
+              <poli-icon name="electric_bolt" class="w-4 h-4" />
+              <span>TRY THIS</span>
+            </span>
+            <p>
+              Open templates/01-layout-essentials/01-layout-essentials.html in the editor. Edit while you read — preview
+              updates live.
+            </p>
+          </div>
+        </section>
 
-            <p>Each lesson ships with mock data and a working template. Nothing extra to install.</p>
-          </section>
-        </article>
-      
-        <article class="poli-break m-5 flex flex-col gap-10">
-          <section class="grid space-y-section">
-            <div class="font-bold flex items-center space-x-gap text-xl"><span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">A</span><span>Two headers, one template</span></div>
+        <section class="grid gap-5">
+          <div class="font-bold flex items-center gap-3 text-xl">
+            <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">GO</span>
+            <span>Start at page 2</span>
+          </div>
 
-            <p>The first-page header used poli-first; this one uses poli-not-first.</p>
+          <p>Each lesson ships with mock data and a working template. Nothing extra to install.</p>
+        </section>
+      </article>
 
-            <div class="border-2 border-primary bg-info-soft p-4 space-y-gap grid rounded-lg">
-              <div class="flex space-x-gap"><div class="rounded-full p-2 bg-error"></div><div class="rounded-full p-2 bg-warning"></div><div class="rounded-full p-2 bg-success"></div></div>
-        
-              <code>
-                &lt;header class="poli-header poli-first"&gt;...&lt;/header&gt;
-                <br />
-                &lt;header class="poli-header poli-not-first"&gt;...&lt;/header&gt;
-              </code>      
-            </div>
-          </section>
+      <article class="poli-break m-5 flex flex-col gap-10">
+        <section class="grid gap-5">
+          <div class="font-bold flex items-center gap-3 text-xl">
+            <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">A</span>
+            <span>Two headers, one template</span>
+          </div>
 
-          <section class="grid space-y-section">
-            <div class="font-bold flex items-center space-x-gap text-xl"><span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">B</span><span>Page conditionals</span></div>
+          <p>The first-page header used poli-first; this one uses poli-not-first.</p>
 
-            <div class="flex text-center space-x-gap">
-              <div class="grid border-1 w-full border-info bg-info-soft rounded-lg p-4 opacity-50"><span class="text-info uppercase">poli-first</span><span class="text-muted text-meta">Box A — page 1 only</span></div>
-              <div class="grid border-1 w-full border-success bg-success-soft rounded-lg p-4"><span class="text-success uppercase">poli-not-first</span><span class="text-meta">Box B — pages 2+</span></div>
-            </div>
-            <div class="border-2 border-warning bg-warning-soft p-4 space-y-gap grid rounded-lg">
-              <span class="text-warning flex items-center">
-                <poli-icon name="electric_bolt" class="w-4 h-4" />
-                <span>TRY THIS</span>
-              </span>
-              <p>Add a third box with poli-last. Save. It appears only on page 3.</p>
-            </div>
-          </section>
-        </article>
-
-       <article class="poli-break m-5 flex flex-col gap-10">
-          <section class="grid space-y-section">
-            <div class="font-bold flex items-center space-x-gap text-xl"><span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">C</span><span>Icons</span></div>
-
-            <p>Material Symbols, 3,000+ glyphs. No external requests.</p>
-            <div class="flex text-center space-x-gap">
-              <div class="grid justify-items-center space-y-gap border-2 border-surface w-full rounded-lg p-4"><poli-icon class="text-primary p-2 w-10 h-10 bg-info-soft rounded-full space-y-gap" name="check"/><div class="font-bold">Available</div><code>check</code></div>
-              <div class="grid justify-items-center space-y-gap border-2 border-surface w-full rounded-lg p-4"><poli-icon class="text-primary p-2 w-10 h-10 bg-info-soft rounded-full space-y-gap" name="bolt"/><div class="font-bold">Fast</div><code>bolt</code></div>
-              <div class="grid justify-items-center space-y-gap border-2 border-surface w-full rounded-lg p-4"><poli-icon class="text-primary p-2 w-10 h-10 bg-info-soft rounded-full space-y-gap" name="contrast"/><div class="font-bold">Styled</div><code>contrast</code></div>
+          <div class="border-2 border-primary bg-info-soft p-4 gap-3 grid rounded-lg w-full">
+            <div class="flex gap-3">
+              <div class="rounded-full p-2 bg-error"></div>
+              <div class="rounded-full p-2 bg-warning"></div>
+              <div class="rounded-full p-2 bg-success"></div>
             </div>
 
-          </section>
+            <code>
+              &lt;header class="poli-header poli-first"&gt;...&lt;/header&gt;
+              <br />
+              &lt;header class="poli-header poli-not-first"&gt;...&lt;/header&gt;
+            </code>
+          </div>
+        </section>
 
-          <section class="grid space-y-section">
-            <div class="font-bold flex items-center space-x-gap text-xl"><span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">D</span><span>Assets & partials</span></div>
+        <section class="grid gap-5">
+          <div class="font-bold flex items-center gap-3 text-xl">
+            <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">B</span>
+            <span>Page conditionals</span>
+          </div>
 
-            <p>The wordmark below loads via poli-asset="logo.png" and the footer is a <code>&lt;poli-partial&gt;</code>.</p>
-            
-            <div class="border-2 border-primary bg-info-soft p-4 space-y-gap grid rounded-lg">
-              <div class="flex space-x-gap"><div class="rounded-full p-2 bg-error"></div><div class="rounded-full p-2 bg-warning"></div><div class="rounded-full p-2 bg-success"></div></div>
-        
-              <div>
-                <code>&lt;img poli-asset="logo.png" /&gt;</code>
-                <br />
-                <code>&lt;poli-partial src="partials/lesson-footer.html" /&gt;</code>
-              </div>
-                    
+          <div class="flex text-center gap-3">
+            <div class="grid border-1 border-info bg-info-soft rounded-lg p-4 opacity-50 w-full">
+              <span class="text-info uppercase">poli-first</span>
+              <span class="text-muted text-xs">Box A — page 1 only</span>
+            </div>
+            <div class="grid border-1 border-success bg-success-soft rounded-lg p-4 w-full">
+              <span class="text-success uppercase">poli-not-first</span>
+              <span class="text-xs">Box B — pages 2+</span>
+            </div>
+          </div>
+          <div class="border-2 border-warning bg-warning-soft p-4 gap-3 grid rounded-lg">
+            <span class="text-warning flex items-center">
+              <poli-icon name="electric_bolt" class="w-4 h-4" />
+              <span>TRY THIS</span>
+            </span>
+            <p>Add a third box with poli-last. Save. It appears only on page 3.</p>
+          </div>
+        </section>
+      </article>
+
+      <article class="poli-break m-5 flex flex-col gap-10">
+        <section class="grid gap-5">
+          <div class="font-bold flex items-center gap-3 text-xl">
+            <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">C</span>
+            <span>Icons</span>
+          </div>
+
+          <p>Material Symbols, 3,000+ glyphs. No external requests.</p>
+          <div class="flex text-center gap-3">
+            <div class="grid justify-items-center gap-3 border-2 border-surface w-full rounded-lg p-4">
+              <poli-icon class="text-primary p-2 w-10 h-10 bg-info-soft rounded-full gap-3" name="check" />
+              <div class="font-bold">Available</div>
+              <code>check</code>
+            </div>
+            <div class="grid justify-items-center gap-3 border-2 border-surface w-full rounded-lg p-4">
+              <poli-icon class="text-primary p-2 w-10 h-10 bg-info-soft rounded-full gap-3" name="bolt" />
+              <div class="font-bold">Fast</div>
+              <code>bolt</code>
+            </div>
+            <div class="grid justify-items-center gap-3 border-2 border-surface w-full rounded-lg p-4">
+              <poli-icon class="text-primary p-2 w-10 h-10 bg-info-soft rounded-full gap-3" name="contrast" />
+              <div class="font-bold">Styled</div>
+              <code>contrast</code>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid gap-5">
+          <div class="font-bold flex items-center gap-3 text-xl">
+            <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">D</span>
+            <span>Assets & partials</span>
+          </div>
+
+          <p>
+            The wordmark below loads via poli-asset="logo.png" and the footer is a
+            <code>&lt;poli-partial&gt;</code>
+            .
+          </p>
+
+          <div class="border-2 border-primary bg-info-soft p-4 gap-3 grid rounded-lg">
+            <div class="flex gap-3">
+              <div class="rounded-full p-2 bg-error"></div>
+              <div class="rounded-full p-2 bg-warning"></div>
+              <div class="rounded-full p-2 bg-success"></div>
             </div>
 
-            <div class="border-2 border-warning bg-warning-soft p-4 space-y-gap grid rounded-lg">
-              <span class="text-warning flex items-center">
-                <poli-icon name="electric_bolt" class="w-4 h-4" />
-                <span>TRY THIS</span>
-              </span>
-              <p>Next: open 02-data-and-content in the editor.</p>
+            <div>
+              <code>&lt;img poli-asset="logo.png" /&gt;</code>
+              <br />
+              <code>&lt;poli-partial src="partials/lesson-footer.html" /&gt;</code>
             </div>
-          </section>
-        </article>
+          </div>
+
+          <div class="border-2 border-warning bg-warning-soft p-4 gap-3 grid rounded-lg">
+            <span class="text-warning flex items-center">
+              <poli-icon name="electric_bolt" class="w-4 h-4" />
+              <span>TRY THIS</span>
+            </span>
+            <p>Next: open 02-data-and-content in the editor.</p>
+          </div>
+        </section>
+      </article>
     </div>
   </main>
-  <footer class="poli-footer flex justify-between pt-4 text-muted text-meta border-t-2 border-surface">
+  <footer class="poli-footer flex justify-between pt-4 text-muted text-xs border-t-2 border-surface">
     <p>Layout Essentials</p>
     <poli-page-numbers />
   </footer>
