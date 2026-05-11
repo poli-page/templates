@@ -45,40 +45,40 @@
       </div>
       <div class="flex justify-between gap-[8px] mb-[5px]">
         <div class="flex flex-col pt-[7px]">
-          <div class="comb">
+          <div class="cerfa-input">
             @let immat = stringToArray(vehicle.registrationNumber, 9);
-            <div class="comb-cell">{{ immat[0] }}</div>
-            <div class="comb-cell">{{ immat[1] }}</div>
-            <div class="comb-cell">{{ immat[2] }}</div>
-            <div class="comb-cell">{{ immat[3] }}</div>
-            <div class="comb-cell">{{ immat[4] }}</div>
-            <div class="comb-cell">{{ immat[5] }}</div>
-            <div class="comb-cell">{{ immat[6] }}</div>
-            <div class="comb-cell">{{ immat[7] }}</div>
-            <div class="comb-cell">{{ immat[8] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ immat[0] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ immat[1] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ immat[2] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ immat[3] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ immat[4] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ immat[5] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ immat[6] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ immat[7] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ immat[8] }}</div>
           </div>
           <div class="text-[6pt] mt-[1px] tracking-[0.019em]">(A) Numéro d'immatriculation du véhicule</div>
         </div>
         <div class="flex flex-col pt-[7px]">
-          <div class="comb">
+          <div class="cerfa-input">
             @let vin = stringToArray(vehicle.vin, 17);
-            <div class="comb-cell">{{ vin[0] }}</div>
-            <div class="comb-cell">{{ vin[1] }}</div>
-            <div class="comb-cell">{{ vin[2] }}</div>
-            <div class="comb-cell">{{ vin[3] }}</div>
-            <div class="comb-cell">{{ vin[4] }}</div>
-            <div class="comb-cell">{{ vin[5] }}</div>
-            <div class="comb-cell">{{ vin[6] }}</div>
-            <div class="comb-cell">{{ vin[7] }}</div>
-            <div class="comb-cell">{{ vin[8] }}</div>
-            <div class="comb-cell">{{ vin[9] }}</div>
-            <div class="comb-cell">{{ vin[10] }}</div>
-            <div class="comb-cell">{{ vin[11] }}</div>
-            <div class="comb-cell">{{ vin[12] }}</div>
-            <div class="comb-cell">{{ vin[13] }}</div>
-            <div class="comb-cell">{{ vin[14] }}</div>
-            <div class="comb-cell">{{ vin[15] }}</div>
-            <div class="comb-cell">{{ vin[16] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[0] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[1] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[2] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[3] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[4] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[5] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[6] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[7] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[8] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[9] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[10] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[11] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[12] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[13] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[14] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[15] }}</div>
+            <div class="cerfa-input-cell w-[19px]">{{ vin[16] }}</div>
           </div>
           <div class="text-[6pt] mt-[1px] tracking-[0.019em]">(E) Numéro d'identification du véhicule</div>
         </div>
@@ -86,19 +86,19 @@
           <div class="flex gap-[5px]">
             @let firstRegDate = formatDate(vehicle.firstRegistrationDate, 'short');
             @let reg = stringToArray(firstRegDate, 10);
-            <div class="comb">
-              <div class="comb-cell-2">{{ reg[0] }}</div>
-              <div class="comb-cell-2">{{ reg[1] }}</div>
+            <div class="cerfa-input">
+              <div class="cerfa-input-cell w-[15px]">{{ reg[0] }}</div>
+              <div class="cerfa-input-cell w-[15px]">{{ reg[1] }}</div>
             </div>
-            <div class="comb">
-              <div class="comb-cell-2">{{ reg[3] }}</div>
-              <div class="comb-cell-2">{{ reg[4] }}</div>
+            <div class="cerfa-input">
+              <div class="cerfa-input-cell w-[15px]">{{ reg[3] }}</div>
+              <div class="cerfa-input-cell w-[15px]">{{ reg[4] }}</div>
             </div>
-            <div class="comb">
-              <div class="comb-cell-2">{{ reg[6] }}</div>
-              <div class="comb-cell-2">{{ reg[7] }}</div>
-              <div class="comb-cell-2">{{ reg[8] }}</div>
-              <div class="comb-cell-2">{{ reg[9] }}</div>
+            <div class="cerfa-input">
+              <div class="cerfa-input-cell w-[15px]">{{ reg[6] }}</div>
+              <div class="cerfa-input-cell w-[15px]">{{ reg[7] }}</div>
+              <div class="cerfa-input-cell w-[15px]">{{ reg[8] }}</div>
+              <div class="cerfa-input-cell w-[15px]">{{ reg[9] }}</div>
             </div>
           </div>
           <div class="text-[6pt] mt-[1px] tracking-[0.019em]">
@@ -110,34 +110,34 @@
       </div>
       <div class="flex mb-[12px]">
         <div class="flex flex-col pt-[7px] mr-[11px]">
-          <div class="comb">
-            <span class="text-field w-[175px] px-1">{{ vehicle.brand }}</span>
+          <div class="cerfa-input">
+            <span class="cerfa-text-field w-[175px] px-1">{{ vehicle.brand }}</span>
           </div>
           <div class="text-[6pt] mt-[1px] tracking-[0.019em]">(D.1 Marque)</div>
         </div>
         <div class="flex flex-col pt-[7px] mr-[18px]">
-          <div class="comb">
-            <span class="text-field w-[179px] px-1">{{ vehicle.typeVariantVersion }}</span>
+          <div class="cerfa-input">
+            <span class="cerfa-text-field w-[179px] px-1">{{ vehicle.typeVariantVersion }}</span>
           </div>
           <div class="text-[6pt] mt-[1px] tracking-[0.019em]">(D.2 Type, variante, version)</div>
         </div>
         <div class="flex flex-col pt-[7px] mr-[12px]">
-          <div class="comb">
-            <span class="text-field w-[148px] px-1">{{ vehicle.nationalGenre }}</span>
+          <div class="cerfa-input">
+            <span class="cerfa-text-field w-[148px] px-1">{{ vehicle.nationalGenre }}</span>
           </div>
           <div class="text-[6pt] mt-[1px] tracking-[0.019em]">(J.1 Genre national)</div>
         </div>
         <div class="flex flex-col pt-[7px]">
-          <div class="comb">
-            <span class="text-field w-[157px] px-1">{{ vehicle.commercialName }}</span>
+          <div class="cerfa-input">
+            <span class="cerfa-text-field w-[157px] px-1">{{ vehicle.commercialName }}</span>
           </div>
           <div class="text-[6pt] mt-[1px] tracking-[0.019em]">(D.3 Dénomination commerciale)</div>
         </div>
       </div>
       <div class="flex gap-[3px] items-center mb-[7px]">
         <span class="tracking-wide">Kilométrage inscrit au compteur du véhicule :</span>
-        <div class="comb">
-          <span class="text-field w-[90px] px-1">{{ formatNumber(vehicle.mileage) }}</span>
+        <div class="cerfa-input">
+          <span class="cerfa-text-field w-[90px] px-1">{{ formatNumber(vehicle.mileage) }}</span>
         </div>
       </div>
       <div class="flex gap-[3px] items-center mb-[5px]">
@@ -158,19 +158,19 @@
             }
             <span class="font-bold mr-[2px] uppercase">Oui</span>
             <span>— numéro de formule</span>
-            <div class="comb ml-1">
+            <div class="cerfa-input ml-1">
               @let formula = stringToArray(vehicle.formulaNumber, 11);
-              <div class="comb-cell">{{ formula[0] }}</div>
-              <div class="comb-cell">{{ formula[1] }}</div>
-              <div class="comb-cell">{{ formula[2] }}</div>
-              <div class="comb-cell">{{ formula[3] }}</div>
-              <div class="comb-cell">{{ formula[4] }}</div>
-              <div class="comb-cell">{{ formula[5] }}</div>
-              <div class="comb-cell">{{ formula[6] }}</div>
-              <div class="comb-cell">{{ formula[7] }}</div>
-              <div class="comb-cell">{{ formula[8] }}</div>
-              <div class="comb-cell">{{ formula[9] }}</div>
-              <div class="comb-cell">{{ formula[10] }}</div>
+              <div class="cerfa-input-cell w-[19px]">{{ formula[0] }}</div>
+              <div class="cerfa-input-cell w-[19px]">{{ formula[1] }}</div>
+              <div class="cerfa-input-cell w-[19px]">{{ formula[2] }}</div>
+              <div class="cerfa-input-cell w-[19px]">{{ formula[3] }}</div>
+              <div class="cerfa-input-cell w-[19px]">{{ formula[4] }}</div>
+              <div class="cerfa-input-cell w-[19px]">{{ formula[5] }}</div>
+              <div class="cerfa-input-cell w-[19px]">{{ formula[6] }}</div>
+              <div class="cerfa-input-cell w-[19px]">{{ formula[7] }}</div>
+              <div class="cerfa-input-cell w-[19px]">{{ formula[8] }}</div>
+              <div class="cerfa-input-cell w-[19px]">{{ formula[9] }}</div>
+              <div class="cerfa-input-cell w-[19px]">{{ formula[10] }}</div>
             </div>
           </div>
           <div class="flex flex-col ml-[49px]">
@@ -182,19 +182,19 @@
               <div class="flex gap-[5px] mr-[2px]">
                 @let regDate = formatDate(vehicle.registrationCertificateDate, 'short');
                 @let reg2 = stringToArray(regDate, 10);
-                <div class="comb ml-1">
-                  <div class="comb-cell-2">{{ reg2[0] }}</div>
-                  <div class="comb-cell-2">{{ reg2[1] }}</div>
+                <div class="cerfa-input ml-1">
+                  <div class="cerfa-input-cell w-[15px]">{{ reg2[0] }}</div>
+                  <div class="cerfa-input-cell w-[15px]">{{ reg2[1] }}</div>
                 </div>
-                <div class="comb">
-                  <div class="comb-cell-2">{{ reg2[3] }}</div>
-                  <div class="comb-cell-2">{{ reg2[4] }}</div>
+                <div class="cerfa-input">
+                  <div class="cerfa-input-cell w-[15px]">{{ reg2[3] }}</div>
+                  <div class="cerfa-input-cell w-[15px]">{{ reg2[4] }}</div>
                 </div>
-                <div class="comb">
-                  <div class="comb-cell-2">{{ reg2[6] }}</div>
-                  <div class="comb-cell-2">{{ reg2[7] }}</div>
-                  <div class="comb-cell-2">{{ reg2[8] }}</div>
-                  <div class="comb-cell-2">{{ reg2[9] }}</div>
+                <div class="cerfa-input">
+                  <div class="cerfa-input-cell w-[15px]">{{ reg2[6] }}</div>
+                  <div class="cerfa-input-cell w-[15px]">{{ reg2[7] }}</div>
+                  <div class="cerfa-input-cell w-[15px]">{{ reg2[8] }}</div>
+                  <div class="cerfa-input-cell w-[15px]">{{ reg2[9] }}</div>
                 </div>
               </div>
             </div>
@@ -210,11 +210,11 @@
           </div>
 
           @let reason = wrapText(vehicle.absenceReason, 34, 2);
-          <div class="comb">
-            <span class="text-field border-x-0 w-full px-1">{{ reason[0] }}</span>
+          <div class="cerfa-input">
+            <span class="cerfa-text-field border-x-0 w-full px-1">{{ reason[0] }}</span>
           </div>
-          <div class="comb mt-[2px]">
-            <span class="text-field border-x-0 w-full px-1">{{ reason[1] }}</span>
+          <div class="cerfa-input mt-[2px]">
+            <span class="cerfa-text-field border-x-0 w-full px-1">{{ reason[1] }}</span>
           </div>
         </div>
       </div>
@@ -260,25 +260,25 @@
       <div class="flex items-end mt-2 mb-[1px]">
         <span class="text-[7pt] mr-[4px]">Je soussigné(e),</span>
 
-        <div class="comb">
-          <span class="text-field w-[384px] px-1">{{ previousOwner.fullName }}</span>
+        <div class="cerfa-input">
+          <span class="cerfa-text-field w-[384px] px-1">{{ previousOwner.fullName }}</span>
         </div>
-        <div class="comb ml-6">
+        <div class="cerfa-input ml-6">
           @let siret = stringToArray(previousOwner.siret, 14);
-          <div class="comb-cell-2">{{ siret[0] }}</div>
-          <div class="comb-cell-2">{{ siret[1] }}</div>
-          <div class="comb-cell-2">{{ siret[2] }}</div>
-          <div class="comb-cell-2">{{ siret[3] }}</div>
-          <div class="comb-cell-2">{{ siret[4] }}</div>
-          <div class="comb-cell-2">{{ siret[5] }}</div>
-          <div class="comb-cell-2">{{ siret[6] }}</div>
-          <div class="comb-cell-2">{{ siret[7] }}</div>
-          <div class="comb-cell-2">{{ siret[8] }}</div>
-          <div class="comb-cell-2">{{ siret[9] }}</div>
-          <div class="comb-cell-2">{{ siret[10] }}</div>
-          <div class="comb-cell-2">{{ siret[11] }}</div>
-          <div class="comb-cell-2">{{ siret[12] }}</div>
-          <div class="comb-cell-2">{{ siret[13] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret[0] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret[1] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret[2] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret[3] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret[4] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret[5] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret[6] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret[7] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret[8] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret[9] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret[10] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret[11] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret[12] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret[13] }}</div>
         </div>
       </div>
       <div class="flex items-center justify-start ml-[77px] mb-[18px]">
@@ -294,26 +294,26 @@
           <div class="flex gap-[7px] w-full">
             <!-- Line 1 -->
             <div class="flex-none flex flex-col">
-              <div class="comb">
-                <span class="text-field w-[58px] px-1">{{ previousOwner.address.streetNumber }}</span>
+              <div class="cerfa-input">
+                <span class="cerfa-text-field w-[58px] px-1">{{ previousOwner.address.streetNumber }}</span>
               </div>
               <div class="text-[6pt] mt-[1px] tracking-[0.019em]">N° de la voie</div>
             </div>
             <div class="flex-none flex flex-col">
-              <div class="comb">
-                <span class="text-field w-[76px] px-1">{{ previousOwner.address.extension }}</span>
+              <div class="cerfa-input">
+                <span class="cerfa-text-field w-[76px] px-1">{{ previousOwner.address.extension }}</span>
               </div>
               <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Extension (bis, ter, .)</div>
             </div>
             <div class="flex-none flex flex-col">
-              <div class="comb">
-                <span class="text-field w-[104px] px-1">{{ previousOwner.address.streetType }}</span>
+              <div class="cerfa-input">
+                <span class="cerfa-text-field w-[104px] px-1">{{ previousOwner.address.streetType }}</span>
               </div>
               <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Type de voie (avenue, etc.)</div>
             </div>
             <div class="flex-1 flex flex-col">
-              <div class="comb">
-                <span class="text-field w-full px-1">{{ previousOwner.address.streetName }}</span>
+              <div class="cerfa-input">
+                <span class="cerfa-text-field w-full px-1">{{ previousOwner.address.streetName }}</span>
               </div>
               <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Nom de la voie</div>
             </div>
@@ -321,19 +321,19 @@
           <div class="flex gap-[7px] w-full">
             <!-- Line 2 -->
             <div class="flex-none flex flex-col">
-              <div class="comb">
+              <div class="cerfa-input">
                 @let cp = stringToArray(previousOwner.address.postalCode, 5);
-                <div class="comb-cell">{{ cp[0] }}</div>
-                <div class="comb-cell">{{ cp[1] }}</div>
-                <div class="comb-cell">{{ cp[2] }}</div>
-                <div class="comb-cell">{{ cp[3] }}</div>
-                <div class="comb-cell">{{ cp[4] }}</div>
+                <div class="cerfa-input-cell w-[19px]">{{ cp[0] }}</div>
+                <div class="cerfa-input-cell w-[19px]">{{ cp[1] }}</div>
+                <div class="cerfa-input-cell w-[19px]">{{ cp[2] }}</div>
+                <div class="cerfa-input-cell w-[19px]">{{ cp[3] }}</div>
+                <div class="cerfa-input-cell w-[19px]">{{ cp[4] }}</div>
               </div>
               <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Code postal</div>
             </div>
             <div class="flex-1 flex flex-col">
-              <div class="comb">
-                <span class="text-field w-full px-1">{{ previousOwner.address.city }}</span>
+              <div class="cerfa-input">
+                <span class="cerfa-text-field w-full px-1">{{ previousOwner.address.city }}</span>
               </div>
               <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Commune</div>
             </div>
@@ -366,32 +366,32 @@
         <div class="flex gap-[4px]">
           @let cessionDate = formatDate(previousOwner.cessionDate, 'short');
           @let cession = stringToArray(cessionDate, 10);
-          <div class="comb">
-            <div class="comb-cell-2">{{ cession[0] }}</div>
-            <div class="comb-cell-2">{{ cession[1] }}</div>
+          <div class="cerfa-input">
+            <div class="cerfa-input-cell w-[15px]">{{ cession[0] }}</div>
+            <div class="cerfa-input-cell w-[15px]">{{ cession[1] }}</div>
           </div>
-          <div class="comb">
-            <div class="comb-cell-2">{{ cession[3] }}</div>
-            <div class="comb-cell-2">{{ cession[4] }}</div>
+          <div class="cerfa-input">
+            <div class="cerfa-input-cell w-[15px]">{{ cession[3] }}</div>
+            <div class="cerfa-input-cell w-[15px]">{{ cession[4] }}</div>
           </div>
-          <div class="comb">
-            <div class="comb-cell-2">{{ cession[6] }}</div>
-            <div class="comb-cell-2">{{ cession[7] }}</div>
-            <div class="comb-cell-2">{{ cession[8] }}</div>
-            <div class="comb-cell-2">{{ cession[9] }}</div>
+          <div class="cerfa-input">
+            <div class="cerfa-input-cell w-[15px]">{{ cession[6] }}</div>
+            <div class="cerfa-input-cell w-[15px]">{{ cession[7] }}</div>
+            <div class="cerfa-input-cell w-[15px]">{{ cession[8] }}</div>
+            <div class="cerfa-input-cell w-[15px]">{{ cession[9] }}</div>
           </div>
         </div>
         <span>à</span>
 
         @let cessionTime = stringToArray(previousOwner.cessionTime, 5);
-        <div class="comb">
-          <div class="comb-cell-2">{{ cessionTime[0] }}</div>
-          <div class="comb-cell-2">{{ cessionTime[1] }}</div>
+        <div class="cerfa-input">
+          <div class="cerfa-input-cell w-[15px]">{{ cessionTime[0] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ cessionTime[1] }}</div>
         </div>
         <span>h</span>
-        <div class="comb">
-          <div class="comb-cell-2">{{ cessionTime[3] }}</div>
-          <div class="comb-cell-2">{{ cessionTime[4] }}</div>
+        <div class="cerfa-input">
+          <div class="cerfa-input-cell w-[15px]">{{ cessionTime[3] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ cessionTime[4] }}</div>
         </div>
         <span class="ml-[4px]">le véhicule désigné ci-dessus.</span>
       </div>
@@ -435,8 +435,8 @@
           </p>
           <div class="flex flex-row text-[8pt] tracking-[0.019em]">
             <span class="mr-[3px]">portant le n° d'agrément :</span>
-            <div class="comb mt-[3px]">
-              <span class="text-field border-x-0 w-[139px] px-1">{{ previousOwner.vhuApprovalNumber }}</span>
+            <div class="cerfa-input mt-[3px]">
+              <span class="cerfa-text-field border-x-0 w-[139px] px-1">{{ previousOwner.vhuApprovalNumber }}</span>
             </div>
             <span class="text-[8pt] tracking-[0.019em]">
               . (Le numero d'agrément VHU du professionnel acquéreur est obligatoire si le
@@ -451,12 +451,12 @@
       <div class="flex justify-between items-start mt-[11px]">
         <div class="flex-none flex w-[400px]">
           <span class="text-[10pt] mr-[4px]">Fait à</span>
-          <div class="comb mt-[6px]">
-            <span class="text-field border-x-0 w-[154px] px-1">{{ previousOwner.signaturePlace }}</span>
+          <div class="cerfa-input mt-[6px]">
+            <span class="cerfa-text-field border-x-0 w-[154px] px-1">{{ previousOwner.signaturePlace }}</span>
           </div>
           <span class="text-[10pt] mr-[4px]">, le</span>
-          <div class="comb mt-[6px]">
-            <span class="text-field border-x-0 w-[110px] px-1">
+          <div class="cerfa-input mt-[6px]">
+            <span class="cerfa-text-field border-x-0 w-[110px] px-1">
               {{ formatDate(previousOwner.signatureDate, 'short') }}
             </span>
           </div>
@@ -511,25 +511,25 @@
       <div class="flex items-end mt-2 mb-[1px]">
         <span class="text-[7pt] mr-[4px]">Je soussigné(e),</span>
 
-        <div class="comb">
-          <span class="text-field w-[384px] px-1">{{ newOwner.fullName }}</span>
+        <div class="cerfa-input">
+          <span class="cerfa-text-field w-[384px] px-1">{{ newOwner.fullName }}</span>
         </div>
-        <div class="comb ml-6">
+        <div class="cerfa-input ml-6">
           @let siret2 = stringToArray(newOwner.siret, 14);
-          <div class="comb-cell-2">{{ siret2[0] }}</div>
-          <div class="comb-cell-2">{{ siret2[1] }}</div>
-          <div class="comb-cell-2">{{ siret2[2] }}</div>
-          <div class="comb-cell-2">{{ siret2[3] }}</div>
-          <div class="comb-cell-2">{{ siret2[4] }}</div>
-          <div class="comb-cell-2">{{ siret2[5] }}</div>
-          <div class="comb-cell-2">{{ siret2[6] }}</div>
-          <div class="comb-cell-2">{{ siret2[7] }}</div>
-          <div class="comb-cell-2">{{ siret2[8] }}</div>
-          <div class="comb-cell-2">{{ siret2[9] }}</div>
-          <div class="comb-cell-2">{{ siret2[10] }}</div>
-          <div class="comb-cell-2">{{ siret2[11] }}</div>
-          <div class="comb-cell-2">{{ siret2[12] }}</div>
-          <div class="comb-cell-2">{{ siret2[13] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret2[0] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret2[1] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret2[2] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret2[3] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret2[4] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret2[5] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret2[6] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret2[7] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret2[8] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret2[9] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret2[10] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret2[11] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret2[12] }}</div>
+          <div class="cerfa-input-cell w-[15px]">{{ siret2[13] }}</div>
         </div>
       </div>
       <div class="flex items-center justify-start ml-[77px] mb-[7px]">
@@ -543,24 +543,24 @@
         <div class="flex gap-[4px]">
           @let birthDate = formatDate(newOwner.birthDate, 'short');
           @let birth = stringToArray(birthDate, 10);
-          <div class="comb">
-            <div class="comb-cell-2">{{ birth[0] }}</div>
-            <div class="comb-cell-2">{{ birth[1] }}</div>
+          <div class="cerfa-input">
+            <div class="cerfa-input-cell w-[15px]">{{ birth[0] }}</div>
+            <div class="cerfa-input-cell w-[15px]">{{ birth[1] }}</div>
           </div>
-          <div class="comb">
-            <div class="comb-cell-2">{{ birth[3] }}</div>
-            <div class="comb-cell-2">{{ birth[4] }}</div>
+          <div class="cerfa-input">
+            <div class="cerfa-input-cell w-[15px]">{{ birth[3] }}</div>
+            <div class="cerfa-input-cell w-[15px]">{{ birth[4] }}</div>
           </div>
-          <div class="comb">
-            <div class="comb-cell-2">{{ birth[6] }}</div>
-            <div class="comb-cell-2">{{ birth[7] }}</div>
-            <div class="comb-cell-2">{{ birth[8] }}</div>
-            <div class="comb-cell-2">{{ birth[9] }}</div>
+          <div class="cerfa-input">
+            <div class="cerfa-input-cell w-[15px]">{{ birth[6] }}</div>
+            <div class="cerfa-input-cell w-[15px]">{{ birth[7] }}</div>
+            <div class="cerfa-input-cell w-[15px]">{{ birth[8] }}</div>
+            <div class="cerfa-input-cell w-[15px]">{{ birth[9] }}</div>
           </div>
         </div>
         <span>à</span>
-        <div class="flex-1 comb">
-          <span class="text-field w-full px-1">{{ newOwner.birthPlace }}</span>
+        <div class="flex-1 cerfa-input">
+          <span class="cerfa-text-field w-full px-1">{{ newOwner.birthPlace }}</span>
         </div>
       </div>
       <div class="flex mb-[10px]">
@@ -569,26 +569,26 @@
           <div class="flex gap-[7px] w-full">
             <!-- Line 1 -->
             <div class="flex-none flex flex-col">
-              <div class="comb">
-                <span class="text-field w-[58px] px-1">{{ newOwner.address.streetNumber }}</span>
+              <div class="cerfa-input">
+                <span class="cerfa-text-field w-[58px] px-1">{{ newOwner.address.streetNumber }}</span>
               </div>
               <div class="text-[6pt] mt-[1px] tracking-[0.019em]">N° de la voie</div>
             </div>
             <div class="flex-none flex flex-col">
-              <div class="comb">
-                <span class="text-field w-[76px] px-1">{{ newOwner.address.extension }}</span>
+              <div class="cerfa-input">
+                <span class="cerfa-text-field w-[76px] px-1">{{ newOwner.address.extension }}</span>
               </div>
               <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Extension (bis, ter, .)</div>
             </div>
             <div class="flex-none flex flex-col">
-              <div class="comb">
-                <span class="text-field w-[104px] px-1">{{ newOwner.address.streetType }}</span>
+              <div class="cerfa-input">
+                <span class="cerfa-text-field w-[104px] px-1">{{ newOwner.address.streetType }}</span>
               </div>
               <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Type de voie (avenue, etc.)</div>
             </div>
             <div class="flex-1 flex flex-col">
-              <div class="comb">
-                <span class="text-field w-full px-1">{{ newOwner.address.streetName }}</span>
+              <div class="cerfa-input">
+                <span class="cerfa-text-field w-full px-1">{{ newOwner.address.streetName }}</span>
               </div>
               <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Nom de la voie</div>
             </div>
@@ -596,19 +596,19 @@
           <div class="flex gap-[7px] w-full">
             <!-- Line 2 -->
             <div class="flex-none flex flex-col">
-              <div class="comb">
+              <div class="cerfa-input">
                 @let cp2 = stringToArray(newOwner.address.postalCode, 5);
-                <div class="comb-cell">{{ cp2[0] }}</div>
-                <div class="comb-cell">{{ cp2[1] }}</div>
-                <div class="comb-cell">{{ cp2[2] }}</div>
-                <div class="comb-cell">{{ cp2[3] }}</div>
-                <div class="comb-cell">{{ cp2[4] }}</div>
+                <div class="cerfa-input-cell w-[19px]">{{ cp2[0] }}</div>
+                <div class="cerfa-input-cell w-[19px]">{{ cp2[1] }}</div>
+                <div class="cerfa-input-cell w-[19px]">{{ cp2[2] }}</div>
+                <div class="cerfa-input-cell w-[19px]">{{ cp2[3] }}</div>
+                <div class="cerfa-input-cell w-[19px]">{{ cp2[4] }}</div>
               </div>
               <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Code postal</div>
             </div>
             <div class="flex-1 flex flex-col">
-              <div class="comb">
-                <span class="text-field w-full px-1">{{ newOwner.address.city }}</span>
+              <div class="cerfa-input">
+                <span class="cerfa-text-field w-full px-1">{{ newOwner.address.city }}</span>
               </div>
               <div class="text-[6pt] mt-[1px] tracking-[0.019em]">Commune</div>
             </div>
@@ -643,12 +643,14 @@
       <div class="flex justify-between items-start mt-[15px]">
         <div class="flex-none flex w-[400px]">
           <span class="text-[10pt] mr-[4px]">Fait à</span>
-          <div class="comb mt-[6px]">
-            <span class="text-field border-x-0 w-[154px] px-1">{{ newOwner.signaturePlace }}</span>
+          <div class="cerfa-input mt-[6px]">
+            <span class="cerfa-text-field border-x-0 w-[154px] px-1">{{ newOwner.signaturePlace }}</span>
           </div>
           <span class="text-[10pt] mr-[4px]">, le</span>
-          <div class="comb mt-[6px]">
-            <span class="text-field border-x-0 w-[110px] px-1">{{ formatDate(newOwner.signatureDate, 'short') }}</span>
+          <div class="cerfa-input mt-[6px]">
+            <span class="cerfa-text-field border-x-0 w-[110px] px-1">
+              {{ formatDate(newOwner.signatureDate, 'short') }}
+            </span>
           </div>
         </div>
 

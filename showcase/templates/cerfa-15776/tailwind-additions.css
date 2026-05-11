@@ -1,23 +1,20 @@
 @theme {
-	--font-cerfa: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-	--font-cerfa-mono: 'Courier New', 'Courier', monospace;
-	--font-ephesis: 'Ephesis', cursive;
+  --font-cerfa: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --font-cerfa-mono: "Courier New", "Courier", monospace;
+  --font-ephesis: "Ephesis", cursive;
 
-	--color-cerfa: #0b3683;
-	--color-pencil: #0f2b46;
+  --color-cerfa: #0b3683;
+  --color-pencil: #0f2b46;
 }
 
 @layer components {
-	.comb {
-		@apply inline-flex border-b-[0.5pt] border-black h-[8px] align-bottom mb-[1px] text-pencil;
-	}
-	.comb-cell {
-		@apply w-[19px] h-[8px] border-l-[0.5pt] border-black flex items-center justify-center text-[10pt] font-cerfa-mono font-bold last:border-r-[0.5pt];
-	}
-	.comb-cell-2 {
-		@apply w-[15px] h-[8px] border-l-[0.5pt] border-black flex items-center justify-center text-[10pt] font-cerfa-mono font-bold last:border-r-[0.5pt];
-	}
-	.text-field {
-		@apply border-l-[0.5pt] border-r-[0.5pt] border-black flex items-center justify-start text-[10pt] font-cerfa-mono font-bold;
-	}
+  .cerfa-input {
+    @apply inline-flex border-b-[0.5pt] border-black h-[8px] align-bottom mb-[1px] text-pencil;
+  }
+  .cerfa-input-cell {
+    @apply w-[19px] h-[8px] border-l-[0.5pt] border-black flex items-center justify-center text-[10pt] font-cerfa-mono font-bold last:border-r-[0.5pt];
+  }
+  .cerfa-text-field {
+    @apply border-l-[0.5pt] border-r-[0.5pt] border-black flex items-center justify-start text-[10pt] font-cerfa-mono font-bold;
+  }
 }
