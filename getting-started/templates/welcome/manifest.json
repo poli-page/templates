@@ -4,7 +4,7 @@
     "template": "welcome.html",
     "mock": "welcome.json"
   },
-  "images": [],
+  "images": ["/images/logo.svg"],
   "fonts": [
     {
       "family": "Inter",
