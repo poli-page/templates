@@ -1,30 +1,22 @@
- @theme {
-    --font-inter: 'Inter', sans-serif;
-                                                                                                                                                
-    --color-primary: #4869A4;
-    --color-surface: #DEDEDF;                                                                                                                   
-    --color-muted:   #7B7B7B;                                                                                                                 
-    --color-ink:     #444444;    
-    --color-info:    #0F6F7A;                                                                                                    
-    --color-info:    #0EA5E9;   
-    --color-success: #22C55E;                                                                                               
-    --color-warning: #F59E0B;                                                                                               
-    --color-error:   #EF4444;                                                                                                   
-   
-    --color-info-soft:    #E0F2FE;                                                                                                            
-    --color-success-soft: #DCFCE7;                                                                                                              
-    --color-warning-soft: #FEF3C7;
-    --color-error-soft:   #FEE2E2; 
-   
-    --text-title:  3rem;                                                                                                
-    --text-body:   1rem;                                                                                              
-    --text-meta:   0.75rem;
-                                                                                                                                                
-    --space-section: 1.5rem;
-    --space-gap:   0.5rem;                                                                                             
-} 
+@theme {
+  --font-inter: 'Inter', sans-serif;
 
+  --color-primary: #4869a4;
+  --color-surface: #dededf;
+  --color-muted: #7b7b7b;
+  --color-ink: #444444;
+  --color-info: #0f6f7a;
+  --color-info: #0ea5e9;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
 
-a {
-  color: var(--color-primary);
+  --color-info-soft: #e0f2fe;
+  --color-success-soft: #dcfce7;
+  --color-warning-soft: #fef3c7;
+  --color-error-soft: #fee2e2;
+}
+
+html {
+  font-size: 12px;
 }
