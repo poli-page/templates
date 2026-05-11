@@ -1,7 +1,3 @@
-/* Tailwind v4 theme customization for this project.
- * Override default fonts, colors, spacing, etc.
- * See: https://tailwindcss.com/docs/theme */
-
  @theme {
     --font-inter: 'Inter', sans-serif;
                                                                                                                                                 
@@ -24,10 +20,8 @@
     --text-body:   1rem;                                                                                              
     --text-meta:   0.75rem;
                                                                                                                                                 
-    --space-pad:   1rem;
     --space-section: 1.5rem;
     --space-gap:   0.5rem;                                                                                             
-    --space-aside: 4rem;                                                                                                
 } 
 
 

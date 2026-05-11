@@ -1,6 +1,12 @@
 {
   "locale": "en",
   "data": {
-    "title": "03-multi-format-and-flow"
+    "title": "03-multi-format-and-flow",
+    "formats": [
+      { "name": "a4", "width": "210 mm", "height": "297 mm", "commonUse": "Reports, EU", "printFit": "Universal", "recommended": "Default" },
+      { "name": "letter", "width": "216 mm", "height": "279 mm", "commonUse": "Reports, US", "printFit": "NA only", "recommended": "US" },
+      { "name": "a5", "width": "148 mm", "height": "210 mm", "commonUse": "Booklets", "printFit": "Compact", "recommended": "Mobile" },
+      { "name": "tabloid", "width": "279 mm", "height": "432 mm", "commonUse": "Posters", "printFit": "Large", "recommended": "Heavy" }
+    ]
   }
 }
