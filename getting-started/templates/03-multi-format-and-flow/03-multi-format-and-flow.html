@@ -1,4 +1,4 @@
-<div class="flex flex-col flex-1 text-lg font-inter p-8 text-ink">
+<div class="flex flex-col flex-1 text-lg font-inter px-8 py-4 text-ink">
   <header class="poli-header poli-first flex justify-between items-center pb-4 border-b-2 border-surface">
     <span class="bg-primary text-white rounded-2xl tracking-widest py-1 px-4">LESSON 01 · MULTI-FORMAT & FLOW</span>
     <span class="text-muted text-xs">ADVANCED · {{ poli.totalPages }} PAGES</span>
@@ -130,12 +130,12 @@
         </span>
       </section>
 
-      <section class="poli-break poli-landscape grid gap-10 align-content-between">
-        <div class="flex gap-5 justify-between flex-wrap">
-          <div class="grid gap-5 w-48/100">
+      <section class="poli-break poli-landscape flex flex-col flex-1 bg-green-100">
+        <div class="flex gap-3 justify-between flex-wrap bg-yellow-100">
+          <div class="grid gap-3 w-[500px] bg-amber-800">
             <div class="font-bold flex items-center gap-3 text-xl">
               <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">2</span>
-              <span>Format-responsive prefixes</span>
+              <span>You're now in landscape</span>
             </div>
 
             <p>
@@ -169,21 +169,15 @@
 
             <div class="font-bold flex items-center gap-3 text-xl">
               <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">3</span>
-              <span>Format-responsive prefixes</span>
+              <span>Why landscape mid-document?</span>
             </div>
 
             <p>
-              Tailwind's
-              <code>sm:</code>
-              ,
-              <code>md:</code>
-              ,
-              <code>lg:</code>
-              are useless in PDFs — there's no viewport. Poli Page provides format prefixes instead:
+              Landscape gives you horizontal space. Use it for content that doesn't fit comfortably in portrait: wide
+              tables, comparison spreads, panoramic images, dashboards.
             </p>
           </div>
-
-          <div class="grid gap-5 w-48/100">
+          <div class="grid gap-3 flex-1 max-w-[50%] bg-red-800">
             <table class="w-full rounded-lg text-xs text-left">
               <thead class="border-1 border-muted text-white font-bold">
                 <tr class="tracking-widest bg-primary">
@@ -219,8 +213,8 @@
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-5 justify-between">
-          <div class="grid gap-5 w-48/100">
+        <div class="flex gap-3 justify-between flex-wrap bg-red-100">
+          <div class="grid gap-3 w-[500px] bg-violet-800">
             <div class="font-bold flex items-center gap-3 text-xl">
               <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">4</span>
               <span>Page break control</span>
@@ -234,12 +228,14 @@
 
 &lt;div class="poli-avoid-break"&gt;
   &lt;h3&gt;Summary&lt;/h3&gt;
-  &lt;p&gt;Stays whole on one page.&lt;/p&gt;            
+  &lt;p&gt;Stays whole on one page.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
               </div>
             </div>
           </div>
-          <div class="border-2 border-warning bg-warning-soft p-4 space-y-gap grid rounded-lg w-48/100">
+          <div
+            class="border-2 flex-1 max-w-[50%] bg-purple-800 border-warning bg-warning-soft p-4 space-y-gap grid rounded-lg"
+          >
             <span class="text-warning flex items-center">
               <poli-icon name="electric_bolt" class="w-4 h-4" />
               <span>TRY THIS</span>
@@ -321,7 +317,7 @@
     </main>
 
     <footer class="poli-footer poli-first">
-      <div class="flex justify-between p-4 mt-4 text-xs text-muted border-t-2 border-surface">
+      <div class="flex justify-between pt-4 mt-4 text-xs text-muted border-t-2 border-surface">
         <span class="uppercase tracking-widest">
           Multi-Format & Flow · Page {{ poli.currentPage }} / {{ poli.totalPages }}
           <span class="text-info">portrait</span>
@@ -331,7 +327,7 @@
     </footer>
 
     <footer class="poli-footer poli-not-last poli-not-first">
-      <div class="flex justify-between p-4 mt-4 text-xs text-muted border-t-2 border-surface">
+      <div class="flex justify-between pt-4 mt-4 text-xs text-muted border-t-2 border-surface">
         <span class="uppercase tracking-widest">
           Multi-Format & Flow · Page {{ poli.currentPage }} / {{ poli.totalPages }}
           <span class="text-warning">landscape</span>
@@ -341,7 +337,7 @@
     </footer>
 
     <footer class="poli-footer poli-last">
-      <div class="flex justify-between p-4 mt-4 text-xs text-muted border-t-2 border-surface">
+      <div class="flex justify-between pt-4 mt-4 text-xs text-muted border-t-2 border-surface">
         <span class="uppercase tracking-widest">
           Multi-Format & Flow · Page {{ poli.currentPage }} / {{ poli.totalPages }}
           <span class="text-info">portrait</span>
