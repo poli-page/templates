@@ -1,7 +1,13 @@
 <div class="flex flex-col flex-1 text-lg font-inter px-8 py-4 text-ink">
-  <header class="poli-header poli-first flex justify-between items-center pb-4 border-b-2 border-surface">
-    <span class="bg-primary text-white rounded-2xl tracking-widest py-1 px-4">LESSON 01 · MULTI-FORMAT & FLOW</span>
-    <span class="text-muted text-xs">ADVANCED · {{ poli.totalPages }} PAGES</span>
+  <header
+    class="poli-header poli-first flex justify-between items-center pb-4 border-b-2 border-surface"
+  >
+    <span class="bg-primary text-white rounded-2xl tracking-widest py-1 px-4"
+      >LESSON 01 · MULTI-FORMAT & FLOW</span
+    >
+    <span class="text-muted text-xs"
+      >ADVANCED · {{ poli.totalPages }} PAGES</span
+    >
   </header>
 
   <header
@@ -10,7 +16,9 @@
     <span class="text-muted tracking-widest py-1">MULTI-FORMAT & FLOW</span>
     <span class="text-muted">
       LESSON 03 ·
-      <span class="border-2 border-warning rounded-2xl bg-warning-soft px-2 py-1 text-warning font-bold">
+      <span
+        class="border-2 border-warning rounded-2xl bg-warning-soft px-2 py-1 text-warning font-bold"
+      >
         LANDSCAPE
       </span>
     </span>
@@ -22,7 +30,10 @@
     <span class="text-muted tracking-widest py-1">MULTI-FORMAT & FLOW</span>
     <span class="text-muted">
       LESSON 03 ·
-      <span class="border-2 border-info rounded-2xl bg-info-soft px-2 py-1 text-info font-bold">PORTRAIT</span>
+      <span
+        class="border-2 border-info rounded-2xl bg-info-soft px-2 py-1 text-info font-bold"
+        >PORTRAIT</span
+      >
     </span>
   </header>
 
@@ -34,32 +45,54 @@
           <span class="text-primary">Flow</span>
         </h1>
         <p class="text-muted">
-          This template renders the same source HTML across multiple page formats, and switches orientation
-          mid-document. Watch what happens between page 1 and page 2: the orientation flips to landscape, then back to
-          portrait on page 3.
+          This template renders the same source HTML across multiple page
+          formats, and switches orientation mid-document. Watch what happens
+          between page 1 and page 2: the orientation flips to landscape, then
+          back to portrait on page 3.
         </p>
       </span>
 
-      <div class="border-2 border-primary border-dashed p-4 rounded-lg gap-3 grid">
-        <span class="text-primary text-sm font-bold tracking-widest">DOCUMENT MAP</span>
+      <div
+        class="border-2 border-primary border-dashed p-4 rounded-lg gap-3 grid"
+      >
+        <span class="text-primary text-sm font-bold tracking-widest"
+          >DOCUMENT MAP</span
+        >
         <div class="grid grid-cols-5 justify-items-center items-center">
-          <div class="grid border-3 border-primary rounded-lg h-14 w-10 place-items-center">1</div>
+          <div
+            class="grid border-3 border-primary rounded-lg h-14 w-10 place-items-center"
+          >
+            1
+          </div>
           <span>-></span>
-          <div class="grid border-3 border-warning rounded-lg h-10 w-14 place-items-center">2</div>
+          <div
+            class="grid border-3 border-warning rounded-lg h-10 w-14 place-items-center"
+          >
+            2
+          </div>
           <span>-></span>
-          <div class="grid border-3 border-primary rounded-lg h-14 w-10 place-items-center">3</div>
+          <div
+            class="grid border-3 border-primary rounded-lg h-14 w-10 place-items-center"
+          >
+            3
+          </div>
           <p class="text-xs">portrait</p>
           <span></span>
           <p class="text-xs text-warning">landscape</p>
           <span></span>
           <p class="text-xs">portrait</p>
         </div>
-        <span class="text-xs text-muted">Same source HTML, no document split, no separate render call.</span>
+        <span class="text-xs text-muted"
+          >Same source HTML, no document split, no separate render call.</span
+        >
       </div>
 
       <section class="grid gap-5">
         <div class="font-bold flex items-center gap-3 text-xl">
-          <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">SCOPE</span>
+          <span
+            class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
+            >SCOPE</span
+          >
           <span>What you'll learn</span>
         </div>
         <ul class="list-disc pl-4">
@@ -87,7 +120,10 @@
 
       <section class="grid gap-5">
         <div class="font-bold flex items-center gap-3 text-xl">
-          <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">1</span>
+          <span
+            class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
+            >1</span
+          >
           <span>Format-responsive prefixes</span>
         </div>
 
@@ -98,12 +134,15 @@
           <code>md:</code>
           ,
           <code>lg:</code>
-          are useless in PDFs — there's no viewport. Poli Page provides format prefixes instead:
+          are useless in PDFs — there's no viewport. Poli Page provides format
+          prefixes instead:
         </p>
         <span class="grid gap-5">
           <div class="w-full">
             <div class="tracking-widest text-xs text-muted">TEMPLATE</div>
-            <div class="p-4 border-muted border-2 text-sm bg-surface rounded-lg">
+            <div
+              class="p-4 border-muted border-2 text-sm bg-surface rounded-lg"
+            >
               <pre><code>&lt;h1 class="text-xl a4:text-2xl letter:text-2xl a5:text-lg"&gt;
   Adaptive title
 &lt;/h1&gt;</code></pre>
@@ -112,13 +151,17 @@
 
           <div class="w-full">
             <div class="tracking-widest text-xs text-primary">OUTPUT</div>
-            <div class="p-2 border-primary space-y-2 border-dashed border-2 rounded-lg font-bold">
+            <div
+              class="p-2 border-primary space-y-2 border-dashed border-2 rounded-lg font-bold"
+            >
               <div class="flex items-center bg-surface p-4 rounded-lg">
                 <span class="w-20 tracking-widest text-xs text-muted">A4</span>
                 <span class="text-2xl">Adaptive Title</span>
               </div>
               <div class="flex items-center bg-surface p-4 rounded-lg">
-                <span class="w-20 tracking-widest text-xs text-muted">LETTER</span>
+                <span class="w-20 tracking-widest text-xs text-muted"
+                  >LETTER</span
+                >
                 <span class="text-2xl">Adaptive Title</span>
               </div>
               <div class="flex items-center bg-surface p-4 rounded-lg">
@@ -130,12 +173,17 @@
         </span>
       </section>
 
-      <section class="poli-break poli-landscape flex flex-col flex-1 bg-green-100">
-        <div class="flex gap-3 justify-between flex-wrap bg-yellow-100">
-          <div class="grid gap-3 w-[500px] bg-amber-800">
+      <section
+        class="poli-break poli-landscape grid gap-10 align-content-between"
+      >
+        <div class="flex gap-5 justify-between flex-wrap">
+          <div class="grid gap-5 w-48/100">
             <div class="font-bold flex items-center gap-3 text-xl">
-              <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">2</span>
-              <span>You're now in landscape</span>
+              <span
+                class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
+                >2</span
+              >
+              <span>Format-responsive prefixes</span>
             </div>
 
             <p>
@@ -145,12 +193,15 @@
               <code>md:</code>
               ,
               <code>lg:</code>
-              are useless in PDFs — there's no viewport. Poli Page provides format prefixes instead:
+              are useless in PDFs — there's no viewport. Poli Page provides
+              format prefixes instead:
             </p>
             <span class="grid gap-5">
               <div class="w-full">
                 <div class="tracking-widest text-xs text-muted">TEMPLATE</div>
-                <div class="p-4 border-muted border-2 text-sm bg-surface rounded-lg">
+                <div
+                  class="p-4 border-muted border-2 text-sm bg-surface rounded-lg"
+                >
                   <pre><code>&lt;section class="poli-landscape"&gt;
   &lt;h2&gt;This whole section is landscape&lt;/h2&gt;
   ...
@@ -161,80 +212,114 @@
               <p>
                 The reverse —
                 <code>poli-portrait</code>
-                inside a landscape document — also works. We use both: page 3 switches back to portrait via
+                inside a landscape document — also works. We use both: page 3
+                switches back to portrait via
                 <code>poli-portrait</code>
                 .
               </p>
             </span>
 
             <div class="font-bold flex items-center gap-3 text-xl">
-              <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">3</span>
-              <span>Why landscape mid-document?</span>
+              <span
+                class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
+                >3</span
+              >
+              <span>Format-responsive prefixes</span>
             </div>
 
             <p>
-              Landscape gives you horizontal space. Use it for content that doesn't fit comfortably in portrait: wide
-              tables, comparison spreads, panoramic images, dashboards.
+              Tailwind's
+              <code>sm:</code>
+              ,
+              <code>md:</code>
+              ,
+              <code>lg:</code>
+              are useless in PDFs — there's no viewport. Poli Page provides
+              format prefixes instead:
             </p>
           </div>
-          <div class="grid gap-3 flex-1 max-w-[50%] bg-red-800">
+
+          <div class="grid gap-5 w-48/100">
             <table class="w-full rounded-lg text-xs text-left">
-              <thead class="border-1 border-muted text-white font-bold">
+              <thead class="border border-muted text-white font-bold">
                 <tr class="tracking-widest bg-primary">
-                  <td class="border-r-1 border-surface p-2">FORMAT</td>
-                  <td class="border-r-1 border-surface p-2">WIDTH</td>
-                  <td class="border-r-1 border-surface p-2">HEIGHT</td>
-                  <td class="border-r-1 border-surface p-2">COMMON USE</td>
-                  <td class="border-r-1 border-surface p-2">PRINT FIT</td>
+                  <td class="border-r border-surface p-2">FORMAT</td>
+                  <td class="border-r border-surface p-2">WIDTH</td>
+                  <td class="border-r border-surface p-2">HEIGHT</td>
+                  <td class="border-r border-surface p-2">COMMON USE</td>
+                  <td class="border-r border-surface p-2">PRINT FIT</td>
                   <td class="p-2">RECOMMENDED</td>
                 </tr>
               </thead>
               <tbody>
                 @for (format of formats) {
-                  <tr>
-                    <td class="border-b-2 border-surface p-2 font-bold tracking-widest uppercase">{{ format.name }}</td>
-                    <td class="border-b-2 border-surface p-2">{{ format.width }}</td>
-                    <td class="border-b-2 border-surface p-2">{{ format.height }}</td>
-                    <td class="border-b-2 border-surface p-2">{{ format.commonUse }}</td>
-                    <td class="border-b-2 border-surface p-2">{{ format.printFit }}</td>
-                    <td class="border-b-2 border-surface p-2">{{ format.recommended }}</td>
-                  </tr>
+                <tr>
+                  <td
+                    class="border-b-2 border-surface p-2 font-bold tracking-widest uppercase"
+                  >
+                    {{ format.name }}
+                  </td>
+                  <td class="border-b-2 border-surface p-2">
+                    {{ format.width }}
+                  </td>
+                  <td class="border-b-2 border-surface p-2">
+                    {{ format.height }}
+                  </td>
+                  <td class="border-b-2 border-surface p-2">
+                    {{ format.commonUse }}
+                  </td>
+                  <td class="border-b-2 border-surface p-2">
+                    {{ format.printFit }}
+                  </td>
+                  <td class="border-b-2 border-surface p-2">
+                    {{ format.recommended }}
+                  </td>
+                </tr>
                 }
               </tbody>
             </table>
 
-            <div class="border-2 border-info rounded-xl bg-info-soft p-4 space-y-gap">
-              <h4 class="tracking-widest text-info font-bold uppercase text-xs">Notice the width</h4>
+            <div
+              class="border-2 border-info rounded-xl bg-info-soft p-4 space-y-gap"
+            >
+              <h4 class="tracking-widest text-info font-bold uppercase text-xs">
+                Notice the width
+              </h4>
               <p>
-                This 5-column table fills the landscape page. In portrait, it would overflow or shrink each column to
-                unreadable widths.
+                This 5-column table fills the landscape page. In portrait, it
+                would overflow or shrink each column to unreadable widths.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="flex gap-3 justify-between flex-wrap bg-red-100">
-          <div class="grid gap-3 w-[500px] bg-violet-800">
+        <div class="flex flex-wrap gap-5 justify-between">
+          <div class="grid gap-5 w-48/100">
             <div class="font-bold flex items-center gap-3 text-xl">
-              <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">4</span>
+              <span
+                class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
+                >4</span
+              >
               <span>Page break control</span>
             </div>
             <div>
               <div class="tracking-widest text-xs text-muted">TEMPLATE</div>
-              <div class="p-4 border-muted border-2 text-sm bg-surface rounded-lg">
+              <div
+                class="p-4 border-muted border-2 text-sm bg-surface rounded-lg"
+              >
                 <pre><code>&lt;section class="poli-break"&gt;
   &lt;h2&gt;This always starts on a new page&lt;/h2&gt;
 &lt;/section&gt;
 
 &lt;div class="poli-avoid-break"&gt;
   &lt;h3&gt;Summary&lt;/h3&gt;
-  &lt;p&gt;Stays whole on one page.&lt;/p&gt;
+  &lt;p&gt;Stays whole on one page.&lt;/p&gt;            
 &lt;/div&gt;</code></pre>
               </div>
             </div>
           </div>
           <div
-            class="border-2 flex-1 max-w-[50%] bg-purple-800 border-warning bg-warning-soft p-4 space-y-gap grid rounded-lg"
+            class="border-2 border-warning bg-warning-soft p-4 space-y-gap grid rounded-lg w-48/100"
           >
             <span class="text-warning flex items-center">
               <poli-icon name="electric_bolt" class="w-4 h-4" />
@@ -243,7 +328,8 @@
             <p>
               Move the
               <code>poli-last</code>
-              div to the first page and you'll see it still shows on the last. Now remove the
+              div to the first page and you'll see it still shows on the last.
+              Now remove the
               <code>poli-last</code>
               - it now shows on the page you moved it to instead.
             </p>
@@ -254,39 +340,59 @@
       <section class="poli-break poli-portrait grid gap-10">
         <div class="grid gap-5">
           <div class="font-bold flex items-center gap-3 text-xl">
-            <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">5</span>
+            <span
+              class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
+              >5</span
+            >
             <span>Back to portrait</span>
           </div>
           <p>
-            The landscape section ended at the bottom of page 2. This page is portrait again, identical to page 1's
-            orientation. You can switch back and forth as many times as a document needs.
+            The landscape section ended at the bottom of page 2. This page is
+            portrait again, identical to page 1's orientation. You can switch
+            back and forth as many times as a document needs.
           </p>
           <p class="text-muted text-sm">
-            Use the pattern thoughtfully: orientation changes are noticeable to the reader, so reserve them for content
-            that genuinely benefits.
+            Use the pattern thoughtfully: orientation changes are noticeable to
+            the reader, so reserve them for content that genuinely benefits.
           </p>
         </div>
 
         <div class="grid gap-5">
-          <h3 class="text-xl font-bold">You've seen the full Poli Page surface</h3>
+          <h3 class="text-xl font-bold">
+            You've seen the full Poli Page surface
+          </h3>
 
           <div class="flex justify-between gap-3">
-            <div class="bg-surface w-full rounded-xl border-t-4 border-primary p-4">
+            <div
+              class="bg-surface w-full rounded-xl border-t-4 border-primary p-4"
+            >
               <h5 class="text-3xl text-primary font-thin">01</h5>
               <p class="font-bold">Layout essentials</p>
-              <span class="text-muted text-xs">Headers, footers, conditionals, icons, images, partials.</span>
+              <span class="text-muted text-xs"
+                >Headers, footers, conditionals, icons, images, partials.</span
+              >
             </div>
 
-            <div class="bg-surface w-full rounded-xl border-t-4 border-primary p-4">
+            <div
+              class="bg-surface w-full rounded-xl border-t-4 border-primary p-4"
+            >
               <h5 class="text-3xl text-primary font-thin">02</h5>
               <p class="font-bold">Data & Content</p>
-              <span class="text-muted text-xs">&#64;for, &#64;if, &#64;let, format helpers, paginated tables.</span>
+              <span class="text-muted text-xs"
+                >&#64;for, &#64;if, &#64;let, format helpers, paginated
+                tables.</span
+              >
             </div>
 
-            <div class="bg-surface w-full rounded-xl border-t-4 border-primary p-4">
+            <div
+              class="bg-surface w-full rounded-xl border-t-4 border-primary p-4"
+            >
               <h5 class="text-3xl text-primary font-thin">03</h5>
               <p class="font-bold">Multi-Format & Flow</p>
-              <span class="text-muted text-xs">Format prefixes, asides, page breaks, mid-document orientation.</span>
+              <span class="text-muted text-xs"
+                >Format prefixes, asides, page breaks, mid-document
+                orientation.</span
+              >
             </div>
           </div>
         </div>
@@ -297,17 +403,19 @@
           <ul class="list-disc pl-4">
             <li>
               <strong>Browse the template gallery</strong>
-              at docs.poli.page/templates for production-ready patterns: invoices, reports, certificates, contracts.
+              at docs.poli.page/templates for production-ready patterns:
+              invoices, reports, certificates, contracts.
             </li>
             <li>
               <strong>Read the poli-* classes reference</strong>
-              for the exhaustive list, including poli-clone for multi-copy documents and poli-odd/poli-even for
-              book-style layouts.
+              for the exhaustive list, including poli-clone for multi-copy
+              documents and poli-odd/poli-even for book-style layouts.
             </li>
             <li>
               <strong>Create your own project</strong>
-              — poli init my-templates from the CLI, or "New Project" in the editor. The getting-started project stays
-              untouched as a reference.
+              — poli init my-templates from the CLI, or "New Project" in the
+              editor. The getting-started project stays untouched as a
+              reference.
             </li>
           </ul>
         </div>
@@ -317,9 +425,12 @@
     </main>
 
     <footer class="poli-footer poli-first">
-      <div class="flex justify-between pt-4 mt-4 text-xs text-muted border-t-2 border-surface">
+      <div
+        class="flex justify-between pt-4 mt-4 text-xs text-muted border-t-2 border-surface"
+      >
         <span class="uppercase tracking-widest">
-          Multi-Format & Flow · Page {{ poli.currentPage }} / {{ poli.totalPages }}
+          Multi-Format & Flow · Page {{ poli.currentPage }} / {{ poli.totalPages
+          }}
           <span class="text-info">portrait</span>
         </span>
         <poli-page-numbers />
@@ -327,9 +438,12 @@
     </footer>
 
     <footer class="poli-footer poli-not-last poli-not-first">
-      <div class="flex justify-between pt-4 mt-4 text-xs text-muted border-t-2 border-surface">
+      <div
+        class="flex justify-between pt-4 mt-4 text-xs text-muted border-t-2 border-surface"
+      >
         <span class="uppercase tracking-widest">
-          Multi-Format & Flow · Page {{ poli.currentPage }} / {{ poli.totalPages }}
+          Multi-Format & Flow · Page {{ poli.currentPage }} / {{ poli.totalPages
+          }}
           <span class="text-warning">landscape</span>
         </span>
         <poli-page-numbers />
@@ -337,9 +451,12 @@
     </footer>
 
     <footer class="poli-footer poli-last">
-      <div class="flex justify-between pt-4 mt-4 text-xs text-muted border-t-2 border-surface">
+      <div
+        class="flex justify-between pt-4 mt-4 text-xs text-muted border-t-2 border-surface"
+      >
         <span class="uppercase tracking-widest">
-          Multi-Format & Flow · Page {{ poli.currentPage }} / {{ poli.totalPages }}
+          Multi-Format & Flow · Page {{ poli.currentPage }} / {{ poli.totalPages
+          }}
           <span class="text-info">portrait</span>
         </span>
         <poli-page-numbers />
