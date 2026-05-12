@@ -1,11 +1,7 @@
 <div class="flex flex-col p-8 text-lg gap-5 text-ink">
   <header class="poli-header poli-first flex justify-between items-center">
-    <span class="bg-primary text-white rounded-2xl tracking-widest py-1 px-4"
-      >LESSON 02 · DATA & CONTENT</span
-    >
-    <span class="text-muted text-xs"
-      >INTERMEDIATE · {{ poli.totalPages }} PAGES</span
-    >
+    <span class="bg-primary text-white rounded-2xl tracking-widest py-1 px-4">LESSON 02 · DATA & CONTENT</span>
+    <span class="text-muted text-xs">INTERMEDIATE · {{ poli.totalPages }} PAGES</span>
   </header>
 
   <header
@@ -23,46 +19,40 @@
       </h1>
 
       <p>
-        This template is rendered from 02-data-and-content.json. All the content
-        you see — the company name, the items list, the totals — comes from that
-        file. Templates author the
+        This template is rendered from 02-data-and-content.json. All the content you see — the company name, the items
+        list, the totals — comes from that file. Templates author the
         <strong>structure</strong>
         ; data fills it in.
       </p>
-      <p>
-        Open both files side by side in the editor. As you type {{ , the editor
-        autocompletes from the JSON.
-      </p>
+      <p>Open both files side by side in the editor. As you type <code poli-raw>{{</code> , the editor autocompletes from the JSON.</p>
     </span>
 
-    <section class="grid gap-5">
+    <!-- Scope -->
+    <section class="flex flex-col gap-5">
       <div class="font-bold flex items-center gap-3 text-xl">
-        <span
-          class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
-          >SCOPE</span
-        >
+        <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">SCOPE</span>
         <span>What you'll learn</span>
       </div>
       <span class="flex justify-between">
         <ul class="list-disc pl-8">
           <li>
             Interpolation with
-            <code>&#123;&#123; ... &#125;&zwnj;&#125;;</code>
+            <code poli-raw>{{ ... }};</code> 
           </li>
           <li>
             Looping with
-            <code>&#64;for</code>
+            <code poli-raw>@for</code>
           </li>
           <li>
             Conditionals with
-            <code>&#64;if / &#64;else</code>
+            <code poli-raw>@if / @else</code>
           </li>
         </ul>
 
         <ul class="list-disc pl-4">
           <li>
             Local variables with
-            <code>&#64;let</code>
+            <code poli-raw>@let</code>
           </li>
           <li>
             Format helpers:
@@ -83,68 +73,58 @@
       </span>
     </section>
 
-    <section class="grid gap-5">
+    <!-- 1. Interpolation -->
+    <section class="flex flex-col gap-5">
       <div class="font-bold flex items-center gap-3 text-xl">
-        <span
-          class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
-          >1</span
-        >
+        <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">1</span>
         <span>Interpolation</span>
       </div>
       <span class="flex justify-between gap-5">
         <div class="w-full">
           <div class="tracking-widest text-xs text-muted">TEMPLATE</div>
           <div class="p-4 border-muted border-2 bg-surface rounded-lg">
-            <code>&#123;&#123; invoice.customer.name &#125;&zwnj;&#125;</code>
+            <code poli-raw>{{ invoice.customer.name }}</code>
           </div>
         </div>
 
         <div class="w-full">
           <div class="tracking-widest text-xs text-primary">OUTPUT</div>
-          <div
-            class="p-4 border-primary border-dashed border-2 rounded-lg font-bold"
-          >
-            Acme Corp
-          </div>
+          <div class="p-4 border-primary border-dashed border-2 rounded-lg font-bold">Acme Corp</div>
         </div>
       </span>
 
       <p class="text-muted text-base">
         The expression in
-        <code>&#123;&#123; &#125;&zwnj;&#125;</code>
-        is JavaScript-like. You can call helpers, do arithmetic, chain property
-        access — but the engine sandboxes execution: no network, no filesystem,
-        no eval.
+        <code poli-raw>{{ }}</code>
+        is JavaScript-like. You can call helpers, do arithmetic, chain property access — but the engine sandboxes
+        execution: no network, no filesystem, no eval.
       </p>
     </section>
 
-    <section class="grid poli-break gap-5">
+    <!-- 2. Looping with @for -->
+    <section class="flex flex-col gap-5">
       <div class="font-bold flex items-center gap-3 text-xl">
-        <span
-          class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
-          >2</span
-        >
+        <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">2</span>
         <span>
           Looping with
-          <code>&#64;for</code>
+          <code poli-raw>@for</code>
         </span>
       </div>
       <p>Each row in the items table on page 3 is rendered by:</p>
-      <span class="flex justify-between gap-3">
+      <span class="flex justify-between gap-5">
         <div class="w-full">
           <div class="tracking-widest text-xs text-muted">TEMPLATE</div>
           <div class="p-4 border-muted border-2 bg-surface rounded-lg">
-            <pre><code><span class="text-purple-600">&#64;for</span> (item of invoice.items) &#123;
-  &lt;tr&gt; ... &lt;/tr&gt;
-&#125;</code></pre>
+            <pre>
+<code poli-raw><span class="text-purple-600">@for</span> (item of invoice.items) {
+  &lt;tr&gt; {{ item.name }} &lt;/tr&gt;
+}</code></pre>
           </div>
         </div>
 
         <div class="w-full">
           <div class="tracking-widest text-xs text-primary">OUTPUT</div>
-          <div
-            class="p-4 border-primary border-dashed border-2 rounded-lg font-bold"
-          >
+          <div class="p-4 border-primary border-dashed border-2 rounded-lg font-bold">
             <table class="w-full border border-muted p-4">
               <thead class="poli-table-header border-b border-muted">
                 <tr>
@@ -153,9 +133,9 @@
               </thead>
               <tbody>
                 @for (item of invoice.items) {
-                <tr class="poli-title text-center">
-                  <td>{{ item.name }}</td>
-                </tr>
+                  <tr class="poli-title text-center">
+                    <td>{{ item.name }}</td>
+                  </tr>
                 }
               </tbody>
             </table>
@@ -164,170 +144,141 @@
       </span>
 
       <div class="w-full p-4 border-info border-2 bg-info-soft rounded-lg">
-        Note: Poli Page's &#64;for does not require a track expression — the
-        engine renders once and doesn't need keys.
+        Note: Poli Page's <code poli-raw>@for</code> does not require a track expression — the engine renders once and doesn't need keys.
       </div>
-      <div
-        class="border-2 border-warning bg-warning-soft p-4 space-y-gap grid rounded-lg"
-      >
+      <div class="border-2 border-warning bg-warning-soft p-4 gap-1 grid rounded-lg">
         <span class="text-warning flex items-center">
           <poli-icon name="electric_bolt" class="w-4 h-4" />
-          <span>TRY THIS</span>
+          <span>TRY THIS</span> 
         </span>
         <p>
           Open
           <code>02-data-and-content.json</code>
-          , add a new line item to invoice.items, save. The table grows in real
-          time.
+          , add a new line item to invoice.items, save. The table grows in real time.
         </p>
       </div>
     </section>
 
-    <section class="grid gap-5">
+    <!-- 3. Conditionals and @if -->
+    <section class="flex flex-col gap-5">
       <div class="font-bold flex items-center gap-3 text-xl">
-        <span
-          class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
-          >3</span
-        >
+        <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">3</span>
         <span>
           Conditionals and
-          <code>&#64;if</code>
+          <code poli-raw>@if</code>
         </span>
       </div>
       <p>Each row in the items table on page 3 is rendered by:</p>
-      <span class="flex justify-between gap-3">
+      <span class="flex justify-between gap-5">
         <div class="w-full">
           <div class="tracking-widest text-xs text-muted">TEMPLATE</div>
           <div class="p-4 border-muted border-2 bg-surface rounded-lg">
-            <pre><code><span class="text-purple-600">&#64;if</span> (discount) &#123;
-  &lt;span class="..."&gt; 
-    &#123;&#123; formatPercent(discount) &#125;&zwnj;&#125; 
+            <pre>
+<code poli-raw><span class="text-purple-600">@if</span> (discount) {
+  &lt;span class="..."&gt;
+    {{ formatPercent(discount) }}
   &lt;/span&gt;
-&#125;</code></pre>
+}</code></pre>
           </div>
         </div>
 
         <div class="w-full">
           <div class="tracking-widest text-xs text-primary">OUTPUT</div>
-          <div
-            class="p-4 border-primary border-dashed border-2 rounded-lg font-bold"
-          >
+          <div class="p-4 border-primary border-dashed border-2 rounded-lg font-bold">
             @if (discount) {
-            <span class="rounded-3xl px-3 py-2 bg-info-soft text-info"
-              >-{{ formatPercent(discount) }}</span
-            >
+              <span class="rounded-3xl px-3 py-2 bg-info-soft text-info">-{{ formatPercent(discount) }}</span>
             }
           </div>
         </div>
       </span>
 
-      <div
-        class="border-2 border-warning bg-warning-soft p-4 space-y-gap grid rounded-lg"
-      >
+      <div class="border-2 border-warning bg-warning-soft p-4 gap-1 grid rounded-lg">
         <span class="text-warning flex items-center">
           <poli-icon name="electric_bolt" class="w-4 h-4" />
           <span>TRY THIS</span>
         </span>
-        <p>
-          In the data file, set discount: 0.15 on an item that doesn't have one.
-          Save — the badge appears.
-        </p>
+        <p>In the data file, set discount: 0.15 on an item that doesn't have one. Save — the badge appears.</p>
       </div>
     </section>
 
-    <section class="grid gap-5">
+    <!-- 4. Multi-branch with @else if -->
+    <section class="flex flex-col gap-5">
       <div class="font-bold flex items-center gap-3 text-xl">
-        <span
-          class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
-          >4</span
-        >
+        <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">4</span>
         <span>
           Multi-branch with
-          <code>&#64;else if</code>
+          <code poli-raw>@else if</code>
         </span>
       </div>
       <p>Each row in the items table on page 3 is rendered by:</p>
-      <span class="flex justify-between gap-3">
+      <span class="flex justify-between gap-5">
         <div class="w-full">
           <div class="tracking-widest text-xs text-muted">TEMPLATE</div>
           <div class="p-4 border-muted border-2 bg-surface rounded-lg">
-            <pre><code><span class="text-purple-600">&#64;if</span> (status === <span class="text-success font-bold">"paid"</span>) &#123;
+            <pre>
+<code poli-raw><span class="text-purple-600">@if</span> (status === <span class="text-success font-bold">"paid"</span>) {
   &lt;span&gt;Paid&lt;/span&gt;
-&#125; <span class="text-purple-600">&#64;else if</span> (status === <span class="text-success font-bold">"pending"</span>) &#123;
+} <span class="text-purple-600">@else if</span> (status === <span class="text-success font-bold">"pending"</span>) {
   &lt;span&gt;Pending&lt;/span&gt;
-&#125; <span class="text-purple-600">&#64;else</span> &#123;
+} <span class="text-purple-600">@else</span> {
   &lt;span&gt;Overdue&lt;/span&gt;
-&#125; 
-              </code></pre>
+} </code></pre>
           </div>
         </div>
 
         <div class="w-full">
           <div class="tracking-widest text-xs text-primary">OUTPUT</div>
-          <div
-            class="p-4 border-primary border-dashed border-2 rounded-lg font-bold"
-          >
+          <div class="p-4 border-primary border-dashed border-2 rounded-lg font-bold">
             @if (status === 'paid') {
-            <span class="rounded-3xl px-3 py-2 bg-success-soft text-success"
-              >Paid</span
-            >
+              <span class="rounded-3xl px-3 py-2 bg-success-soft text-success">Paid</span>
             } @else if (status === 'pending') {
-            <span class="rounded-3xl px-3 py-2 bg-warning-soft text-warning"
-              >Pending</span
-            >
+              <span class="rounded-3xl px-3 py-2 bg-warning-soft text-warning">Pending</span>
             } @else {
-            <span class="rounded-3xl px-3 py-2 bg-error-soft text-error"
-              >Overdue</span
-            >
+              <span class="rounded-3xl px-3 py-2 bg-error-soft text-error">Overdue</span>
             }
           </div>
         </div>
       </span>
 
-      <div
-        class="border-2 border-warning bg-warning-soft p-4 space-y-gap grid rounded-lg"
-      >
+      <div class="border-2 border-warning bg-warning-soft p-4 gap-1 grid rounded-lg">
         <p>
           No
-          <code>&#64;switchChain &#64;if / &#64;else if / &#64;else</code>
+          <code poli-raws>@switch</code> chain. Use <code poli-raws>@if / @else if / @else</code>
           for multi-branch logic.
         </p>
       </div>
     </section>
 
-    <section class="grid gap-5">
+    <!-- 5. Local variables with @let -->
+    <section class="flex flex-col gap-5">
       <div class="font-bold flex items-center gap-3 text-xl">
-        <span
-          class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
-          >5</span
-        >
+        <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">5</span>
         <span>
           Local variables with
-          <code>&#64;let</code>
+          <code poli-raw>@let</code>
         </span>
       </div>
       <p>Each row in the items table on page 3 is rendered by:</p>
       <div class="w-full">
         <div class="tracking-widest text-xs text-muted">TEMPLATE</div>
         <div class="p-4 border-muted border-2 bg-surface rounded-lg">
-          <pre><code><span class="text-purple-600">&#64;let</span> subtotal = item.quantity * item.unitPrice; 
-<span class="text-purple-600">&#64;let</span> lineTotal = subtotal * (1 - (item.discount || 0));</code></pre>
+          <pre>
+<code poli-raw><span class="text-purple-600">@let</span> subtotal = item.quantity * item.unitPrice; 
+<span class="text-purple-600">@let</span> lineTotal = subtotal * (1 - (item.discount || 0));</code></pre>
           <p class="text-muted">// scoped to its block — doesn't leak</p>
         </div>
       </div>
     </section>
 
+    <!-- 6. The line items table -->
     <section class="grid poli-break gap-5">
       <div class="font-bold flex items-center gap-3 text-xl">
-        <span
-          class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
-          >6</span
-        >
+        <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">6</span>
         <span>The line items table</span>
       </div>
       <p>
-        Look at the bottom of this page versus the top of the next. The table
-        starts here, but it's long enough to spill over. The
+        Look at the bottom of this page versus the top of the next. The table starts here, but it's long enough to spill
+        over. The
         <code>&lt;thead&gt;</code>
         repeats automatically — that's
         <code>poli-table-header.</code>
@@ -344,26 +295,23 @@
         </thead>
         <tbody class="text-center">
           @for (item of webInvoice.items) {
-          <tr class="h-15 border-b border-muted">
-            <td class="text-left pl-4">
-              {{ item.description }} @if (item.discount && item.discount > 0) {
-              <span class="rounded-3xl px-3 py-2 bg-info-soft text-info"
-                >-{{ formatPercent(item.discount) }}</span
-              >
-              }
-            </td>
-            <td>{{ item.qty }}</td>
-            <td>{{ formatMoney(item.unit, 'EUR') }}</td>
-            <td class="text-right pr-4">
-              {{ formatMoney(item.qty * item.unit, 'EUR') }}
-            </td>
-          </tr>
+            <tr class="h-15 border-b border-muted">
+              <td class="text-left pl-4">
+                {{ item.description }}
+                @if (item.discount && item.discount > 0) {
+                  <span class="rounded-3xl px-3 py-2 bg-info-soft text-info">-{{ formatPercent(item.discount) }}</span>
+                }
+              </td>
+              <td>{{ item.qty }}</td>
+              <td>{{ formatMoney(item.unit, 'EUR') }}</td>
+              <td class="text-right pr-4">
+                {{ formatMoney(item.qty * item.unit, 'EUR') }}
+              </td>
+            </tr>
           }
         </tbody>
       </table>
-      <div
-        class="border-2 border-warning bg-warning-soft p-4 space-y-gap grid rounded-lg"
-      >
+      <div class="border-2 border-warning bg-warning-soft p-4 gap-1 grid rounded-lg">
         <span class="text-warning flex items-center">
           <poli-icon name="electric_bolt" class="w-4 h-4" />
           <span>TRY THIS</span>
@@ -371,28 +319,24 @@
         <p>
           Without
           <code>poli-table-header</code>
-          , page 4 would show data rows with no column titles. Remove the class
-          and re-render to see.
+          , page 4 would show data rows with no column titles. Remove the class and re-render to see.
         </p>
       </div>
 
       <p class="italic text-muted">
-        The header above came from poli-table-header. The engine cloned it at
-        the top of this page when the table spilled over.
+        The header above came from poli-table-header. The engine cloned it at the top of this page when the table
+        spilled over.
       </p>
     </section>
 
+    <!-- 7. Formatting helpers -->
     <section class="grid gap-5">
       <div class="font-bold flex items-center gap-3 text-xl">
-        <span
-          class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
-          >7</span
-        >
+        <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">7</span>
         <span>Formatting helpers</span>
       </div>
       <p>
-        Money, dates, percentages, and numbers respect the document locale (set
-        in
+        Money, dates, percentages, and numbers respect the document locale (set in
         <code>poli-page.json</code>
         or via the SDK's locale):
       </p>
@@ -407,24 +351,22 @@
         </thead>
         <tbody class="text-left">
           @for (item of helpers.items) {
-          <tr class="h-15 border-b border-muted">
-            <td class="pl-4">
-              <code>{{ item.function }}</code>
-            </td>
-            <td>{{ item.frOutput }}</td>
-            <td class="text-right pr-4">{{ item.enOutput }}</td>
-          </tr>
+            <tr class="h-15 border-b border-muted">
+              <td class="pl-4">
+                <code>{{ item.function }}</code>
+              </td>
+              <td>{{ item.frOutput }}</td>
+              <td class="text-right pr-4">{{ item.enOutput }}</td>
+            </tr>
           }
         </tbody>
       </table>
     </section>
 
-    <section class="grid poli-break gap-5">
+    <!-- 8. Last-page totals with poli-last -->
+    <section class="grid gap-5">
       <div class="font-bold flex items-center gap-3 text-xl">
-        <span
-          class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary"
-          >8</span
-        >
+        <span class="bg-primary/30 rounded-xl text-sm tracking-widest py-1 px-4 text-primary">8</span>
         <span>
           Last-page totals with
           <code>poli-last</code>
@@ -435,11 +377,10 @@
         <strong>last</strong>
         page of the document. That's done with
         <code>poli-last</code>
-        . If the line items grew and pushed the totals to page 5, this box would
-        move with them.
+        . If the line items grew and pushed the totals to page 5, this box would move with them.
       </p>
 
-      <div class="poli-last bg-surface rounded-lg p-4 grid space-y-gap">
+      <div class="poli-last bg-surface rounded-lg p-4 grid gap-1">
         <div class="flex justify-between">
           <span>Subtotal</span>
           <span>14 790,00 €</span>
@@ -457,9 +398,7 @@
         </div>
       </div>
 
-      <div
-        class="border-2 border-warning bg-warning-soft p-4 space-y-gap grid rounded-lg"
-      >
+      <div class="border-2 border-warning bg-warning-soft p-4 gap-1 grid rounded-lg">
         <span class="text-warning flex items-center">
           <poli-icon name="electric_bolt" class="w-4 h-4" />
           <span>TRY THIS</span>
@@ -467,8 +406,7 @@
         <p>
           Move the
           <code>poli-last</code>
-          div to the first page and you'll see it still shows on the last. Now
-          remove the
+          div to the first page and you'll see it still shows on the last. Now remove the
           <code>poli-last</code>
           - it now shows on the page you moved it to instead.
         </p>
@@ -477,15 +415,12 @@
       <p class="italic text-muted text-base">
         Combined with
         <code>poli-table-header</code>
-        , this is a common invoice pattern: header repeats per page, totals
-        appear once at the end.
+        , this is a common invoice pattern: header repeats per page, totals appear once at the end.
       </p>
     </section>
   </main>
   <footer class="poli-footer">
-    <div
-      class="flex justify-between p-4 text-xs text-muted border-t-2 border-surface"
-    >
+    <div class="flex justify-between p-4 text-xs text-muted border-t-2 border-surface">
       <span>{{ formatDateTime(poli.generatedAt, 'long', 'short') }}</span>
       <poli-page-numbers />
     </div>
