@@ -85,6 +85,30 @@
 			"src": "fonts/ephesis-400.woff2",
 			"weight": 400,
 			"style": "normal"
+		},
+		{
+			"family": "Arimo",
+			"src": "fonts/arimo-latin.woff2",
+			"weight": 400,
+			"style": "normal"
+		},
+		{
+			"family": "Arimo",
+			"src": "fonts/arimo-latin.woff2",
+			"weight": 700,
+			"style": "normal"
+		},
+		{
+			"family": "Arimo",
+			"src": "fonts/arimo-italic-latin.woff2",
+			"weight": 400,
+			"style": "italic"
+		},
+		{
+			"family": "Arimo",
+			"src": "fonts/arimo-italic-latin.woff2",
+			"weight": 700,
+			"style": "italic"
 		}
 	],
 	"templates": [
@@ -135,6 +159,13 @@
 			"template": "cerfa-15776.html",
 			"mock": "cerfa-15776.json",
 			"format": "A4",
+			"orientation": "portrait"
+		},
+		{
+			"name": "form-w9",
+			"template": "form-w9.html",
+			"mock": "form-w9.json",
+			"format": "Letter",
 			"orientation": "portrait"
 		}
 	]

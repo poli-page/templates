@@ -1,0 +1,1804 @@
+<!-- IRS Form W-9 (Rev. March 2024) — Request for Taxpayer Identification Number and Certification -->
+<!-- Geometry mirrors the official IRS PDF: US Letter, 36pt side margins, 540pt content width. -->
+<div class="font-w9 text-black text-[7pt] leading-none tracking-[0.002em]">
+  <!-- ============================ PAGE 1 — the form ============================ -->
+  <div class="px-[36pt] pt-[30pt]">
+    <!-- ============================ MASTHEAD (y 30 → 84) ============================ -->
+    <header class="relative h-[54pt] border-b-[0.5pt] border-black">
+      <!-- Column rules start 5.8pt below the masthead top, as on the printed form -->
+      <div class="absolute left-[86.4pt] top-[5.8pt] bottom-0 w-[0.5pt] bg-black"></div>
+      <div class="absolute left-[453.6pt] top-[5.8pt] bottom-0 w-[0.5pt] bg-black"></div>
+
+      <!-- Form number block -->
+      <span class="absolute left-0 top-[17.2pt] text-[7pt]">Form</span>
+      <span class="absolute left-[20.2pt] top-[2.8pt] text-[24pt] font-bold tracking-[-0.02em]">W-9</span>
+      <span class="absolute left-0 top-[26.4pt] text-[7pt]">({{ form.revision }})</span>
+      <span class="absolute left-0 top-[36.7pt] text-[7pt]">Department of the Treasury</span>
+      <span class="absolute left-0 top-[44.8pt] text-[7pt]">Internal Revenue Service</span>
+
+      <!-- Title block -->
+      <div class="absolute left-[86.4pt] right-[86.4pt] top-[7.2pt] text-center text-[13.5pt] font-bold leading-[15pt] tracking-[-0.0094em]">
+        Request for Taxpayer
+        <br />
+        Identification Number and Certification
+      </div>
+      <div class="absolute left-[86.4pt] right-[86.4pt] top-[41pt] text-center text-[8pt] font-bold tracking-[0.0045em]">
+        Go to
+        <span class="italic">www.irs.gov/FormW9</span>
+        for instructions and the latest information.
+      </div>
+
+      <!-- Routing note -->
+      <div class="absolute left-[460.6pt] top-[14.6pt] text-[9pt] font-bold leading-[10.8pt]">
+        Give form to the
+        <br />
+        requester. Do not
+        <br />
+        send to the IRS.
+      </div>
+    </header>
+
+    <!-- ============================ BEFORE YOU BEGIN (y 84 → 96) ============================ -->
+    <div class="h-[12pt] pt-[1.9pt] border-b-[0.5pt] border-black text-[8pt] tracking-[0.0045em]">
+      <span class="font-bold">Before you begin.</span>
+      For guidance related to the purpose of Form W-9, see
+      <span class="italic">Purpose of Form</span>, below.
+    </div>
+
+    <!-- ============================ FORM BODY — lines 1 to 7 (y 96 → 348) ============================ -->
+    <div class="flex h-[252pt] border-b-[0.5pt] border-black">
+      <!-- Rotated left rail -->
+      <div class="relative w-[21.6pt] border-r-[0.5pt] border-black shrink-0">
+        <div
+          class="absolute left-[3.7pt] top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 whitespace-nowrap text-[7pt] font-bold"
+        >
+          Print or type.
+        </div>
+        <div
+          class="absolute left-[13.3pt] top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 whitespace-nowrap text-[7pt] font-bold"
+        >
+          See
+          <span class="italic">Specific Instructions</span>
+          on page 3.
+        </div>
+      </div>
+
+      <!-- Numbered fields -->
+      <div class="flex-1 flex flex-col">
+        <!-- Line 1 (y 96 → 132) -->
+        <div class="h-[36pt] border-b-[0.5pt] border-black relative">
+          <span class="absolute left-[4pt] top-[2.4pt] font-bold">1</span>
+          <div class="absolute left-[15.7pt] right-[3.5pt] top-[2.4pt] leading-[8.4pt]">
+            Name of entity/individual. An entry is required. (For a sole proprietor or disregarded entity, enter the
+            owner’s name on line 1, and enter the business/disregarded entity’s name on line 2.)
+          </div>
+          <div class="absolute left-[15.7pt] top-[20pt] w9-entry text-[10pt]">{{ payee.name }}</div>
+        </div>
+
+        <!-- Line 2 (y 132 → 156) -->
+        <div class="h-[24pt] border-b-[0.5pt] border-black relative">
+          <span class="absolute left-[4pt] top-[2.4pt] font-bold">2</span>
+          <div class="absolute left-[15.7pt] top-[2.4pt]">
+            Business name/disregarded entity name, if different from above.
+          </div>
+          <div class="absolute left-[15.7pt] top-[11.5pt] w9-entry text-[10pt]">{{ payee.businessName }}</div>
+        </div>
+
+        <!-- Lines 3a / 3b + box 4 (y 156 → 276) -->
+        <div class="flex h-[120pt] border-b-[0.5pt] border-black">
+          <!-- Lines 3a and 3b -->
+          <div class="w-[396pt] shrink-0 flex flex-col">
+            <!-- Line 3a (y 156 → 243) -->
+            <div class="h-[86.5pt] relative">
+              <span class="absolute left-[4pt] top-[2.4pt] font-bold">3a</span>
+              <div class="absolute left-[15.7pt] right-[3pt] top-[2.4pt] leading-[8.4pt]">
+                Check the appropriate box for federal tax classification of the entity/individual whose name is entered
+                on line 1. Check only
+                <span class="font-bold">one</span>
+                of the following seven boxes.
+              </div>
+
+              <!-- Seven classification boxes -->
+              <div class="absolute left-[15.2pt] top-[24.2pt] w9-check">
+                @if (payee.taxClassification === 'individual') {
+                  <poli-icon name="check" style-name="sharp" class="w-[7pt] h-[7pt]" />
+                }
+              </div>
+              <span class="absolute left-[28.8pt] top-[25.1pt]">Individual/sole proprietor</span>
+
+              <div class="absolute left-[122.2pt] top-[24.2pt] w9-check">
+                @if (payee.taxClassification === 'c-corp') {
+                  <poli-icon name="check" style-name="sharp" class="w-[7pt] h-[7pt]" />
+                }
+              </div>
+              <span class="absolute left-[135.8pt] top-[25.1pt]">C corporation</span>
+
+              <div class="absolute left-[194.2pt] top-[24.2pt] w9-check">
+                @if (payee.taxClassification === 's-corp') {
+                  <poli-icon name="check" style-name="sharp" class="w-[7pt] h-[7pt]" />
+                }
+              </div>
+              <span class="absolute left-[207.8pt] top-[25.1pt]">S corporation</span>
+
+              <div class="absolute left-[266.2pt] top-[24.2pt] w9-check">
+                @if (payee.taxClassification === 'partnership') {
+                  <poli-icon name="check" style-name="sharp" class="w-[7pt] h-[7pt]" />
+                }
+              </div>
+              <span class="absolute left-[279.8pt] top-[25.1pt]">Partnership</span>
+
+              <div class="absolute left-[331pt] top-[24.2pt] w9-check">
+                @if (payee.taxClassification === 'trust-estate') {
+                  <poli-icon name="check" style-name="sharp" class="w-[7pt] h-[7pt]" />
+                }
+              </div>
+              <span class="absolute left-[344.6pt] top-[25.1pt]">Trust/estate</span>
+
+              <!-- LLC -->
+              <div class="absolute left-[15.2pt] top-[37.5pt] w9-check">
+                @if (payee.taxClassification === 'llc') {
+                  <poli-icon name="check" style-name="sharp" class="w-[7pt] h-[7pt]" />
+                }
+              </div>
+              <span class="absolute left-[28.8pt] top-[38.2pt]">
+                LLC. Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)
+                <span class="tracking-[0.35em] ml-[4pt]">. . . .</span>
+              </span>
+              <div class="absolute left-[359.7pt] top-[38.2pt] w-[29.3pt] text-center w9-entry">
+                {{ payee.llcClassification }}
+              </div>
+              <div class="absolute left-[359.7pt] top-[47pt] w-[29.3pt] h-[0.5pt] bg-black"></div>
+
+              <div class="absolute left-[28.8pt] right-[3pt] top-[47.9pt] leading-[8pt]">
+                <span class="font-bold">Note:</span>
+                Check the “LLC” box above and, in the entry space, enter the appropriate code (C, S, or P) for the tax
+                classification of the LLC, unless it is a disregarded entity. A disregarded entity should instead check
+                the appropriate box for the tax classification of its owner.
+              </div>
+
+              <!-- Other -->
+              <div class="absolute left-[15.2pt] top-[74pt] w9-check">
+                @if (payee.taxClassification === 'other') {
+                  <poli-icon name="check" style-name="sharp" class="w-[7pt] h-[7pt]" />
+                }
+              </div>
+              <span class="absolute left-[28.8pt] top-[74.7pt]">Other (see instructions)</span>
+              <div class="absolute left-[104.5pt] top-[74.7pt] w-[284.5pt] w9-entry">{{ payee.otherClassification }}</div>
+              <div class="absolute left-[104.5pt] top-[84pt] w-[284.5pt] h-[0.5pt] bg-black"></div>
+            </div>
+            <!-- Rule between 3a and 3b stops short of the box 4 divider, as on the form -->
+            <div class="h-[0.5pt] w-[382.1pt] bg-black shrink-0"></div>
+
+            <!-- Line 3b (y 243 → 276) -->
+            <div class="h-[33pt] relative">
+              <span class="absolute left-[4pt] top-[2.7pt] font-bold">3b</span>
+              <div class="absolute left-[15.7pt] right-[19pt] top-[2.7pt] leading-[8.4pt] text-justify">
+                If on line 3a you checked “Partnership” or “Trust/estate,” or checked “LLC” and entered “P” as its tax
+                classification, and you are providing this form to a partnership, trust, or estate in which you have an
+                ownership interest, check this box if you have any foreign partners, owners, or beneficiaries. See
+                instructions
+                <span class="tracking-[0.35em] ml-[2pt]">. . . . . . . . .</span>
+              </div>
+              <div class="absolute left-[383pt] top-[19.3pt] w9-check">
+                @if (payee.foreignPartners) {
+                  <poli-icon name="check" style-name="sharp" class="w-[7pt] h-[7pt]" />
+                }
+              </div>
+            </div>
+          </div>
+
+          <!-- Box 4 — Exemptions -->
+          <div class="w-[122.4pt] shrink-0 border-l-[0.5pt] border-black relative">
+            <span class="absolute left-[3.5pt] top-[2.6pt] font-bold">4</span>
+            <div class="absolute left-[11.5pt] right-[5pt] top-[2.6pt] leading-[8.4pt]">
+              Exemptions (codes apply only to certain entities, not individuals; see instructions on page 3):
+            </div>
+            <span class="absolute left-[3.5pt] top-[37.2pt]">Exempt payee code (if any)</span>
+            <div class="absolute left-[89.2pt] top-[37.2pt] w-[32.9pt] text-center w9-entry">
+              {{ payee.exemptPayeeCode }}
+            </div>
+            <div class="absolute left-[89.2pt] top-[48pt] w-[32.9pt] h-[0.5pt] bg-black"></div>
+
+            <div class="absolute left-[3.5pt] right-[1pt] top-[55.4pt] leading-[8.4pt]">
+              Exemption from Foreign Account Tax Compliance Act (FATCA) reporting code (if any)
+            </div>
+            <div class="absolute left-[46.2pt] top-[72.7pt] w-[75.9pt] text-center w9-entry">{{ payee.fatcaCode }}</div>
+            <div class="absolute left-[46.2pt] top-[84pt] w-[75.9pt] h-[0.5pt] bg-black"></div>
+
+            <div class="absolute left-[3.5pt] right-[1pt] top-[95.6pt] text-center italic font-bold leading-[8.4pt]">
+              (Applies to accounts maintained outside the United States.)
+            </div>
+          </div>
+        </div>
+
+        <!-- Lines 5 and 6 + requester block (y 276 → 324) -->
+        <div class="flex h-[48pt]">
+          <div class="w-[331.2pt] shrink-0 flex flex-col">
+            <!-- Line 5 -->
+            <div class="h-[24pt] border-b-[0.5pt] border-black relative">
+              <span class="absolute left-[4pt] top-[2.4pt] font-bold">5</span>
+              <div class="absolute left-[15.7pt] top-[2.4pt]">
+                Address (number, street, and apt. or suite no.). See instructions.
+              </div>
+              <div class="absolute left-[15.7pt] top-[11.5pt] w9-entry text-[9pt]">{{ payee.address }}</div>
+            </div>
+            <!-- Line 6 -->
+            <div class="h-[24pt] relative">
+              <span class="absolute left-[4pt] top-[2.4pt] font-bold">6</span>
+              <div class="absolute left-[15.7pt] top-[2.4pt]">City, state, and ZIP code</div>
+              <div class="absolute left-[15.7pt] top-[11.5pt] w9-entry text-[9pt]">{{ payee.cityStateZip }}</div>
+            </div>
+          </div>
+          <!-- Requester -->
+          <div class="w-[187.2pt] shrink-0 border-l-[0.5pt] border-black relative">
+            <div class="absolute left-[4pt] top-[2.4pt]">Requester’s name and address (optional)</div>
+            <div class="absolute left-[4pt] top-[11.5pt] w9-entry leading-[9pt]">
+              @for (line of requester.lines) {
+                <div>{{ line }}</div>
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 7 (y 324 → 348) -->
+        <div class="h-[24pt] border-t-[0.5pt] border-black relative">
+          <span class="absolute left-[4pt] top-[2.4pt] font-bold">7</span>
+          <div class="absolute left-[15.7pt] top-[2.4pt]">List account number(s) here (optional)</div>
+          <div class="absolute left-[15.7pt] top-[11.5pt] w9-entry text-[9pt]">{{ payee.accountNumbers }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================ PART I (y 348 → 444) ============================ -->
+    <div class="h-[12pt] border-b-[0.5pt] border-black relative">
+      <div class="absolute left-0 top-0 w-[36pt] h-[12pt] bg-black"></div>
+      <span class="absolute left-[5.2pt] top-[0.6pt] text-[10pt] font-bold text-white">Part I</span>
+      <span class="absolute left-[50.4pt] top-[0.6pt] text-[10pt] font-bold">
+        Taxpayer Identification Number (TIN)
+      </span>
+    </div>
+
+    <div class="h-[84pt] border-b-[0.5pt] border-black relative">
+      <div class="absolute left-0 top-[4.2pt] w-[366pt] text-[8pt] leading-[9.6pt] tracking-[0.0045em]">
+        Enter your TIN in the appropriate box. The TIN provided must match the name given on line 1 to avoid backup
+        withholding. For individuals, this is generally your social security number (SSN). However, for a resident alien,
+        sole proprietor, or disregarded entity, see the instructions for Part I, later. For other entities, it is your
+        employer identification number (EIN). If you do not have a number, see
+        <span class="italic">How to get a TIN</span>, later.
+      </div>
+      <div class="absolute left-0 top-[58.7pt] w-[366pt] text-[8pt] leading-[9.6pt] tracking-[0.0045em]">
+        <span class="font-bold">Note:</span>
+        If the account is in more than one name, see the instructions for line 1. See also
+        <span class="italic">What Name and Number To Give the Requester</span>
+        for guidelines on whose number to enter.
+      </div>
+
+      <!-- Social security number -->
+      <div class="absolute left-[381.6pt] top-0 w-[158.4pt] h-[10pt] border-[0.5pt] border-black flex items-center">
+        <span class="pl-[4pt] text-[9pt] font-bold">Social security number</span>
+      </div>
+      @let ssn = stringToArray(tin.ssn, 9);
+      <div class="absolute left-[381.6pt] top-[12pt] flex items-center">
+        <div class="w9-cells">
+          <div class="w9-cell">{{ ssn[0] }}</div>
+          <div class="w9-cell">{{ ssn[1] }}</div>
+          <div class="w9-cell">{{ ssn[2] }}</div>
+        </div>
+        <div class="w-[14.4pt] h-[24pt] shrink-0 flex items-center justify-center text-[9pt] font-bold">–</div>
+        <div class="w9-cells">
+          <div class="w9-cell">{{ ssn[3] }}</div>
+          <div class="w9-cell">{{ ssn[4] }}</div>
+        </div>
+        <div class="w-[14.4pt] h-[24pt] shrink-0 flex items-center justify-center text-[9pt] font-bold">–</div>
+        <div class="w9-cells">
+          <div class="w9-cell">{{ ssn[5] }}</div>
+          <div class="w9-cell">{{ ssn[6] }}</div>
+          <div class="w9-cell">{{ ssn[7] }}</div>
+          <div class="w9-cell">{{ ssn[8] }}</div>
+        </div>
+      </div>
+
+      <span class="absolute left-[381.6pt] top-[36.1pt] text-[9pt] font-bold">or</span>
+
+      <!-- Employer identification number -->
+      <div class="absolute left-[381.6pt] top-[48pt] w-[144pt] h-[10pt] border-[0.5pt] border-black flex items-center">
+        <span class="pl-[4pt] text-[9pt] font-bold">Employer identification number</span>
+      </div>
+      @let ein = stringToArray(tin.ein, 9);
+      <div class="absolute left-[381.6pt] top-[60pt] flex items-center">
+        <div class="w9-cells">
+          <div class="w9-cell">{{ ein[0] }}</div>
+          <div class="w9-cell">{{ ein[1] }}</div>
+        </div>
+        <div class="w-[14.4pt] h-[24pt] shrink-0 flex items-center justify-center text-[9pt] font-bold">–</div>
+        <div class="w9-cells">
+          <div class="w9-cell">{{ ein[2] }}</div>
+          <div class="w9-cell">{{ ein[3] }}</div>
+          <div class="w9-cell">{{ ein[4] }}</div>
+          <div class="w9-cell">{{ ein[5] }}</div>
+          <div class="w9-cell">{{ ein[6] }}</div>
+          <div class="w9-cell">{{ ein[7] }}</div>
+          <div class="w9-cell">{{ ein[8] }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================ PART II (y 444 → 576) ============================ -->
+    <div class="h-[12pt] border-b-[0.5pt] border-black relative">
+      <div class="absolute left-0 top-0 w-[36pt] h-[12pt] bg-black"></div>
+      <span class="absolute left-[3.8pt] top-[0.6pt] text-[10pt] font-bold text-white">Part II</span>
+      <span class="absolute left-[50.4pt] top-[0.6pt] text-[10pt] font-bold">Certification</span>
+    </div>
+
+    <div class="h-[120pt] border-b-[0.5pt] border-black pt-[3.1pt] text-[8pt] leading-[9.6pt] tracking-[0.0045em] whitespace-nowrap">
+      <div>Under penalties of perjury, I certify that:</div>
+      <div class="mt-[2.4pt] pl-[9pt] -indent-[9pt]">
+        1. The number shown on this form is my correct taxpayer identification number (or I am waiting for a number to be
+        issued to me); and
+      </div>
+      <div class="mt-[0.6pt] pl-[9pt] -indent-[9pt]">
+        2. I am not subject to backup withholding because (a) I am exempt from backup withholding, or (b) I have not
+        been notified by the Internal Revenue
+        <br />
+        Service (IRS) that I am subject to backup withholding as a result of a failure to report all interest or
+        dividends, or (c) the IRS has notified me that I am
+        <br />
+        no longer subject to backup withholding; and
+      </div>
+      <div class="mt-[2.4pt] pl-[9pt] -indent-[9pt]">3. I am a U.S. citizen or other U.S. person (defined below); and</div>
+      <div class="mt-[2.4pt] pl-[9pt] -indent-[9pt]">
+        4. The FATCA code(s) entered on this form (if any) indicating that I am exempt from FATCA reporting is correct.
+      </div>
+      <div class="mt-[2.9pt] tracking-[-0.0119em]">
+        <span class="font-bold">Certification instructions.</span>
+        You must cross out item 2 above if you have been notified by the IRS that you are currently subject to backup
+        withholding
+        <br />
+        because you have failed to report all interest and dividends on your tax return. For real estate transactions,
+        item 2 does not apply. For mortgage interest paid,
+        <br />
+        acquisition or abandonment of secured property, cancellation of debt, contributions to an individual retirement
+        arrangement (IRA), and, generally, payments
+        <br />
+        other than interest and dividends, you are not required to sign the certification, but you must provide your
+        correct TIN. See the instructions for Part II, later.
+      </div>
+    </div>
+
+    <!-- ============================ SIGNATURE (y 576 → 600) ============================ -->
+    <div class="h-[24pt] border-b-[0.5pt] border-black relative">
+      <div class="absolute left-0 top-0 w-[36pt] h-full border-r-[0.5pt] border-black">
+        <div class="text-[10pt] font-bold leading-[10pt] pt-[2.7pt]">
+          Sign
+          <br />
+          Here
+        </div>
+      </div>
+      <div class="absolute left-[40pt] top-[6.5pt] text-[7pt] font-bold leading-[8.4pt]">
+        Signature of
+        <br />
+        U.S. person
+      </div>
+      <div class="absolute left-[90pt] top-[7pt] font-ephesis text-[17pt] text-pencil leading-none">
+        {{ signature.name }}
+      </div>
+      <span class="absolute left-[349.6pt] top-[15.2pt] text-[7pt] font-bold">Date</span>
+      <div class="absolute left-[375pt] top-[14.7pt] w9-entry">{{ formatDate(signature.date, 'short') }}</div>
+    </div>
+
+    <!-- ============================ GENERAL INSTRUCTIONS (y 600 → 744) ============================ -->
+    <div class="flex gap-[23.6pt] h-[144pt] border-b-[0.5pt] border-black pt-[8.2pt]">
+      <div class="flex-1 text-[8pt] leading-[9pt] tracking-[0.0045em]">
+        <div class="text-[14pt] font-bold leading-[14pt] tracking-[-0.0094em]">General Instructions</div>
+        <div class="mt-[5.1pt]">Section references are to the Internal Revenue Code unless otherwise noted.</div>
+        <div class="mt-[2.8pt]">
+          <span class="font-bold">Future developments</span>. For the latest information about developments related to Form W-9 and its
+          instructions, such as legislation enacted after they were published, go to
+          <span class="italic">www.irs.gov/FormW9</span>.
+        </div>
+        <div class="text-[12pt] font-bold leading-[12pt] mt-[6.7pt]">What’s New</div>
+        <div class="mt-[4.4pt]">
+          Line 3a has been modified to clarify how a disregarded entity completes this line. An LLC that is a disregarded
+          entity should check the appropriate box for the tax classification of its owner. Otherwise, it should check the
+          “LLC” box and enter its appropriate tax classification.
+        </div>
+      </div>
+
+      <div class="flex-1 text-[8pt] leading-[9pt] tracking-[0.0045em]">
+        <div class="indent-[8pt]">
+          New line 3b has been added to this form. A flow-through entity is required to complete this line to indicate
+          that it has direct or indirect foreign partners, owners, or beneficiaries when it provides the Form W-9 to
+          another flow-through entity in which it has an ownership interest. This change is intended to provide a
+          flow-through entity with information regarding the status of its indirect foreign partners, owners, or
+          beneficiaries, so that it can satisfy any applicable reporting requirements. For example, a partnership that
+          has any indirect foreign partners may be required to complete Schedules K-2 and K-3. See the Partnership
+          Instructions for Schedules K-2 and K-3 (Form 1065).
+        </div>
+        <div class="text-[12pt] font-bold leading-[12pt] mt-[4.5pt]">Purpose of Form</div>
+        <div class="mt-[4.4pt] indent-[8pt]">
+          An individual or entity (Form W-9 requester) who is required to file an information return with the IRS is
+          giving you this form because they
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================ FOOTER (y 744 → 756) ============================ -->
+    <div class="relative h-[12pt] pt-[3.3pt]">
+      <span class="absolute left-[201pt] top-[3.3pt] text-[7pt]">Cat. No. {{ form.catalogNumber }}</span>
+      <span class="absolute right-0 top-[1.4pt] text-[10pt] font-bold">
+        Form
+        <span class="text-[10pt] font-bold">W-9</span>
+        ({{ form.footerRevision }})
+      </span>
+    </div>
+  </div>
+
+  <!-- ============================ PAGE 2 ============================ -->
+  <div class="poli-break px-[36pt] pt-[36pt]">
+    <div class="relative h-[12pt] border-b-[0.5pt] border-black">
+      <span class="absolute left-0 top-[1.8pt] text-[7.5pt]">Form W-9 ({{ form.footerRevision }})</span>
+      <span class="absolute right-0 top-[1.8pt] text-[7.5pt]">Page <span class="text-[10pt] font-bold">2</span></span>
+    </div>
+    <div class="flex gap-[21.4pt] text-[8pt] leading-[9pt] tracking-[0.0045em]">
+      <div class="relative w-[259.4pt] h-[712pt] shrink-0">
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[8.4pt]">
+          must obtain your correct taxpayer identification number (TIN), which
+          <br />
+          may be your social security number (SSN), individual taxpayer
+          <br />
+          identification number (ITIN), adoption taxpayer identification number
+          <br />
+          (ATIN), or employer identification number (EIN), to report on an
+          <br />
+          information return the amount paid to you, or other amount reportable
+          <br />
+          on an information return. Examples of information returns include, but
+          <br />
+          are not limited to, the following.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[74.4pt]">
+          • Form 1099-INT (interest earned or paid).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[86.4pt]">
+          • Form 1099-DIV (dividends, including those from stocks or mutual
+          <br />
+          funds).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[107.4pt]">
+          • Form 1099-MISC (various types of income, prizes, awards, or gross
+          <br />
+          proceeds).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[128.4pt]">
+          • Form 1099-NEC (nonemployee compensation).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[140.4pt]">
+          • Form 1099-B (stock or mutual fund sales and certain other
+          <br />
+          transactions by brokers).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[161.4pt]">
+          • Form 1099-S (proceeds from real estate transactions).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[173.4pt]">
+          • Form 1099-K (merchant card and third-party network transactions).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[185.4pt]">
+          • Form 1098 (home mortgage interest), 1098-E (student loan interest),
+          <br />
+          and 1098-T (tuition).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[206.4pt]">
+          • Form 1099-C (canceled debt).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[218.4pt]">
+          • Form 1099-A (acquisition or abandonment of secured property).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[230.4pt] indent-[8pt]">
+          Use Form W-9 only if you are a U.S. person (including a resident
+          <br />
+          alien), to provide your correct TIN.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[251.4pt]">
+          <span class="font-bold">Caution:</span> If you don’t return Form W-9 to the requester with a TIN, you
+          <br />
+          might be subject to backup withholding. See <span class="italic">What is backup</span>
+          <br />
+          <span class="italic">withholding</span>, later.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[281.4pt] indent-[7pt]">
+          <span class="font-bold">By signing the filled-out form</span>, you:
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[293.4pt] indent-[8pt]">
+          1. Certify that the TIN you are giving is correct (or you are waiting for a
+          <br />
+          number to be issued);
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[314.4pt] indent-[8pt]">
+          2. Certify that you are not subject to backup withholding; or
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[326.4pt] indent-[8pt]">
+          3. Claim exemption from backup withholding if you are a U.S. exempt
+          <br />
+          payee; and
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[347.4pt] indent-[8pt]">
+          4. Certify to your non-foreign status for purposes of withholding under
+          <br />
+          chapter 3 or 4 of the Code (if applicable); and
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[368.4pt] indent-[8pt]">
+          5. Certify that FATCA code(s) entered on this form (if any) indicating
+          <br />
+          that you are exempt from the FATCA reporting is correct. See <span class="italic">What Is</span>
+          <br />
+          <span class="italic">FATCA Reporting</span>, later, for further information.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[398.4pt]">
+          <span class="font-bold">Note:</span> If you are a U.S. person and a requester gives you a form other
+          <br />
+          than Form W-9 to request your TIN, you must use the requester’s form if
+          <br />
+          it is substantially similar to this Form W-9.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[428.4pt]">
+          <span class="font-bold">Definition of a U.S. person.</span> For federal tax purposes, you are
+          <br />
+          considered a U.S. person if you are:
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[449.4pt]">
+          • An individual who is a U.S. citizen or U.S. resident alien;
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[461.4pt]">
+          • A partnership, corporation, company, or association created or
+          <br />
+          organized in the United States or under the laws of the United States;
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[482.4pt]">
+          • An estate (other than a foreign estate); or
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[494.4pt]">
+          • A domestic trust (as defined in Regulations section 301.7701-7).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[506.4pt]">
+          <span class="font-bold">Establishing U.S. status for purposes of chapter 3 and chapter 4</span>
+          <br />
+          <span class="font-bold">withholding.</span> Payments made to foreign persons, including certain
+          <br />
+          distributions, allocations of income, or transfers of sales proceeds, may
+          <br />
+          be subject to withholding under chapter 3 or chapter 4 of the Code
+          <br />
+          (sections 1441–1474). Under those rules, if a Form W-9 or other
+          <br />
+          certification of non-foreign status has not been received, a withholding
+          <br />
+          agent, transferee, or partnership (payor) generally applies presumption
+          <br />
+          rules that may require the payor to withhold applicable tax from the
+          <br />
+          recipient, owner, transferor, or partner (payee). See Pub. 515,
+          <br />
+          Withholding of Tax on Nonresident Aliens and Foreign Entities.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[599.4pt] indent-[8pt]">
+          The following persons must provide Form W-9 to the payor for
+          <br />
+          purposes of establishing its non-foreign status.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[620.4pt]">
+          • In the case of a disregarded entity with a U.S. owner, the U.S. owner
+          <br />
+          of the disregarded entity and not the disregarded entity.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[641.4pt]">
+          • In the case of a grantor trust with a U.S. grantor or other U.S. owner,
+          <br />
+          generally, the U.S. grantor or other U.S. owner of the grantor trust and
+          <br />
+          not the grantor trust.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[671.4pt]">
+          • In the case of a U.S. trust (other than a grantor trust), the U.S. trust
+          <br />
+          and not the beneficiaries of the trust.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[692.4pt]">
+          See Pub. 515 for more information on providing a Form W-9 or a
+          <br />
+          certification of non-foreign status to avoid withholding.
+        </p>
+      </div>
+      <div class="relative w-[259.2pt] h-[712pt] shrink-0">
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[8.4pt]">
+          <span class="font-bold">Foreign person.</span> If you are a foreign person or the U.S. branch of a
+          <br />
+          foreign bank that has elected to be treated as a U.S. person (under
+          <br />
+          Regulations section 1.1441-1(b)(2)(iv) or other applicable section for
+          <br />
+          chapter 3 or 4 purposes), do not use Form W-9. Instead, use the
+          <br />
+          appropriate Form W-8 or Form 8233 (see Pub. 515). If you are a
+          <br />
+          qualified foreign pension fund under Regulations section 1.897(l)-1(d), or
+          <br />
+          a partnership that is wholly owned by qualified foreign pension funds,
+          <br />
+          that is treated as a non-foreign person for purposes of section 1445
+          <br />
+          withholding, do not use Form W-9. Instead, use Form W-8EXP (or other
+          <br />
+          certification of non-foreign status).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[101.4pt]">
+          <span class="font-bold">Nonresident alien who becomes a resident alien.</span> Generally, only a
+          <br />
+          nonresident alien individual may use the terms of a tax treaty to reduce
+          <br />
+          or eliminate U.S. tax on certain types of income. However, most tax
+          <br />
+          treaties contain a provision known as a saving clause. Exceptions
+          <br />
+          specified in the saving clause may permit an exemption from tax to
+          <br />
+          continue for certain types of income even after the payee has otherwise
+          <br />
+          become a U.S. resident alien for tax purposes.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[167.4pt] indent-[8pt]">
+          If you are a U.S. resident alien who is relying on an exception
+          <br />
+          contained in the saving clause of a tax treaty to claim an exemption
+          <br />
+          from U.S. tax on certain types of income, you must attach a statement
+          <br />
+          to Form W-9 that specifies the following five items.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[206.4pt] indent-[8pt]">
+          1. The treaty country. Generally, this must be the same treaty under
+          <br />
+          which you claimed exemption from tax as a nonresident alien.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[227.4pt] indent-[8pt]">
+          2. The treaty article addressing the income.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[239.4pt] indent-[8pt]">
+          3. The article number (or location) in the tax treaty that contains the
+          <br />
+          saving clause and its exceptions.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[260.4pt] indent-[8pt]">
+          4. The type and amount of income that qualifies for the exemption
+          <br />
+          from tax.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[281.4pt] indent-[8pt]">
+          5. Sufficient facts to justify the exemption from tax under the terms of
+          <br />
+          the treaty article.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[302.4pt] indent-[8pt]">
+          <span class="italic"><span class="font-bold">Example.</span> </span>Article 20 of the U.S.-China income tax treaty allows an
+          <br />
+          exemption from tax for scholarship income received by a Chinese
+          <br />
+          student temporarily present in the United States. Under U.S. law, this
+          <br />
+          student will become a resident alien for tax purposes if their stay in the
+          <br />
+          United States exceeds 5 calendar years. However, paragraph 2 of the
+          <br />
+          first Protocol to the U.S.-China treaty (dated April 30, 1984) allows the
+          <br />
+          provisions of Article 20 to continue to apply even after the Chinese
+          <br />
+          student becomes a resident alien of the United States. A Chinese
+          <br />
+          student who qualifies for this exception (under paragraph 2 of the first
+          <br />
+          Protocol) and is relying on this exception to claim an exemption from tax
+          <br />
+          on their scholarship or fellowship income would attach to Form W-9 a
+          <br />
+          statement that includes the information described above to support that
+          <br />
+          exemption.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[422.4pt] indent-[8pt]">
+          If you are a nonresident alien or a foreign entity, give the requester the
+          <br />
+          appropriate completed Form W-8 or Form 8233.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[446.3pt] text-[12pt] leading-[12pt] font-bold">
+          <span class="font-bold">Backup Withholding</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[462.4pt]">
+          <span class="font-bold">What is backup withholding?</span> Persons making certain payments to you
+          <br />
+          must under certain conditions withhold and pay to the IRS 24% of such
+          <br />
+          payments. This is called “backup withholding.” Payments that may be
+          <br />
+          subject to backup withholding include, but are not limited to, interest,
+          <br />
+          tax-exempt interest, dividends, broker and barter exchange
+          <br />
+          transactions, rents, royalties, nonemployee pay, payments made in
+          <br />
+          settlement of payment card and third-party network transactions, and
+          <br />
+          certain payments from fishing boat operators. Real estate transactions
+          <br />
+          are not subject to backup withholding.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[546.4pt] indent-[8pt]">
+          You will not be subject to backup withholding on payments you receive
+          <br />
+          if you give the requester your correct TIN, make the proper certifications,
+          <br />
+          and report all your taxable interest and dividends on your tax return.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[576.4pt] font-bold">
+          <span class="font-bold">Payments you receive will be subject to backup withholding if:</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[588.4pt] indent-[8pt]">
+          1. You do not furnish your TIN to the requester;
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[600.4pt] indent-[8pt]">
+          2. You do not certify your TIN when required (see the instructions for
+          <br />
+          Part II for details);
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[621.4pt] indent-[8pt]">
+          3. The IRS tells the requester that you furnished an incorrect TIN;
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[633.4pt] indent-[8pt]">
+          4. The IRS tells you that you are subject to backup withholding
+          <br />
+          because you did not report all your interest and dividends on your tax
+          <br />
+          return (for reportable interest and dividends only); or
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[663.4pt] indent-[8pt]">
+          5. You do not certify to the requester that you are not subject to
+          <br />
+          backup withholding, as described in item 4 under “<span class="italic">By signing the filled-</span>
+          <br />
+          <span class="italic">out form</span> ” above (for reportable interest and dividend accounts opened
+          <br />
+          after 1983 only).
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- ============================ PAGE 3 ============================ -->
+  <div class="poli-break px-[36pt] pt-[36pt]">
+    <div class="relative h-[12pt] border-b-[0.5pt] border-black">
+      <span class="absolute left-0 top-[1.8pt] text-[7.5pt]">Form W-9 ({{ form.footerRevision }})</span>
+      <span class="absolute right-0 top-[1.8pt] text-[7.5pt]">Page <span class="text-[10pt] font-bold">3</span></span>
+    </div>
+    <div class="flex gap-[21.4pt] text-[8pt] leading-[9pt] tracking-[0.0045em]">
+      <div class="relative w-[259.4pt] h-[712pt] shrink-0">
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[8.4pt] indent-[8pt]">
+          Certain payees and payments are exempt from backup withholding.
+          <br />
+          See <span class="italic">Exempt payee code</span>, later, and the separate Instructions for the
+          <br />
+          Requester of Form W-9 for more information.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[38.4pt] indent-[8pt]">
+          See also <span class="italic">Establishing U.S. status for purposes of chapter 3 and</span>
+          <br />
+          <span class="italic">chapter 4 withholding</span>, earlier.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[64.4pt] text-[12pt] leading-[12pt] font-bold">
+          <span class="font-bold">What Is FATCA Reporting?</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[80.4pt]">
+          The Foreign Account Tax Compliance Act (FATCA) requires a
+          <br />
+          participating foreign financial institution to report all U.S. account
+          <br />
+          holders that are specified U.S. persons. Certain payees are exempt from
+          <br />
+          FATCA reporting. See <span class="italic">Exemption from FATCA reporting code</span>, later, and
+          <br />
+          the Instructions for the Requester of Form W-9 for more information.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[131.4pt] text-[12pt] leading-[12pt] font-bold">
+          <span class="font-bold">Updating Your Information</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[147.4pt]">
+          You must provide updated information to any person to whom you
+          <br />
+          claimed to be an exempt payee if you are no longer an exempt payee
+          <br />
+          and anticipate receiving reportable payments in the future from this
+          <br />
+          person. For example, you may need to provide updated information if
+          <br />
+          you are a C corporation that elects to be an S corporation, or if you are
+          <br />
+          no longer tax exempt. In addition, you must furnish a new Form W-9 if
+          <br />
+          the name or TIN changes for the account, for example, if the grantor of a
+          <br />
+          grantor trust dies.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[225.4pt] text-[12pt] leading-[12pt] font-bold">
+          <span class="font-bold">Penalties</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[241.4pt]">
+          <span class="font-bold">Failure to furnish TIN.</span> If you fail to furnish your correct TIN to a
+          <br />
+          requester, you are subject to a penalty of $50 for each such failure
+          <br />
+          unless your failure is due to reasonable cause and not to willful neglect.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[271.4pt]">
+          <span class="font-bold">Civil penalty for false information with respect to withholding.</span> If you
+          <br />
+          make a false statement with no reasonable basis that results in no
+          <br />
+          backup withholding, you are subject to a $500 penalty.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[301.4pt]">
+          <span class="font-bold">Criminal penalty for falsifying information.</span> Willfully falsifying
+          <br />
+          certifications or affirmations may subject you to criminal penalties
+          <br />
+          including fines and/or imprisonment.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[331.4pt]">
+          <span class="font-bold">Misuse of TINs.</span> If the requester discloses or uses TINs in violation of
+          <br />
+          federal law, the requester may be subject to civil and criminal penalties.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[357.1pt] text-[14pt] leading-[14pt] font-bold">
+          <span class="font-bold">Specific Instructions</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[377.6pt] text-[10pt] leading-[10pt] font-bold">
+          <span class="font-bold">Line 1</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[391.4pt]">
+          You must enter one of the following on this line; <span class="font-bold">do not</span> leave this line
+          <br />
+          blank. The name should match the name on your tax return.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[412.4pt] indent-[8pt]">
+          If this Form W-9 is for a joint account (other than an account
+          <br />
+          maintained by a foreign financial institution (FFI)), list first, and then
+          <br />
+          circle, the name of the person or entity whose number you entered in
+          <br />
+          Part I of Form W-9. If you are providing Form W-9 to an FFI to document
+          <br />
+          a joint account, each holder of the account that is a U.S. person must
+          <br />
+          provide a Form W-9.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[469.4pt]">
+          • <span class="font-bold">Individual.</span> Generally, enter the name shown on your tax return. If you
+          <br />
+          have changed your last name without informing the Social Security
+          <br />
+          Administration (SSA) of the name change, enter your first name, the last
+          <br />
+          name as shown on your social security card, and your new last name.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[508.4pt]">
+          <span class="font-bold">Note for ITIN applicant:</span> Enter your individual name as it was entered
+          <br />
+          on your Form W-7 application, line 1a. This should also be the same as
+          <br />
+          the name you entered on the Form 1040 you filed with your application.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[538.4pt]">
+          • <span class="font-bold">Sole proprietor.</span> Enter your individual name as shown on your Form
+          <br />
+          1040 on line 1. Enter your business, trade, or “doing business as” (DBA)
+          <br />
+          name on line 2.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[568.4pt]">
+          • <span class="font-bold">Partnership, C corporation, S corporation, or LLC, other than a</span>
+          <br />
+          <span class="font-bold">disregarded entity.</span> Enter the entity’s name as shown on the entity’s tax
+          <br />
+          return on line 1 and any business, trade, or DBA name on line 2.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[598.4pt]">
+          • <span class="font-bold">Other entities.</span> Enter your name as shown on required U.S. federal tax
+          <br />
+          documents on line 1. This name should match the name shown on the
+          <br />
+          charter or other legal document creating the entity. Enter any business,
+          <br />
+          trade, or DBA name on line 2.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[637.4pt]">
+          • <span class="font-bold">Disregarded entity.</span> In general, a business entity that has a single
+          <br />
+          owner, including an LLC, and is not a corporation, is disregarded as an
+          <br />
+          entity separate from its owner (a disregarded entity). See Regulations
+          <br />
+          section 301.7701-2(c)(2). A disregarded entity should check the
+          <br />
+          appropriate box for the tax classification of its owner. Enter the owner’s
+          <br />
+          name on line 1. The name of the owner entered on line 1 should never
+          <br />
+          be a disregarded entity. The name on line 1 should be the name shown
+          <br />
+          on the income tax return on which the income should be reported. For
+        </p>
+      </div>
+      <div class="relative w-[259.2pt] h-[712pt] shrink-0">
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[8.4pt]">
+          example, if a foreign LLC that is treated as a disregarded entity for U.S.
+          <br />
+          federal tax purposes has a single owner that is a U.S. person, the U.S.
+          <br />
+          owner’s name is required to be provided on line 1. If the direct owner of
+          <br />
+          the entity is also a disregarded entity, enter the first owner that is not
+          <br />
+          disregarded for federal tax purposes. Enter the disregarded entity’s
+          <br />
+          name on line 2. If the owner of the disregarded entity is a foreign person,
+          <br />
+          the owner must complete an appropriate Form W-8 instead of a Form
+          <br />
+          W-9. This is the case even if the foreign person has a U.S. TIN.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[85.6pt] text-[10pt] leading-[10pt] font-bold">
+          <span class="font-bold">Line 2</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[99.4pt]">
+          If you have a business name, trade name, DBA name, or disregarded
+          <br />
+          entity name, enter it on line 2.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[122.6pt] text-[10pt] leading-[10pt] font-bold">
+          <span class="font-bold">Line 3a</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[136.4pt]">
+          Check the appropriate box on line 3a for the U.S. federal tax
+          <br />
+          classification of the person whose name is entered on line 1. Check only
+          <br />
+          one box on line 3a.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[317.6pt] text-[10pt] leading-[10pt] font-bold">
+          <span class="font-bold">Line 3b</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[331.4pt]">
+          Check this box if you are a partnership (including an LLC classified as a
+          <br />
+          partnership for U.S. federal tax purposes), trust, or estate that has any
+          <br />
+          foreign partners, owners, or beneficiaries, and you are providing this
+          <br />
+          form to a partnership, trust, or estate, in which you have an ownership
+          <br />
+          interest. You must check the box on line 3b if you receive a Form W-8
+          <br />
+          (or documentary evidence) from any partner, owner, or beneficiary
+          <br />
+          establishing foreign status or if you receive a Form W-9 from any
+          <br />
+          partner, owner, or beneficiary that has checked the box on line 3b.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[406.4pt]">
+          <span class="font-bold">Note:</span> A partnership that provides a Form W-9 and checks box 3b may
+          <br />
+          be required to complete Schedules K-2 and K-3 (Form 1065). For more
+          <br />
+          information, see the Partnership Instructions for Schedules K-2 and K-3
+          <br />
+          (Form 1065).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[445.4pt] indent-[8pt]">
+          If you are required to complete line 3b but fail to do so, you may not
+          <br />
+          receive the information necessary to file a correct information return with
+          <br />
+          the IRS or furnish a correct payee statement to your partners or
+          <br />
+          beneficiaries. See, for example, sections 6698, 6722, and 6724 for
+          <br />
+          penalties that may apply.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[495.6pt] text-[10pt] leading-[10pt] font-bold">
+          <span class="font-bold">Line 4 Exemptions</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[509.4pt]">
+          If you are exempt from backup withholding and/or FATCA reporting,
+          <br />
+          enter in the appropriate space on line 4 any code(s) that may apply to
+          <br />
+          you.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[539.4pt] font-bold">
+          <span class="font-bold">Exempt payee code.</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[551.4pt]">
+          • Generally, individuals (including sole proprietors) are not exempt from
+          <br />
+          backup withholding.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[572.4pt]">
+          • Except as provided below, corporations are exempt from backup
+          <br />
+          withholding for certain payments, including interest and dividends.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[593.4pt]">
+          • Corporations are not exempt from backup withholding for payments
+          <br />
+          made in settlement of payment card or third-party network transactions.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[614.4pt]">
+          • Corporations are not exempt from backup withholding with respect to
+          <br />
+          attorneys’ fees or gross proceeds paid to attorneys, and corporations
+          <br />
+          that provide medical or health care services are not exempt with respect
+          <br />
+          to payments reportable on Form 1099-MISC.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[653.4pt] indent-[8pt]">
+          The following codes identify payees that are exempt from backup
+          <br />
+          withholding. Enter the appropriate code in the space on line 4.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[674.4pt] indent-[5pt]">
+          1—An organization exempt from tax under section 501(a), any IRA, or
+          <br />
+          a custodial account under section 403(b)(7) if the account satisfies the
+          <br />
+          requirements of section 401(f)(2).
+        </p>
+        <div class="absolute left-0 top-[168pt] w-[259.2pt] h-[144pt] border-[0.5pt] border-black">
+        <div class="absolute left-0 right-0 top-[24pt] h-[0.5pt] bg-black"></div>
+        <div class="absolute left-0 right-0 top-[36pt] h-[0.5pt] bg-black"></div>
+        <div class="absolute left-0 right-0 top-[60pt] h-[0.5pt] bg-black"></div>
+        <div class="absolute left-0 right-0 top-[120pt] h-[0.5pt] bg-black"></div>
+        <div class="absolute left-0 right-0 top-[132pt] h-[0.5pt] bg-black"></div>
+        <div class="absolute top-0 bottom-0 left-[129.6pt] w-[0.5pt] bg-black"></div>
+        <div class="absolute left-[3.9pt] top-[2.9pt] leading-[8pt] whitespace-nowrap font-bold"><span class="font-bold">IF the entity/individual on line 1</span></div>
+        <div class="absolute left-[133.9pt] top-[2.9pt] leading-[8pt] whitespace-nowrap font-bold"><span class="font-bold">THEN check the box for . . .</span></div>
+        <div class="absolute left-[3.9pt] top-[11.9pt] leading-[8pt] whitespace-nowrap font-bold"><span class="font-bold">is a(n) . . .</span></div>
+        <div class="absolute left-[1.9pt] top-[25.9pt] leading-[8pt] whitespace-nowrap">• Corporation</div>
+        <div class="absolute left-[133.9pt] top-[25.9pt] leading-[8pt] whitespace-nowrap">Corporation.</div>
+        <div class="absolute left-[1.9pt] top-[37.9pt] leading-[8pt] whitespace-nowrap">• Individual or</div>
+        <div class="absolute left-[133.9pt] top-[37.9pt] leading-[8pt] whitespace-nowrap">Individual/sole proprietor.</div>
+        <div class="absolute left-[1.9pt] top-[49.9pt] leading-[8pt] whitespace-nowrap">• Sole proprietorship</div>
+        <div class="absolute left-[1.9pt] top-[61.9pt] leading-[8pt] whitespace-nowrap">• LLC classified as a partnership</div>
+        <div class="absolute left-[133.9pt] top-[61.9pt] leading-[8pt] whitespace-nowrap">Limited liability company and</div>
+        <div class="absolute left-[1.9pt] top-[70.9pt] leading-[8pt] whitespace-nowrap">for U.S. federal tax purposes or</div>
+        <div class="absolute left-[133.9pt] top-[70.9pt] leading-[8pt] whitespace-nowrap">enter the appropriate tax</div>
+        <div class="absolute left-[133.9pt] top-[79.9pt] leading-[8pt] whitespace-nowrap">classification:</div>
+        <div class="absolute left-[1.9pt] top-[82.9pt] leading-[8pt] whitespace-nowrap">• LLC that has filed Form 8832 or</div>
+        <div class="absolute left-[133.9pt] top-[90.9pt] leading-[8pt] whitespace-nowrap">P = Partnership,</div>
+        <div class="absolute left-[1.9pt] top-[91.9pt] leading-[8pt] whitespace-nowrap">2553 electing to be taxed as a</div>
+        <div class="absolute left-[133.9pt] top-[99.9pt] leading-[8pt] whitespace-nowrap">C = C corporation, or</div>
+        <div class="absolute left-[1.9pt] top-[100.9pt] leading-[8pt] whitespace-nowrap">corporation</div>
+        <div class="absolute left-[133.9pt] top-[108.9pt] leading-[8pt] whitespace-nowrap">S = S corporation.</div>
+        <div class="absolute left-[1.9pt] top-[121.9pt] leading-[8pt] whitespace-nowrap">• Partnership</div>
+        <div class="absolute left-[133.9pt] top-[121.9pt] leading-[8pt] whitespace-nowrap">Partnership.</div>
+        <div class="absolute left-[1.9pt] top-[133.9pt] leading-[8pt] whitespace-nowrap">• Trust/estate</div>
+        <div class="absolute left-[133.9pt] top-[133.9pt] leading-[8pt] whitespace-nowrap">Trust/estate.</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============================ PAGE 4 ============================ -->
+  <div class="poli-break px-[36pt] pt-[36pt]">
+    <div class="relative h-[12pt] border-b-[0.5pt] border-black">
+      <span class="absolute left-0 top-[1.8pt] text-[7.5pt]">Form W-9 ({{ form.footerRevision }})</span>
+      <span class="absolute right-0 top-[1.8pt] text-[7.5pt]">Page <span class="text-[10pt] font-bold">4</span></span>
+    </div>
+    <div class="flex gap-[21.4pt] text-[8pt] leading-[9pt] tracking-[0.0045em]">
+      <div class="relative w-[259.4pt] h-[712pt] shrink-0">
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[8.4pt] indent-[5pt]">
+          2—The United States or any of its agencies or instrumentalities.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[20.4pt] indent-[5pt]">
+          3—A state, the District of Columbia, a U.S. commonwealth or territory,
+          <br />
+          or any of their political subdivisions or instrumentalities.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[41.4pt] indent-[5pt]">
+          4—A foreign government or any of its political subdivisions, agencies,
+          <br />
+          or instrumentalities.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[62.4pt] indent-[5pt]">
+          5—A corporation.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[74.4pt] indent-[5pt]">
+          6—A dealer in securities or commodities required to register in the
+          <br />
+          United States, the District of Columbia, or a U.S. commonwealth or
+          <br />
+          territory.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[104.4pt] indent-[5pt]">
+          7—A futures commission merchant registered with the Commodity
+          <br />
+          Futures Trading Commission.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[125.4pt] indent-[5pt]">
+          8—A real estate investment trust.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[137.4pt] indent-[5pt]">
+          9—An entity registered at all times during the tax year under the
+          <br />
+          Investment Company Act of 1940.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[158.4pt]">
+          10—A common trust fund operated by a bank under section 584(a).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[170.4pt]">
+          11—A financial institution as defined under section 581.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[182.4pt]">
+          12—A middleman known in the investment community as a nominee or
+          <br />
+          custodian.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[203.4pt]">
+          13—A trust exempt from tax under section 664 or described in section
+          <br />
+          4947.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[224.4pt] indent-[8pt]">
+          The following chart shows types of payments that may be exempt
+          <br />
+          from backup withholding. The chart applies to the exempt payees listed
+          <br />
+          above, 1 through 13.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[450.2pt] text-[6pt] leading-[6pt]">
+          1
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[451.0pt] indent-[3pt]">
+          See Form 1099-MISC, Miscellaneous Information, and its instructions.
+          <br />
+          <span class="align-super text-[5.5pt]">2</span> However, the following payments made to a corporation and
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[471.4pt]">
+          reportable on Form 1099-MISC are not exempt from backup
+          <br />
+          withholding: medical and health care payments, attorneys’ fees, gross
+          <br />
+          proceeds paid to an attorney reportable under section 6045(f), and
+          <br />
+          payments for services paid by a federal executive agency.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[510.4pt]">
+          <span class="font-bold">Exemption from FATCA reporting code.</span> The following codes identify
+          <br />
+          payees that are exempt from reporting under FATCA. These codes
+          <br />
+          apply to persons submitting this form for accounts maintained outside
+          <br />
+          of the United States by certain foreign financial institutions. Therefore, if
+          <br />
+          you are only submitting this form for an account you hold in the United
+          <br />
+          States, you may leave this field blank. Consult with the person
+          <br />
+          requesting this form if you are uncertain if the financial institution is
+          <br />
+          subject to these requirements. A requester may indicate that a code is
+          <br />
+          not required by providing you with a Form W-9 with “Not Applicable” (or
+          <br />
+          any similar indication) entered on the line for a FATCA exemption code.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[603.4pt] indent-[8pt]">
+          A—An organization exempt from tax under section 501(a) or any
+          <br />
+          individual retirement plan as defined in section 7701(a)(37).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[624.4pt] indent-[8pt]">
+          B—The United States or any of its agencies or instrumentalities.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[636.4pt] indent-[8pt]">
+          C—A state, the District of Columbia, a U.S. commonwealth or
+          <br />
+          territory, or any of their political subdivisions or instrumentalities.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[657.4pt] indent-[8pt]">
+          D—A corporation the stock of which is regularly traded on one or
+          <br />
+          more established securities markets, as described in Regulations
+          <br />
+          section 1.1472-1(c)(1)(i).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[687.4pt] indent-[8pt]">
+          E—A corporation that is a member of the same expanded affiliated
+          <br />
+          group as a corporation described in Regulations section 1.1472-1(c)(1)(i).
+        </p>
+        <div class="absolute left-0 top-[254pt] w-[259.4pt] h-[194pt] border-[0.5pt] border-black">
+        <div class="absolute left-0 right-0 top-[24pt] h-[0.5pt] bg-black"></div>
+        <div class="absolute left-0 right-0 top-[45pt] h-[0.5pt] bg-black"></div>
+        <div class="absolute left-0 right-0 top-[111pt] h-[0.5pt] bg-black"></div>
+        <div class="absolute left-0 right-0 top-[132pt] h-[0.5pt] bg-black"></div>
+        <div class="absolute left-0 right-0 top-[164pt] h-[0.5pt] bg-black"></div>
+        <div class="absolute top-0 bottom-0 left-[129.6pt] w-[0.5pt] bg-black"></div>
+        <div class="absolute left-[0.0pt] top-[2.9pt] leading-[8pt] whitespace-nowrap font-bold"><span class="font-bold">IF the payment is for . . .</span></div>
+        <div class="absolute left-[133.3pt] top-[2.9pt] leading-[8pt] whitespace-nowrap font-bold"><span class="font-bold">THEN the payment is exempt</span></div>
+        <div class="absolute left-[133.3pt] top-[11.9pt] leading-[8pt] whitespace-nowrap font-bold"><span class="font-bold">for . . .</span></div>
+        <div class="absolute left-[2.0pt] top-[25.9pt] leading-[8pt] whitespace-nowrap">• Interest and dividend payments</div>
+        <div class="absolute left-[133.3pt] top-[25.9pt] leading-[8pt] whitespace-nowrap">All exempt payees except</div>
+        <div class="absolute left-[133.3pt] top-[34.9pt] leading-[8pt] whitespace-nowrap">for 7.</div>
+        <div class="absolute left-[2.0pt] top-[46.9pt] leading-[8pt] whitespace-nowrap">• Broker transactions</div>
+        <div class="absolute left-[133.3pt] top-[46.9pt] leading-[8pt] whitespace-nowrap">Exempt payees 1 through 4 and 6</div>
+        <div class="absolute left-[133.3pt] top-[55.9pt] leading-[8pt] whitespace-nowrap">through 11 and all C corporations.</div>
+        <div class="absolute left-[133.3pt] top-[64.9pt] leading-[8pt] whitespace-nowrap">S corporations must not enter an</div>
+        <div class="absolute left-[133.3pt] top-[73.9pt] leading-[8pt] whitespace-nowrap">exempt payee code because they</div>
+        <div class="absolute left-[133.3pt] top-[82.9pt] leading-[8pt] whitespace-nowrap">are exempt only for sales of</div>
+        <div class="absolute left-[133.3pt] top-[91.9pt] leading-[8pt] whitespace-nowrap">noncovered securities acquired</div>
+        <div class="absolute left-[133.3pt] top-[100.9pt] leading-[8pt] whitespace-nowrap">prior to 2012.</div>
+        <div class="absolute left-[2.0pt] top-[112.9pt] leading-[8pt] whitespace-nowrap">• Barter exchange transactions</div>
+        <div class="absolute left-[133.3pt] top-[112.9pt] leading-[8pt] whitespace-nowrap">Exempt payees 1 through 4.</div>
+        <div class="absolute left-[2.0pt] top-[121.9pt] leading-[8pt] whitespace-nowrap">and patronage dividends</div>
+        <div class="absolute left-[2.0pt] top-[133.9pt] leading-[8pt] whitespace-nowrap">• Payments over $600 required to</div>
+        <div class="absolute left-[133.3pt] top-[133.9pt] leading-[8pt] whitespace-nowrap">Generally, exempt payees</div>
+        <div class="absolute left-[176.7pt] top-[144.2pt] leading-[5.33333pt] whitespace-nowrap text-[5.33333pt]">2</div>
+        <div class="absolute left-[2.0pt] top-[142.9pt] leading-[8pt] whitespace-nowrap">be reported and direct sales over</div>
+        <div class="absolute left-[133.3pt] top-[144.7pt] leading-[8pt] whitespace-nowrap">1 through 5.</div>
+        <div class="absolute left-[2.0pt] top-[153.7pt] leading-[8pt] whitespace-nowrap">$5,000<span class="align-super text-[5.5pt]">1</span></div>
+        <div class="absolute left-[2.0pt] top-[165.9pt] leading-[8pt] whitespace-nowrap">• Payments made in settlement of</div>
+        <div class="absolute left-[133.3pt] top-[165.9pt] leading-[8pt] whitespace-nowrap">Exempt payees 1 through 4.</div>
+        <div class="absolute left-[2.0pt] top-[174.9pt] leading-[8pt] whitespace-nowrap">payment card or third-party</div>
+        <div class="absolute left-[2.0pt] top-[183.9pt] leading-[8pt] whitespace-nowrap">network transactions</div>
+      </div>
+      </div>
+      <div class="relative w-[259.2pt] h-[712pt] shrink-0">
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[8.4pt] indent-[8pt]">
+          F—A dealer in securities, commodities, or derivative financial
+          <br />
+          instruments (including notional principal contracts, futures, forwards,
+          <br />
+          and options) that is registered as such under the laws of the United
+          <br />
+          States or any state.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[47.4pt] indent-[8pt]">
+          G—A real estate investment trust.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[59.4pt] indent-[8pt]">
+          H—A regulated investment company as defined in section 851 or an
+          <br />
+          entity registered at all times during the tax year under the Investment
+          <br />
+          Company Act of 1940.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[89.4pt] indent-[8pt]">
+          I—A common trust fund as defined in section 584(a).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[101.4pt] indent-[8pt]">
+          J—A bank as defined in section 581.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[113.4pt] indent-[8pt]">
+          K—A broker.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[125.4pt] indent-[8pt]">
+          L—A trust exempt from tax under section 664 or described in section
+          <br />
+          4947(a)(1).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[146.4pt] indent-[8pt]">
+          M—A tax-exempt trust under a section 403(b) plan or section 457(g)
+          <br />
+          plan.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[167.4pt]">
+          <span class="font-bold">Note:</span> You may wish to consult with the financial institution requesting
+          <br />
+          this form to determine whether the FATCA code and/or exempt payee
+          <br />
+          code should be completed.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[199.6pt] text-[10pt] leading-[10pt] font-bold">
+          <span class="font-bold">Line 5</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[213.4pt]">
+          Enter your address (number, street, and apartment or suite number).
+          <br />
+          This is where the requester of this Form W-9 will mail your information
+          <br />
+          returns. If this address differs from the one the requester already has on
+          <br />
+          file, enter “NEW” at the top. If a new address is provided, there is still a
+          <br />
+          chance the old address will be used until the payor changes your
+          <br />
+          address in their records.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[272.6pt] text-[10pt] leading-[10pt] font-bold">
+          <span class="font-bold">Line 6</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[286.4pt]">
+          Enter your city, state, and ZIP code.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[301.4pt] text-[12pt] leading-[12pt] font-bold">
+          <span class="font-bold">Part I. Taxpayer Identification Number (TIN)</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[317.4pt]">
+          <span class="font-bold">Enter your TIN in the appropriate box.</span> If you are a resident alien and
+          <br />
+          you do not have, and are not eligible to get, an SSN, your TIN is your
+          <br />
+          IRS ITIN. Enter it in the entry space for the Social security number. If you
+          <br />
+          do not have an ITIN, see <span class="italic">How to get a TIN</span> below.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[356.4pt] indent-[8pt]">
+          If you are a sole proprietor and you have an EIN, you may enter either
+          <br />
+          your SSN or EIN.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[377.4pt] indent-[8pt]">
+          If you are a single-member LLC that is disregarded as an entity
+          <br />
+          separate from its owner, enter the owner’s SSN (or EIN, if the owner has
+          <br />
+          one). If the LLC is classified as a corporation or partnership, enter the
+          <br />
+          entity’s EIN.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[416.4pt]">
+          <span class="font-bold">Note:</span> See <span class="italic">What Name and Number To Give the Requester</span>, later, for
+          <br />
+          further clarification of name and TIN combinations.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[437.4pt]">
+          <span class="font-bold">How to get a TIN.</span> If you do not have a TIN, apply for one immediately.
+          <br />
+          To apply for an SSN, get Form SS-5, Application for a Social Security
+          <br />
+          Card, from your local SSA office or get this form online at
+          <br />
+          <span class="italic">www.SSA.gov</span>. You may also get this form by calling 800-772-1213. Use
+          <br />
+          Form W-7, Application for IRS Individual Taxpayer Identification
+          <br />
+          Number, to apply for an ITIN, or Form SS-4, Application for Employer
+          <br />
+          Identification Number, to apply for an EIN. You can apply for an EIN
+          <br />
+          online by accessing the IRS website at <span class="italic">www.irs.gov/EIN</span>. Go to
+          <br />
+          <span class="italic">www.irs.gov/Forms</span> to view, download, or print Form W-7 and/or Form
+          <br />
+          SS-4. Or, you can go to <span class="italic">www.irs.gov/OrderForms</span> to place an order and
+          <br />
+          have Form W-7 and/or Form SS-4 mailed to you within 15 business
+          <br />
+          days.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[548.4pt] indent-[8pt]">
+          If you are asked to complete Form W-9 but do not have a TIN, apply
+          <br />
+          for a TIN and enter “Applied For” in the space for the TIN, sign and date
+          <br />
+          the form, and give it to the requester. For interest and dividend
+          <br />
+          payments, and certain payments made with respect to readily tradable
+          <br />
+          instruments, you will generally have 60 days to get a TIN and give it to
+          <br />
+          the requester before you are subject to backup withholding on
+          <br />
+          payments. The 60-day rule does not apply to other types of payments.
+          <br />
+          You will be subject to backup withholding on all such payments until
+          <br />
+          you provide your TIN to the requester.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[632.4pt]">
+          <span class="font-bold">Note:</span> Entering “Applied For” means that you have already applied for a
+          <br />
+          TIN or that you intend to apply for one soon. See also <span class="italic">Establishing U.S.</span>
+          <br />
+          <span class="italic">status for purposes of chapter 3 and chapter 4 withholding</span>, earlier, for
+          <br />
+          when you may instead be subject to withholding under chapter 3 or 4 of
+          <br />
+          the Code.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[680.4pt]">
+          <span class="font-bold">Caution:</span> A disregarded U.S. entity that has a foreign owner must use
+          <br />
+          the appropriate Form W-8.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- ============================ PAGE 5 ============================ -->
+  <div class="poli-break px-[36pt] pt-[36pt]">
+    <div class="relative h-[12pt] border-b-[0.5pt] border-black">
+      <span class="absolute left-0 top-[1.8pt] text-[7.5pt]">Form W-9 ({{ form.footerRevision }})</span>
+      <span class="absolute right-0 top-[1.8pt] text-[7.5pt]">Page <span class="text-[10pt] font-bold">5</span></span>
+    </div>
+    <div class="flex gap-[21.4pt] text-[8pt] leading-[9pt] tracking-[0.0045em]">
+      <div class="relative w-[259.4pt] h-[712pt] shrink-0">
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[8.4pt] text-[12pt] leading-[12pt] font-bold">
+          <span class="font-bold">Part II. Certification</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[24.4pt]">
+          To establish to the withholding agent that you are a U.S. person, or
+          <br />
+          resident alien, sign Form W-9. You may be requested to sign by the
+          <br />
+          withholding agent even if item 1, 4, or 5 below indicates otherwise.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[54.4pt] indent-[8pt]">
+          For a joint account, only the person whose TIN is shown in Part I
+          <br />
+          should sign (when required). In the case of a disregarded entity, the
+          <br />
+          person identified on line 1 must sign. Exempt payees, see <span class="italic">Exempt payee</span>
+          <br />
+          <span class="italic">code</span>, earlier.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[93.4pt]">
+          <span class="font-bold">Signature requirements.</span> Complete the certification as indicated in
+          <br />
+          items 1 through 5 below.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[114.4pt] indent-[8pt]">
+          <span class="font-bold">1. Interest, dividend, and barter exchange accounts opened</span>
+          <br />
+          <span class="font-bold">before 1984 and broker accounts considered active during 1983.</span>
+          <br />
+          You must give your correct TIN, but you do not have to sign the
+          <br />
+          certification.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[153.4pt] indent-[8pt]">
+          <span class="font-bold">2. Interest, dividend, broker, and barter exchange accounts</span>
+          <br />
+          <span class="font-bold">opened after 1983 and broker accounts considered inactive during</span>
+          <br />
+          <span class="font-bold">1983.</span> You must sign the certification or backup withholding will apply. If
+          <br />
+          you are subject to backup withholding and you are merely providing
+          <br />
+          your correct TIN to the requester, you must cross out item 2 in the
+          <br />
+          certification before signing the form.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[210.4pt] indent-[8pt]">
+          <span class="font-bold">3. Real estate transactions.</span> You must sign the certification. You may
+          <br />
+          cross out item 2 of the certification.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[231.4pt] indent-[8pt]">
+          <span class="font-bold">4. Other payments.</span> You must give your correct TIN, but you do not
+          <br />
+          have to sign the certification unless you have been notified that you
+          <br />
+          have previously given an incorrect TIN. “Other payments” include
+          <br />
+          payments made in the course of the requester’s trade or business for
+          <br />
+          rents, royalties, goods (other than bills for merchandise), medical and
+          <br />
+          health care services (including payments to corporations), payments to
+          <br />
+          a nonemployee for services, payments made in settlement of payment
+          <br />
+          card and third-party network transactions, payments to certain fishing
+          <br />
+          boat crew members and fishermen, and gross proceeds paid to
+          <br />
+          attorneys (including payments to corporations).
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[324.4pt] indent-[8pt]">
+          <span class="font-bold">5. Mortgage interest paid by you, acquisition or abandonment of</span>
+          <br />
+          <span class="font-bold">secured property, cancellation of debt, qualified tuition program</span>
+          <br />
+          <span class="font-bold">payments (under section 529), ABLE accounts (under section 529A),</span>
+          <br />
+          <span class="font-bold">IRA, Coverdell ESA, Archer MSA or HSA contributions or</span>
+          <br />
+          <span class="font-bold">distributions, and pension distributions.</span> You must give your correct
+          <br />
+          TIN, but you do not have to sign the certification.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[384.3pt] text-[12pt] leading-[12pt] font-bold">
+          <span class="font-bold">What Name and Number To Give the Requester</span>
+        </p>
+        <div class="absolute left-0 top-[399pt] w-[259.4pt] h-[180pt] border-[0.5pt] border-black">
+        <div class="absolute left-0 right-0 top-[12pt] h-[0.5pt] bg-black"></div>
+        <div class="absolute top-0 bottom-0 left-[136.8pt] w-[0.5pt] bg-black"></div>
+        <div class="absolute left-[22.0pt] top-[1.9pt] leading-[8pt] whitespace-nowrap font-bold"><span class="font-bold">For this type of account:</span></div>
+        <div class="absolute left-[154.7pt] top-[1.9pt] leading-[8pt] whitespace-nowrap font-bold"><span class="font-bold">Give name and SSN of:</span></div>
+        <div class="absolute left-[4.0pt] top-[13.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">1. Individual</div>
+        <div class="absolute left-[142.7pt] top-[13.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">The individual</div>
+        <div class="absolute left-[4.0pt] top-[24.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">2. Two or more individuals (joint account)</div>
+        <div class="absolute left-[142.7pt] top-[24.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">The actual owner of the account or,</div>
+        <div class="absolute left-[12.7pt] top-[32.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">other than an account maintained by</div>
+        <div class="absolute left-[142.7pt] top-[32.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">if combined funds, the first individual</div>
+        <div class="absolute left-[190.0pt] top-[40.2pt] leading-[5.33333pt] whitespace-nowrap text-[5.33333pt]">1</div>
+        <div class="absolute left-[12.7pt] top-[40.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">an FFI</div>
+        <div class="absolute left-[142.7pt] top-[41.4pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">on the account</div>
+        <div class="absolute left-[4.0pt] top-[52.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">3. Two or more U.S. persons</div>
+        <div class="absolute left-[142.7pt] top-[52.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">Each holder of the account</div>
+        <div class="absolute left-[4.0pt] top-[60.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">(joint account maintained by an FFI)</div>
+        <div class="absolute left-[142.7pt] top-[72.3pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">The minor<span class="align-super text-[5.5pt]">2</span></div>
+        <div class="absolute left-[4.0pt] top-[72.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">4. Custodial account of a minor</div>
+        <div class="absolute left-[12.0pt] top-[80.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">(Uniform Gift to Minors Act)</div>
+        <div class="absolute left-[142.7pt] top-[92.3pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">The grantor-trustee<span class="align-super text-[5.5pt]">1</span></div>
+        <div class="absolute left-[4.0pt] top-[92.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">5. a. The usual revocable savings trust</div>
+        <div class="absolute left-[12.0pt] top-[100.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">(grantor is also trustee)</div>
+        <div class="absolute left-[196.7pt] top-[109.2pt] leading-[5.33333pt] whitespace-nowrap text-[5.33333pt]">1</div>
+        <div class="absolute left-[12.0pt] top-[112.4pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">b. So-called trust account that is not</div>
+        <div class="absolute left-[142.7pt] top-[112.4pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">The actual owner</div>
+        <div class="absolute left-[12.0pt] top-[120.3pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">a legal or valid trust under state law</div>
+        <div class="absolute left-[4.0pt] top-[131.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">6. Sole proprietorship or disregarded</div>
+        <div class="absolute left-[142.7pt] top-[131.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">The owner<span class="align-super text-[5.5pt]">3</span></div>
+        <div class="absolute left-[12.0pt] top-[139.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">entity owned by an individual</div>
+        <div class="absolute left-[4.0pt] top-[151.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">7. Grantor trust filing under Optional</div>
+        <div class="absolute left-[142.7pt] top-[151.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">The grantor*</div>
+        <div class="absolute left-[12.0pt] top-[159.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">Filing Method 1 (see Regulations</div>
+        <div class="absolute left-[12.0pt] top-[167.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">section 1.671-4(b)(2)(i)(A))**</div>
+      </div>
+      </div>
+      <div class="relative w-[259.2pt] h-[712pt] shrink-0">
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[215.1pt] text-[5.33333pt] leading-[5.33333pt]">
+          1
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[215.3pt] indent-[3pt]">
+          List first and circle the name of the person whose number you furnish.
+          <br />
+          If only one person on a joint account has an SSN, that person’s number
+          <br />
+          must be furnished.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[246.1pt] text-[5.33333pt] leading-[5.33333pt]">
+          2
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[246.3pt] indent-[3pt]">
+          Circle the minor’s name and furnish the minor’s SSN.
+          <br />
+          <span class="align-super text-[5.5pt]">3</span> You must show your individual name on line 1, and enter your business
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[266.4pt]">
+          or DBA name, if any, on line 2. You may use either your SSN or EIN (if
+          <br />
+          you have one), but the IRS encourages you to use your SSN.
+          <br />
+          <span class="align-super text-[5.5pt]">4</span> List first and circle the name of the trust, estate, or pension trust. (Do
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[297.4pt]">
+          not furnish the TIN of the personal representative or trustee unless the
+          <br />
+          legal entity itself is not designated in the account title.)
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[318.4pt]">
+          * <span class="font-bold">Note:</span> The grantor must also provide a Form W-9 to the trustee of the
+          <br />
+          trust.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[339.4pt]">
+          ** For more information on optional filing methods for grantor trusts, see
+          <br />
+          the Instructions for Form 1041.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[360.4pt]">
+          <span class="font-bold">Note:</span> If no name is circled when more than one name is listed, the
+          <br />
+          number will be considered to be that of the first name listed.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[384.3pt] text-[12pt] leading-[12pt] font-bold">
+          <span class="font-bold">Secure Your Tax Records From Identity Theft</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[400.4pt]">
+          Identity theft occurs when someone uses your personal information,
+          <br />
+          such as your name, SSN, or other identifying information, without your
+          <br />
+          permission to commit fraud or other crimes. An identity thief may use
+          <br />
+          your SSN to get a job or may file a tax return using your SSN to receive
+          <br />
+          a refund.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[448.4pt] indent-[8pt]">
+          To reduce your risk:
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[460.4pt]">
+          • Protect your SSN,
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[472.4pt]">
+          • Ensure your employer is protecting your SSN, and
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[484.4pt]">
+          • Be careful when choosing a tax return preparer.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[496.4pt] indent-[8pt]">
+          If your tax records are affected by identity theft and you receive a
+          <br />
+          notice from the IRS, respond right away to the name and phone number
+          <br />
+          printed on the IRS notice or letter.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[526.4pt] indent-[8pt]">
+          If your tax records are not currently affected by identity theft but you
+          <br />
+          think you are at risk due to a lost or stolen purse or wallet, questionable
+          <br />
+          credit card activity, or a questionable credit report, contact the IRS
+          <br />
+          Identity Theft Hotline at 800-908-4490 or submit Form 14039.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[565.7pt] indent-[8pt]">
+          For more information, see Pub. 5027, Identity Theft Information for
+          <br />
+          Taxpayers.
+        </p>
+        <div class="absolute left-0 top-[10pt] w-[259.2pt] h-[203pt] border-[0.5pt] border-black">
+        <div class="absolute left-0 right-0 top-[12pt] h-[0.5pt] bg-black"></div>
+        <div class="absolute top-0 bottom-0 left-[136.8pt] w-[0.5pt] bg-black"></div>
+        <div class="absolute left-[21.9pt] top-[1.8pt] leading-[8pt] whitespace-nowrap font-bold"><span class="font-bold">For this type of account:</span></div>
+        <div class="absolute left-[155.9pt] top-[1.8pt] leading-[8pt] whitespace-nowrap font-bold"><span class="font-bold">Give name and EIN of:</span></div>
+        <div class="absolute left-[3.9pt] top-[13.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">8. Disregarded entity not owned by an</div>
+        <div class="absolute left-[142.5pt] top-[13.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">The owner</div>
+        <div class="absolute left-[11.9pt] top-[21.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">individual</div>
+        <div class="absolute left-[142.5pt] top-[33.4pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">Legal entity<span class="align-super text-[5.5pt]">4</span></div>
+        <div class="absolute left-[3.9pt] top-[33.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">9. A valid trust, estate, or pension trust</div>
+        <div class="absolute left-[-0.1pt] top-[45.5pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">10. Corporation or LLC electing corporate</div>
+        <div class="absolute left-[142.5pt] top-[45.5pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">The corporation</div>
+        <div class="absolute left-[11.9pt] top-[52.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">status on Form 8832 or Form 2553</div>
+        <div class="absolute left-[-0.1pt] top-[64.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">11. Association, club, religious, charitable,</div>
+        <div class="absolute left-[142.5pt] top-[64.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">The organization</div>
+        <div class="absolute left-[11.9pt] top-[72.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">educational, or other tax-exempt</div>
+        <div class="absolute left-[11.9pt] top-[80.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">organization</div>
+        <div class="absolute left-[-0.1pt] top-[93.5pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">12. Partnership or multi-member LLC</div>
+        <div class="absolute left-[142.5pt] top-[93.5pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">The partnership</div>
+        <div class="absolute left-[-0.1pt] top-[103.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">13. A broker or registered nominee</div>
+        <div class="absolute left-[142.5pt] top-[103.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">The broker or nominee</div>
+        <div class="absolute left-[1.2pt] top-[114.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">14. Account with the Department of</div>
+        <div class="absolute left-[142.5pt] top-[114.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">The public entity</div>
+        <div class="absolute left-[13.2pt] top-[123.5pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">Agriculture in the name of a public</div>
+        <div class="absolute left-[13.2pt] top-[130.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">entity (such as a state or local</div>
+        <div class="absolute left-[13.2pt] top-[138.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">government, school district, or prison)</div>
+        <div class="absolute left-[13.2pt] top-[146.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">that receives agricultural program</div>
+        <div class="absolute left-[13.2pt] top-[154.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">payments</div>
+        <div class="absolute left-[1.2pt] top-[166.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">15. Grantor trust filing Form 1041 or</div>
+        <div class="absolute left-[142.5pt] top-[166.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">The trust</div>
+        <div class="absolute left-[13.2pt] top-[174.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">under the Optional Filing Method 2,</div>
+        <div class="absolute left-[13.2pt] top-[182.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">requiring Form 1099 (see Regulations</div>
+        <div class="absolute left-[13.2pt] top-[190.8pt] leading-[7.33333pt] whitespace-nowrap text-[7.33333pt]">section 1.671-4(b)(2)(i)(B))**</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============================ PAGE 6 ============================ -->
+  <div class="poli-break px-[36pt] pt-[36pt]">
+    <div class="relative h-[12pt] border-b-[0.5pt] border-black">
+      <span class="absolute left-0 top-[1.8pt] text-[7.5pt]">Form W-9 ({{ form.footerRevision }})</span>
+      <span class="absolute right-0 top-[1.8pt] text-[7.5pt]">Page <span class="text-[10pt] font-bold">6</span></span>
+    </div>
+    <div class="flex gap-[21.4pt] text-[8pt] leading-[9pt] tracking-[0.0045em]">
+      <div class="relative w-[259.4pt] h-[712pt] shrink-0">
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[8.4pt] indent-[8pt]">
+          Victims of identity theft who are experiencing economic harm or a
+          <br />
+          systemic problem, or are seeking help in resolving tax problems that
+          <br />
+          have not been resolved through normal channels, may be eligible for
+          <br />
+          Taxpayer Advocate Service (TAS) assistance. You can reach TAS by
+          <br />
+          calling the TAS toll-free case intake line at 877-777-4778 or TTY/TDD
+          <br />
+          800-829-4059.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[65.4pt]">
+          <span class="font-bold">Protect yourself from suspicious emails or phishing schemes.</span>
+          <br />
+          Phishing is the creation and use of email and websites designed to
+          <br />
+          mimic legitimate business emails and websites. The most common act
+          <br />
+          is sending an email to a user falsely claiming to be an established
+          <br />
+          legitimate enterprise in an attempt to scam the user into surrendering
+          <br />
+          private information that will be used for identity theft.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[122.4pt] indent-[8pt]">
+          The IRS does not initiate contacts with taxpayers via emails. Also, the
+          <br />
+          IRS does not request personal detailed information through email or ask
+          <br />
+          taxpayers for the PIN numbers, passwords, or similar secret access
+          <br />
+          information for their credit card, bank, or other financial accounts.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[161.4pt] indent-[8pt]">
+          If you receive an unsolicited email claiming to be from the IRS,
+          <br />
+          forward this message to <span class="italic">phishing@irs.gov</span>. You may also report misuse
+          <br />
+          of the IRS name, logo, or other IRS property to the Treasury Inspector
+          <br />
+          General for Tax Administration (TIGTA) at 800-366-4484. You can
+          <br />
+          forward suspicious emails to the Federal Trade Commission at
+          <br />
+          <span class="italic">spam@uce.gov</span> or report them at <span class="italic">www.ftc.gov/complaint</span>. You can
+          <br />
+          contact the FTC at <span class="italic">www.ftc.gov/idtheft</span> or 877-IDTHEFT (877-438-4338).
+          <br />
+          If you have been the victim of identity theft, see <span class="italic">www.IdentityTheft.gov</span>
+          <br />
+          and Pub. 5027.
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[245.4pt] indent-[8pt]">
+          Go to <span class="italic">www.irs.gov/IdentityTheft</span> to learn more about identity theft and
+          <br />
+          how to reduce your risk.
+        </p>
+      </div>
+      <div class="relative w-[259.2pt] h-[712pt] shrink-0">
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[8.4pt] text-[12pt] leading-[12pt] font-bold">
+          <span class="font-bold">Privacy Act Notice</span>
+        </p>
+        <p class="absolute left-0 m-0 whitespace-nowrap top-[24.4pt]">
+          Section 6109 of the Internal Revenue Code requires you to provide your
+          <br />
+          correct TIN to persons (including federal agencies) who are required to
+          <br />
+          file information returns with the IRS to report interest, dividends, or
+          <br />
+          certain other income paid to you; mortgage interest you paid; the
+          <br />
+          acquisition or abandonment of secured property; the cancellation of
+          <br />
+          debt; or contributions you made to an IRA, Archer MSA, or HSA. The
+          <br />
+          person collecting this form uses the information on the form to file
+          <br />
+          information returns with the IRS, reporting the above information.
+          <br />
+          Routine uses of this information include giving it to the Department of
+          <br />
+          Justice for civil and criminal litigation and to cities, states, the District of
+          <br />
+          Columbia, and U.S. commonwealths and territories for use in
+          <br />
+          administering their laws. The information may also be disclosed to other
+          <br />
+          countries under a treaty, to federal and state agencies to enforce civil
+          <br />
+          and criminal laws, or to federal law enforcement and intelligence
+          <br />
+          agencies to combat terrorism. You must provide your TIN whether or not
+          <br />
+          you are required to file a tax return. Under section 3406, payors must
+          <br />
+          generally withhold a percentage of taxable interest, dividends, and
+          <br />
+          certain other payments to a payee who does not give a TIN to the payor.
+          <br />
+          Certain penalties may also apply for providing false or fraudulent
+          <br />
+          information.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

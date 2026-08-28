@@ -54,6 +54,10 @@
   --font-cerfa: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   --font-cerfa-mono: 'Courier New', 'Courier', monospace;
   --font-ephesis: 'Ephesis', cursive;
+
+  /* W-9 fonts */
+  --font-w9: 'Arimo', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-w9-mono: 'Courier New', 'Courier', monospace;
 }
 
 @layer components {
@@ -66,5 +70,19 @@
   }
   .cerfa-text-field {
     @apply border-l-[0.5pt] border-r-[0.5pt] border-black flex items-center justify-start text-[10pt] font-cerfa-mono font-bold;
+  }
+
+  /* IRS Form W-9 — TIN digit cells, entry values and checkboxes */
+  .w9-cells {
+    @apply flex shrink-0 border-y-[0.5pt] border-black;
+  }
+  .w9-cell {
+    @apply w-[14.4pt] h-[24pt] shrink-0 border-l-[0.5pt] border-black flex items-center justify-center text-[11pt] font-w9-mono font-bold text-pencil last:border-r-[0.5pt];
+  }
+  .w9-check {
+    @apply w-[8pt] h-[8pt] border-[0.5pt] border-black flex items-center justify-center shrink-0 text-pencil;
+  }
+  .w9-entry {
+    @apply font-w9-mono font-bold text-[8pt] text-pencil;
   }
 }

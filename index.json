@@ -32,6 +32,10 @@
         {
           "name": "cerfa-15776",
           "description": "Official French CERFA 15776 form"
+        },
+        {
+          "name": "form-w9",
+          "description": "IRS Form W-9 replica — US Letter, six pages"
         }
       ]
     },

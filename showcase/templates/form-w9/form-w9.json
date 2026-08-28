@@ -1,0 +1,39 @@
+{
+  "locale": "en-US",
+  "data": {
+    "form": {
+      "revision": "Rev. March 2024",
+      "catalogNumber": "10231X",
+      "footerRevision": "Rev. 3-2024"
+    },
+    "payee": {
+      "name": "Harper J. Okonkwo",
+      "businessName": "Northbrook Design Studio",
+      "taxClassification": "individual",
+      "llcClassification": "",
+      "otherClassification": "",
+      "foreignPartners": false,
+      "exemptPayeeCode": "",
+      "fatcaCode": "",
+      "address": "1420 Larkspur Lane, Apt. 3B",
+      "cityStateZip": "Asheville, NC 28801",
+      "accountNumbers": "8842-01977"
+    },
+    "requester": {
+      "lines": [
+        "Cascade Ridge Outfitters LLC",
+        "88 Foundry Street, Suite 210",
+        "Portland, OR 97209"
+      ]
+    },
+    "tin": {
+      "type": "ssn",
+      "ssn": "412887305",
+      "ein": ""
+    },
+    "signature": {
+      "name": "Harper J. Okonkwo",
+      "date": "2026-08-24"
+    }
+  }
+}
