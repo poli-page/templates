@@ -1,7 +1,6 @@
 {
 	"project": {
 		"name": "playground",
-		"version": "1.0.0",
 		"description": "Poli Page Playground — starter templates for the online playground"
 	},
 	"templates": [

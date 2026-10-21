@@ -1,7 +1,6 @@
 {
   "project": {
     "name": "Poli Page Structures",
-    "version": "1.0.0",
     "description": "Layout structure templates used by the editor wizard when creating new templates"
   },
   "fonts": [],
