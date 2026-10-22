@@ -1,7 +1,6 @@
 {
   "project": {
     "name": "getting-started",
-    "version": "1.0.0",
     "description": "The 4 getting-started templates"
   },
   "engine": {
