@@ -11,6 +11,10 @@
  *                                                    # if they already exist
  *   node tools/build-template-manifests.mjs --force   # overwrite everything
  *                                                    # (use to re-bootstrap)
+ *   node tools/build-template-manifests.mjs --check   # write nothing; exit 1
+ *                                                    # when index.json or a
+ *                                                    # template's files are
+ *                                                    # out of sync (npm test, CI)
  *
  * The default behavior preserves manual refines: once a contributor has
  * trimmed fonts to the actually-used set or scoped a tailwind-additions
@@ -28,6 +32,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
 const FORCE = process.argv.includes('--force');
+const CHECK = process.argv.includes('--check');
 
 const CONFIG = {
 	collections: {
@@ -42,6 +47,7 @@ const CONFIG = {
 				'delivery-note': 'Delivery note with itemized table',
 				'pay-slip': 'French-style monthly pay slip',
 				'cerfa-15776': 'Official French CERFA 15776 form',
+				'form-w9': 'IRS Form W-9 replica, US Letter, six pages',
 			},
 		},
 		structures: {
@@ -85,6 +91,7 @@ const IMAGE_EXT = /\.(png|jpe?g|gif|svg|webp)$/i;
 const warnings = [];
 
 async function main() {
+	if (CHECK) return check();
 	await writeIndex();
 	for (const [collName, coll] of Object.entries(CONFIG.collections)) {
 		await processCollection(collName, coll);
@@ -96,7 +103,40 @@ async function main() {
 	console.log('\n✓ Manifests generated');
 }
 
-async function writeIndex() {
+/**
+ * `--check`: writes nothing, exits 1 when the committed files are out of sync
+ * with CONFIG. index.json must be what writeIndex() produces (so a template
+ * listed there by hand, without a CONFIG entry, fails), and every template
+ * must have the files the editor and the CLI import.
+ */
+async function check() {
+	const problems = [];
+	const expected = JSON.stringify(buildIndex(), null, 2) + '\n';
+	const actual = await readOrEmpty(path.join(REPO, 'index.json'));
+	if (actual !== expected) {
+		problems.push('index.json differs from CONFIG: add the template to CONFIG in this script, then run it');
+	}
+	for (const [collName, coll] of Object.entries(CONFIG.collections)) {
+		for (const tName of Object.keys(coll.templates)) {
+			const dir = path.join(REPO, collName, 'templates', tName);
+			for (const file of ['manifest.json', 'tailwind-additions.css', `${tName}.html`, `${tName}.json`]) {
+				try {
+					await fs.access(path.join(dir, file));
+				} catch {
+					problems.push(`${collName}/${tName}: ${file} is missing`);
+				}
+			}
+		}
+	}
+	if (problems.length > 0) {
+		console.error('✗ Templates out of sync:');
+		for (const p of problems) console.error('  - ' + p);
+		process.exit(1);
+	}
+	console.log('✓ index.json and every template manifest are in sync');
+}
+
+function buildIndex() {
 	const collections = {};
 	for (const [name, coll] of Object.entries(CONFIG.collections)) {
 		collections[name] = {
@@ -108,10 +148,14 @@ async function writeIndex() {
 			})),
 		};
 	}
-	const index = {
+	return {
 		$schema: 'poli-page/templates/v1',
 		collections,
 	};
+}
+
+async function writeIndex() {
+	const index = buildIndex();
 	const target = path.join(REPO, 'index.json');
 	await fs.writeFile(target, JSON.stringify(index, null, 2) + '\n', 'utf-8');
 	console.log(`✓ ${path.relative(REPO, target)}`);
