@@ -1,0 +1,23 @@
+@theme {
+  --font-w9: "Arimo", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --font-w9-mono: "Courier New", "Courier", monospace;
+  --font-ephesis: "Ephesis", cursive;
+
+  --color-pencil: #0f2b46;
+}
+
+@layer components {
+  /* IRS Form W-9 - TIN digit cells, entry values and checkboxes */
+  .w9-cells {
+    @apply flex shrink-0 border-y-[0.5pt] border-black;
+  }
+  .w9-cell {
+    @apply w-[14.4pt] h-[24pt] shrink-0 border-l-[0.5pt] border-black flex items-center justify-center text-[11pt] font-w9-mono font-bold text-pencil last:border-r-[0.5pt];
+  }
+  .w9-check {
+    @apply w-[8pt] h-[8pt] border-[0.5pt] border-black flex items-center justify-center shrink-0 text-pencil;
+  }
+  .w9-entry {
+    @apply font-w9-mono font-bold text-[8pt] text-pencil;
+  }
+}
